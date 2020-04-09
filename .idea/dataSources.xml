@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DataSourceManagerImpl" format="xml" multifile-model="true">
+    <data-source source="LOCAL" name="sigais" uuid="242afe22-e086-454b-be36-5a431a662788">
+      <driver-ref>postgresql</driver-ref>
+      <synchronize>true</synchronize>
+      <jdbc-driver>org.postgresql.Driver</jdbc-driver>
+      <jdbc-url>jdbc:postgresql://localhost:5432/sigais_cliente</jdbc-url>
+    </data-source>
+    <data-source source="LOCAL" name="sigais_client@localhost" uuid="5badb858-0219-44d4-b33a-f66c24234b4e">
+      <driver-ref>postgresql</driver-ref>
+      <synchronize>true</synchronize>
+      <jdbc-driver>org.postgresql.Driver</jdbc-driver>
+      <jdbc-url>jdbc:postgresql://localhost:5432/sigais_client</jdbc-url>
+    </data-source>
+  </component>
+</project>
