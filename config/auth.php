@@ -68,7 +68,7 @@ return [
     'providers' => [
         'users' => [
             'driver' => 'eloquent',
-            'model' => App\Sigais\Models\User::class,
+            'model' => App\ProTicket\Models\User::class,
         ],
 
         // 'users' => [

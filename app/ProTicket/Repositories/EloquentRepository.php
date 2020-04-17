@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Sigais\Repositories;
+namespace App\ProTicket\Repositories;
 
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Facades\Cache;
@@ -8,7 +8,7 @@ use Illuminate\Support\Facades\Log;
 
 /**
  * Class EloquentRepository
- * @package App\Sigais\Repositories
+ * @package App\ProTicket\Repositories
  * @version 1.0.0
  */
 abstract class EloquentRepository

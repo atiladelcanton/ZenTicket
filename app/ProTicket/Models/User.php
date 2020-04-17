@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Sigais\Models;
+namespace App\ProTicket\Models;
 
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Foundation\Auth\User as Authenticatable;
@@ -10,7 +10,7 @@ use Artesaos\Defender\Traits\HasDefender;
  * Model User
  * @author Atila Rampazo <atilarampazo@gmail.com>
  * @version 1.0.0
- * @package App\Sigais\Models
+ * @package App\ProTicket\Models
  */
 class User extends Authenticatable implements MustVerifyEmail
 {

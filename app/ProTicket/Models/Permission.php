@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Sigais\Models;
+namespace App\ProTicket\Models;
 
 use Artesaos\Defender\Pivots\PermissionRolePivot;
 use Artesaos\Defender\Pivots\PermissionUserPivot;
@@ -9,7 +9,7 @@ use Illuminate\Database\Eloquent\Model;
 /**
  * Model Permissions
  * @version 1.0.0
- * @package App\Sigais\Models
+ * @package App\ProTicket\Models
  */
 class Permission extends Model implements \Artesaos\Defender\Contracts\Permission
 {

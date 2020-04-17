@@ -14,14 +14,14 @@ class CreateDefenderPermissionRoleTable extends Migration
     {
         Schema::create(config('defender.permission_role_table', 'permission_role'), function (Blueprint $table) {
             $table->unsignedInteger(config('defender.permission_key', 'permission_id'))->index();
-            $table->foreign(config('defender.permission_key', 'permission_id'))->references('id')
+            /*$table->foreign(config('defender.permission_key', 'permission_id'))->references('id')
                   ->on(config('defender.permission_table', 'permissions'))
-                  ->onDelete('cascade');
+                  ->onDelete('cascade');*/
 
             $table->unsignedInteger(config('defender.role_key', 'role_id'))->index();
-            $table->foreign(config('defender.role_key', 'role_id'))->references('id')
+           /* $table->foreign(config('defender.role_key', 'role_id'))->references('id')
                   ->on(config('defender.role_table', 'roles'))
-                  ->onDelete('cascade');
+                  ->onDelete('cascade');*/
 
             $table->tinyInteger('value')->default(-1);
             $table->timestamp('expires')->nullable();

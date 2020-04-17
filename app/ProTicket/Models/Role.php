@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Sigais\Models;
+namespace App\ProTicket\Models;
 
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsToMany;
@@ -9,7 +9,7 @@ use Illuminate\Database\Eloquent\Relations\BelongsToMany;
  * Model Role
  * @author Atila Rampazo <atilarampazo@gmail.com>
  * @version 1.0.0
- * @package App\Sigais\Models
+ * @package App\ProTicket\Models
  */
 class Role extends Model
 {

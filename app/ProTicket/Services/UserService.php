@@ -1,12 +1,12 @@
 <?php
 
 
-namespace App\Sigais\Services;
+namespace App\ProTicket\Services;
 
 
 use App\Mail\RegisterUser;
-use App\Sigais\Contracts\ServiceContract;
-use App\Sigais\Repositories\UserRepository;
+use App\ProTicket\Contracts\ServiceContract;
+use App\ProTicket\Repositories\UserRepository;
 use Exception;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Hash;
@@ -14,7 +14,7 @@ use Illuminate\Support\Facades\Mail;
 
 /**
  * Class UserService
- * @package App\Sigais\Services
+ * @package App\ProTicket\Services
  * @version 1.0.0
  */
 class UserService implements ServiceContract

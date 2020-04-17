@@ -2,37 +2,42 @@
 
 namespace App\Http\Controllers;
 
+use App\ProTicket\Helpers\LogError;
+use App\ProTicket\Helpers\SessionFlashMessage;
+use App\ProTicket\Services\ModuloService;
+use App\ProTicket\Services\RoleService;
 use App\Http\Requests\RoleStore;
-use App\Sigais\Services\ModuloService;
-use App\Sigais\Services\RoleService;
-use Illuminate\Support\Facades\Log;
+use Exception;
+use Illuminate\Contracts\Support\Renderable;
 
 class RolesController extends Controller
 {
     private $roleServices;
     private $moduleService;
+    private $pageTitle;
 
     /**
      * Create a new controller instance.
      *
-     * @param  RoleService  $roleService
-     * @param  ModuloService  $moduloService
+     * @param RoleService $roleService
+     * @param ModuloService $moduloService
      */
     public function __construct(RoleService $roleService, ModuloService $moduloService)
     {
         $this->middleware('auth');
         $this->roleServices = $roleService;
         $this->moduleService = $moduloService;
+        $this->pageTitle = 'Grupos';
     }
 
     /**
      * Show the application dashboard.
      *
-     * @return \Illuminate\Contracts\Support\Renderable
+     * @return Renderable
      */
     public function index()
     {
-        $pageTitle = 'Grupos';
+        $pageTitle = $this->pageTitle;
         $roles = $this->roleServices->renderList();
 
         return view('dashboard.groups.index', compact('pageTitle', 'roles'));
@@ -40,9 +45,9 @@ class RolesController extends Controller
 
     public function create()
     {
-        $pageTitle = 'Novo Grupo';
+        $pageTitle = $this->pageTitle;
 
-        $modules = $this->moduleService->renderWithPermission(auth()->user()->roles[0]->id);
+        $modules = $this->moduleService->renderList(auth()->user()->role_id);
         return view('dashboard.groups.create', compact('pageTitle', 'modules'));
     }
 
@@ -51,82 +56,59 @@ class RolesController extends Controller
         try {
             $data = $request->all();
             if (!isset($data['permissions'])) {
-                $request->session()->flash('message', ['type' => 'Warning', 'msg' => __('messages.permissions_required')]);
+                $request->session()->flash(
+                    'message',
+                    ['type' => 'Warning', 'msg' => __('messages.permissions_required')]
+                );
 
                 return back()->withInput();
             }
             $this->roleServices->buildInsert($data);
-            $request->session()->flash('message', ['type' => 'Success', 'msg' => __('messages.success_store')]);
+            SessionFlashMessage::success(SessionFlashMessage::STORE);
             return redirect()->route('grupos');
-        } catch (\Exception $e) {
-            Log::error(
-                $e->getMessage(),
-                [
-                    'usuario' => auth()->user()->email,
-                    'linha' => $e->getLine(),
-                    'arquivo' => $e->getFile(),
-                ]
-            );
-            $request->session()->flash('message', ['type' => 'Error', 'msg' => __('messages.catch_message_store')]);
+        } catch (Exception $e) {
+            LogError::Log($e);
 
+            SessionFlashMessage::error(SessionFlashMessage::STORE);
             return back()->withInput();
         }
     }
 
     public function edit($id)
     {
-        try {
-            $dataEdit = $this->roleServices->renderEdit($id);
+        $dataEdit = $this->roleServices->renderEdit($id);
 
-            if (is_null($dataEdit['role'])) {
-                session()->flash('message', ['type' => 'Warning', 'msg' => __('messages.not_found')]);
-                return redirect()->route('grupos');
-            }
-            $pageTitle = 'Editar Grupo';
-            $role = $dataEdit['role'];
-            $permissions = $dataEdit['permissions'];
-            $modules = $this->moduleService->renderWithPermission(auth()->user()->roles[0]->id);
-
-            return view('dashboard.groups.edit', compact('pageTitle', 'modules', 'role','permissions'));
-        } catch (\Exception $e) {
-            Log::error(
-                $e->getMessage(),
-                [
-                    'usuario' => auth()->user()->email,
-                    'linha' => $e->getLine(),
-                    'arquivo' => $e->getFile(),
-                ]
-            );
-
-            session()->flash('message', ['type' => 'Error', 'msg' => __('messages.catch_message_store')]);
-
+        if (is_null($dataEdit['role'])) {
+            session()->flash('message', ['type' => 'Warning', 'msg' => __('messages.not_found')]);
             return redirect()->route('grupos');
         }
-    }
-    
-    public function update($id,RoleStore $request){
-        try {
+        $pageTitle = $this->pageTitle;
+        $role = $dataEdit['role'];
+        $permissions = $dataEdit['permissions'];
 
+        $modules = $this->moduleService->renderList(auth()->user()->role_id);
+
+        return view('dashboard.groups.edit', compact('pageTitle', 'modules', 'role', 'permissions'));
+    }
+
+    public function update($id, RoleStore $request)
+    {
+        try {
             $data = $request->all();
             if (!isset($data['permissions'])) {
-                $request->session()->flash('message', ['type' => 'Warning', 'msg' => __('messages.permissions_required')]);
+                $request->session()->flash(
+                    'message',
+                    ['type' => 'Warning', 'msg' => __('messages.permissions_required')]
+                );
 
                 return back()->withInput();
             }
-            $this->roleServices->buildUpdate($id,$data);
-            $request->session()->flash('message', ['type' => 'Success', 'msg' => __('messages.success_update')]);
+            $this->roleServices->buildUpdate($id, $data);
+            SessionFlashMessage::success(SessionFlashMessage::UPDATE);
             return redirect()->route('grupos');
-        } catch (\Exception $e) {
-            Log::error(
-                $e->getMessage(),
-                [
-                    'usuario' => auth()->user()->email,
-                    'linha' => $e->getLine(),
-                    'arquivo' => $e->getFile(),
-                ]
-            );
-            $request->session()->flash('message', ['type' => 'Error', 'msg' => __('messages.catch_message_update')]);
-
+        } catch (Exception $e) {
+            LogError::Log($e);
+            SessionFlashMessage::error(SessionFlashMessage::UPDATE);
             return back()->withInput();
         }
     }

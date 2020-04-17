@@ -1,15 +1,16 @@
 <?php
 
-namespace App\Sigais\Repositories;
+namespace App\ProTicket\Repositories;
 
-use App\Sigais\Models\Role;
+
+use App\ProTicket\Models\User;
 
 /**
- * Class RoleRepository
- * @package App\Sigais\Repositories
+ * Class UserRepository
+ * @package App\ProTicket\Repositories
  * @version 1.0.0
  */
-class RoleRepository
+class UserRepository
 {
     /**
      * @var Role
@@ -17,15 +18,16 @@ class RoleRepository
     private $model;
 
     /**
-     * Role Repository constructor.
-     * @param Role $module
+     * User Repository constructor.
+     * @param User $module
      */
-    public function __construct(Role $module)
+    public function __construct(User $module)
     {
         $this->model = $module;
     }
 
     /**
+     * retrieve all users
      * @return mixed
      */
     public function getAll()
@@ -34,38 +36,41 @@ class RoleRepository
     }
 
     /**
-     * @param $id
+     * retrieve a user
+     * @param int $id
      * @return mixed
      */
-    public function getById($id)
+    public function getById(int $id)
     {
         return $this->model->find($id);
     }
 
     /**
-     * @param $data
+     * inserts a user
+     *
+     * @param array $data
      * @return mixed
      */
-    public function create($data)
+    public function create(array $data)
     {
         return $this->model->create($data);
     }
 
     /**
-     * @param $id
-     * @param $data
+     * @param int $id
+     * @param array $data
      * @return mixed
      */
-    public function update($id, $data)
+    public function update(int $id, array $data)
     {
         return $this->model->find($id)->fill($data)->save();
     }
 
     /**
-     * @param $id
+     * @param int $id
      * @return mixed
      */
-    public function delete($id)
+    public function delete(int $id)
     {
         return $this->model->find($id)->delete();
     }

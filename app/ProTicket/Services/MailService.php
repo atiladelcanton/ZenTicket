@@ -1,7 +1,7 @@
 <?php
 
 
-namespace App\Sigais\Services;
+namespace App\ProTicket\Services;
 
 
 use Log;
@@ -14,8 +14,8 @@ class MailService
      * @param string $viewTemplate
      * @param array $data
      * @param string $subject
-     * @param string $toName
-     * @param string $toEmail
+     * @param string $fromEmail
+     * @param string $fromName
      * @return void
      */
     public static function sendMailSendGrid(

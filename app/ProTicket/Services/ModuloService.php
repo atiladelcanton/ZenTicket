@@ -1,13 +1,13 @@
 <?php
 
-namespace App\Sigais\Services;
+namespace App\ProTicket\Services;
 
 
-use App\Sigais\Repositories\ModuleRepository;
+use App\ProTicket\Repositories\ModuleRepository;
 
 /**
  * Class ModuloService
- * @package App\Sigais\Services
+ * @package App\ProTicket\Services
  * @version 1.0.0
  */
 class ModuloService

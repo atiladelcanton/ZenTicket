@@ -13,9 +13,9 @@ class Administrator extends Seeder
     public function run()
     {
         DB::table('users')->insert([
-            'name' => 'Administrador Cliente',
-            'email' => 'atilarampazo@gmail.com',
-            'password' => \Illuminate\Support\Facades\Hash::make('clienteSigais@2019'),
+            'name' => 'Admin',
+            'email' => 'admin@email.com',
+            'password' => \Illuminate\Support\Facades\Hash::make('proTicket@2020'),
             'created_at' => now()
         ]);
     }

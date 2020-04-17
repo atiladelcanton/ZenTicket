@@ -17,11 +17,11 @@ class CreateRolesModules extends Migration
             $table->bigIncrements('id');
             $table->integer('roles_id');
             $table->index('roles_id');
-            $table->foreign('roles_id')->references('id')->on('roles')->onDelete('cascade');
+          //  $table->foreign('roles_id')->references('id')->on('roles')->onDelete('cascade');
 
             $table->integer('modules_id');
             $table->index('modules_id');
-            $table->foreign('modules_id')->references('id')->on('modules')->onDelete('cascade');
+          //  $table->foreign('modules_id')->references('id')->on('modules')->onDelete('cascade');
 
             $table->timestamps();
         });

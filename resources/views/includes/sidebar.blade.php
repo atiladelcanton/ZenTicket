@@ -1,6 +1,6 @@
 <div id="left-sidebar" class="sidebar">
     <div class="navbar-brand">
-        <a href="{{url('/')}}" class="logo"><img src="{{asset('img/sigais_logo_azul.png')}}" alt="{{env('APP_NAME')}}" style="width: 89px;"></a>
+        <a href="{{url('/')}}" class="logo"><img src="{{asset('img/logo.png')}}" alt="{{env('APP_NAME')}}" style="width: 189px;"></a>
         <button type="button" class="btn-toggle-offcanvas btn btn-sm float-right"><i class="lnr lnr-menu icon-close"></i></button>
     </div>
     <div class="sidebar-scroll">
@@ -23,14 +23,39 @@
                 </ul>
             </div>
         </div>
+
         <nav id="left-sidebar-nav" class="sidebar-nav">
             <ul id="main-menu" class="metismenu">
 
                 <li class=" {{explode('/',url()->current())[3] == 'home' ? 'active' : '' }}"><a href="{{url('/')}}"><i class="icon-speedometer"></i><span>Principal</span></a></li>
-                 @foreach($modules  as $module)
-                    @shield($module->slug.'.index')
-                    <li class="{{explode('/',url()->current())[3] == $module->slug ? 'active' : '' }}"><a href="{{ route($module->slug) }}"><i class="{{$module->icon}}"></i><span>{{$module->name}}</span></a></li>
-                    @endshield
+                @foreach($modules  as $module)
+
+                    @if(count($module->parents) > 0)
+                        @if($module->slug === 'configuracoes')
+                            @is('Administrador')
+                                <li class=" {{explode('/',url()->current())[3] == $module->slug ? 'active' : '' }}">
+                                    <a href="{{ $module->slug === 'configuracoes' ? '#':route($module->slug) }}" class="has-arrow">
+                                        <i class="{{$module->icon}}"></i><span>{{$module->name}}</span>
+                                    </a>
+
+                                    <ul>
+                                        @foreach($module->parents as $parent)
+
+                                            @shield($parent->slug.'.index')
+                                                <li class="{{explode('/',url()->current())[3] == $parent->slug ? 'active' : '' }}">
+                                                    <a href="{{ route($parent->slug) }}"><span>{{$parent->name}}</span></a>
+                                                </li>
+                                            @endshield
+                                        @endforeach
+                                    </ul>
+                                </li>
+                            @endis
+                        @endif
+                    @else
+                        @shield($module->slug.'.index')
+                            <li class="{{explode('/',url()->current())[3] == $module->slug ? 'active' : '' }}"><a href="{{ route($module->slug) }}"><i class="{{$module->icon}}"></i><span>{{$module->name}}</span></a></li>
+                        @endshield
+                    @endif
                 @endforeach
             </ul>
         </nav>

@@ -18,14 +18,11 @@ class CreateModules extends Migration
             $table->string('name');
             $table->string('slug');
             $table->string('icon');
+            $table->integer('parent_id')->nullable();
+
             $table->timestamps();
         });
 
-        Schema::table(config('defender.permission_table', 'permissions'),function(Blueprint $table){
-            $table->integer('modules_id');
-            $table->index('modules_id');
-            $table->foreign('modules_id')->references('id')->on('modules')->onDelete('cascade');
-        });
     }
 
     /**

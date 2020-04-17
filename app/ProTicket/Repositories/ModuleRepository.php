@@ -1,14 +1,14 @@
 <?php
 
-namespace App\Sigais\Repositories;
+namespace App\ProTicket\Repositories;
 
-use App\Sigais\Models\Module;
+use App\ProTicket\Models\Module;
 use Illuminate\Support\Collection;
 use Illuminate\Support\Facades\DB;
 
 /**
  * Class ModuleRepository
- * @package App\Sigais\Repositories
+ * @package App\ProTicket\Repositories
  * @version 1.0.0
  */
 class ModuleRepository
@@ -41,6 +41,7 @@ class ModuleRepository
                     ->where('roles_modules.roles_id', '=',
                         $role_id);
             })
+            ->whereNull('parent_id')
             ->select('modules.id', 'modules.name', 'modules.slug',
                 'modules.icon')
 

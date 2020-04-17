@@ -4,7 +4,7 @@
         <div class="navbar-left">
             <div class="navbar-btn">
                 <a href="index.html">
-                    <img src="{{asset('img/logo_small.png')}}" alt="{{env('APP_NAME')}}" class="img-fluid logo">
+                    <img src="{{asset('img/logo.png')}}" alt="{{env('APP_NAME')}}" class="img-fluid logo" style="width:50px;">
                 </a>
                 <button type="button" class="btn-toggle-offcanvas"><i class="lnr lnr-menu fa fa-bars"></i></button>
             </div>

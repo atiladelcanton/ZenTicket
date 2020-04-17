@@ -18,7 +18,7 @@ class ViewComposerServiceProvider extends ServiceProvider
 
         View::composer(['includes.sidebar'], function($view) {
 
-            $menuService = app()->make('App\Sigais\Services\ModuloService');
+            $menuService = app()->make('App\ProTicket\Services\ModuloService');
 
             $userId = auth()->user()->roles[0]->id;
 

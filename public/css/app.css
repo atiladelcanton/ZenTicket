@@ -1,6 +1,9 @@
-.logo{
-  margin: 0 auto !important;
-  justify-content: center !important;
-  align-items: center !important;
-  display: flex !important;
+.light_version .metismenu a{
+  font-weight: normal;
+}
+.light_version #left-sidebar .navbar-brand{
+  border-color:transparent;
+}
+.user-account .dropdown .dropdown-menu{
+  left: -50px !important;
 }

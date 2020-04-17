@@ -5,8 +5,8 @@ namespace App\Http\Controllers;
 
 
 use App\Http\Requests\UserStore;
-use App\Sigais\Services\RoleService;
-use App\Sigais\Services\UserService;
+use App\ProTicket\Services\RoleService;
+use App\ProTicket\Services\UserService;
 use Exception;
 use Illuminate\Contracts\View\Factory;
 use Illuminate\Http\RedirectResponse;

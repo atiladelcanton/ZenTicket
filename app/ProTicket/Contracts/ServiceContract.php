@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Sigais\Contracts;
+namespace App\ProTicket\Contracts;
 
 
 interface ServiceContract

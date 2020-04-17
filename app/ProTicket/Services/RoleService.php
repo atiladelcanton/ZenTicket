@@ -1,13 +1,12 @@
 <?php
 
-namespace App\Sigais\Services;
+namespace App\ProTicket\Services;
 
-
-use App\Sigais\Repositories\RoleRepository;
+use App\ProTicket\Repositories\RoleRepository;
 
 /**
  * Class RoleService
- * @package App\Sigais\Services
+ * @package App\eCidade\Services
  * @version 1.0.0
  */
 class RoleService
@@ -24,10 +23,10 @@ class RoleService
     /**
      * MenuService constructor.
      * @param RoleRepository $roleRepository
+     * @param ModuloService $moduloService
      */
     public function __construct(RoleRepository $roleRepository, ModuloService $moduloService)
     {
-
         $this->repository = $roleRepository;
         $this->moduleService = $moduloService;
     }
@@ -69,7 +68,6 @@ class RoleService
      */
     public function buildUpdate($id, $data)
     {
-
         $this->repository->update($id, $data);
 
         return $this->moduleService->updatePermissionsAdministrator($id, $data['permissions']);
@@ -97,6 +95,4 @@ class RoleService
     {
         return $this->repository->delete($id);
     }
-
-
 }
