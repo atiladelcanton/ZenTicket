@@ -6,9 +6,11 @@ namespace App\ProTicket\Contracts;
 interface ServiceContract
 {
     /**
+     * @param string $column
+     * @param string $orderColum
      * @return mixed
      */
-    public function renderList();
+    public function renderList(string $column = 'id', $orderColum = 'DESC');
 
     /**
      * @param int $id

@@ -3,8 +3,6 @@
 namespace App\ProTicket\Repositories;
 
 use Illuminate\Database\Eloquent\Model;
-use Illuminate\Support\Facades\Cache;
-use Illuminate\Support\Facades\Log;
 
 /**
  * Class EloquentRepository
@@ -25,8 +23,18 @@ abstract class EloquentRepository
      */
     public function __construct(Model $model)
     {
-
         $this->model = $model;
+    }
+
+    /**
+     * @param string $orderColum
+     * @param string $orientation
+     * @return mixed
+     */
+    public function getAll($orderColum = 'id', $orientation = 'desc')
+    {
+
+        return $this->model->orderBy($orderColum, $orientation)->paginate(15);
     }
 
     /**
@@ -44,7 +52,6 @@ abstract class EloquentRepository
      */
     public function create($data)
     {
-
         return $this->model->create($data);
     }
 
@@ -55,8 +62,6 @@ abstract class EloquentRepository
      */
     public function update($id, $data)
     {
-
-
         return $this->model->find($id)->update($data);
     }
 
@@ -66,7 +71,6 @@ abstract class EloquentRepository
      */
     public function delete($id)
     {
-
         return $this->model->find($id)->delete();
     }
 }

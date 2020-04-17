@@ -79,13 +79,5 @@ class Modules extends Seeder
                 'parent_id' => $config->id
             ]
         );
-        Module::create(
-            [
-                'name' => 'Status Ticket',
-                'slug' => str_slug('Status Ticket'),
-                'icon' => 'icon-bubbles',
-                'parent_id' => $config->id
-            ]
-        );
     }
 }

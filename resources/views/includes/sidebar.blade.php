@@ -1,4 +1,4 @@
-<div id="left-sidebar" class="sidebar">
+<div id="left-sidebar" class="sidebar mini_sidebar_on">
     <div class="navbar-brand">
         <a href="{{url('/')}}" class="logo"><img src="{{asset('img/logo.png')}}" alt="{{env('APP_NAME')}}" style="width: 189px;"></a>
         <button type="button" class="btn-toggle-offcanvas btn btn-sm float-right"><i class="lnr lnr-menu icon-close"></i></button>
