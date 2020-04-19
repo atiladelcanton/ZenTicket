@@ -12,7 +12,7 @@ class LogError
 
         Log::error(
             [
-                'causador' => uth()->user()->id,
+                'causador' => auth()->user()->id,
                 'origem' => 'USUARIO PAINEL',
                 'linha' => $exception->getLine(),
                 'arquivo' => $exception->getFile(),

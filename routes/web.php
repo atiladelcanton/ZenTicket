@@ -49,6 +49,7 @@ Route::prefix('projetos')->middleware('needsPermission')->group(function () {
     Route::post('/editar/{id}',['shield' => ['usuarios.edit'], 'uses' => 'UsersController@update'])->name('projetos.alterar');
     Route::delete('/{id}',['shield' => ['usuarios.destroy'], 'uses' => 'UsersController@destroy'])->name('projetos.deletar');
 });
+
 Route::group(['configuacoes','prefix'=>'configuracoes'],function (){
 
     Route::prefix('sla')->middleware('needsPermission')->group(function () {
@@ -70,21 +71,7 @@ Route::group(['configuacoes','prefix'=>'configuracoes'],function (){
         Route::delete('/{id}',['shield' => ['tipos-de-chamados.destroy'], 'uses' => 'UsersController@destroy'])->name('tipos-de-chamados.deletar');
     });
 
-    Route::prefix('impactos')->middleware('needsPermission')->group(function () {
-        Route::get('/', ['shield' => ['impactos.index'], 'uses' => 'UsersController@index'])->name('impactos');
-        Route::get('/criar',['shield' => ['impactos.create'], 'uses' => 'UsersController@create'])->name('impactos.create');
-        Route::post('/criar',['shield' => ['impactos.create'], 'uses' => 'UsersController@store'])->name('impactos.registrar');
-        Route::get('/editar/{id}',['shield' => ['impactos.edit'], 'uses' => 'UsersController@edit'])->name('impactos.editar');
-        Route::post('/editar/{id}',['shield' => ['impactos.edit'], 'uses' => 'UsersController@update'])->name('impactos.alterar');
-        Route::delete('/{id}',['shield' => ['impactos.destroy'], 'uses' => 'UsersController@destroy'])->name('impactos.deletar');
-    });
-    Route::prefix('status-ticket')->middleware('needsPermission')->group(function () {
-        Route::get('/', ['shield' => ['status-ticket.index'], 'uses' => 'StatusTicketController@index'])->name('status-ticket');
-        Route::get('/criar',['shield' => ['status-ticket.create'], 'uses' => 'StatusTicketController@create'])->name('status-ticket.create');
-        Route::post('/criar',['shield' => ['status-ticket.create'], 'uses' => 'StatusTicketController@store'])->name('status-ticket.registrar');
-        Route::get('/editar/{id}',['shield' => ['status-ticket.edit'], 'uses' => 'StatusTicketController@edit'])->name('status-ticket.editar');
-        Route::post('/editar/{id}',['shield' => ['status-ticket.edit'], 'uses' => 'StatusTicketController@update'])->name('status-ticket.alterar');
-        Route::delete('/{id}',['shield' => ['status-ticket.destroy'], 'uses' => 'StatusTicketController@destroy'])->name('status-ticket.deletar');
-    });
+    include 'impactos/web.php';
+    include 'status_ticket/web.php';
 
 });
