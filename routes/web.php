@@ -51,27 +51,8 @@ Route::prefix('projetos')->middleware('needsPermission')->group(function () {
 });
 
 Route::group(['configuacoes','prefix'=>'configuracoes'],function (){
-
-    Route::prefix('sla')->middleware('needsPermission')->group(function () {
-        Route::get('/', ['shield' => ['sla.index'], 'uses' => 'UsersController@index'])->name('sla');
-        Route::get('/criar',['shield' => ['sla.create'], 'uses' => 'UsersController@create'])->name('sla.create');
-        Route::post('/criar',['shield' => ['sla.create'], 'uses' => 'UsersController@store'])->name('sla.registrar');
-        Route::get('/editar/{id}',['shield' => ['sla.edit'], 'uses' => 'UsersController@edit'])->name('sla.editar');
-        Route::post('/editar/{id}',['shield' => ['sla.edit'], 'uses' => 'UsersController@update'])->name('sla.alterar');
-        Route::delete('/{id}',['shield' => ['sla.destroy'], 'uses' => 'UsersController@destroy'])->name('sla.deletar');
-    });
-
-
-    Route::prefix('tipos-de-chamados')->middleware('needsPermission')->group(function () {
-        Route::get('/', ['shield' => ['tipos-de-chamados.index'], 'uses' => 'UsersController@index'])->name('tipos-de-chamados');
-        Route::get('/criar',['shield' => ['tipos-de-chamados.create'], 'uses' => 'UsersController@create'])->name('tipos-de-chamados.create');
-        Route::post('/criar',['shield' => ['tipos-de-chamados.create'], 'uses' => 'UsersController@store'])->name('tipos-de-chamados.registrar');
-        Route::get('/editar/{id}',['shield' => ['tipos-de-chamados.edit'], 'uses' => 'UsersController@edit'])->name('tipos-de-chamados.editar');
-        Route::post('/editar/{id}',['shield' => ['tipos-de-chamados.edit'], 'uses' => 'UsersController@update'])->name('tipos-de-chamados.alterar');
-        Route::delete('/{id}',['shield' => ['tipos-de-chamados.destroy'], 'uses' => 'UsersController@destroy'])->name('tipos-de-chamados.deletar');
-    });
-
+    include 'prioridade/web.php';
+    include 'tipos_ticket/web.php';
     include 'impactos/web.php';
     include 'status_ticket/web.php';
-
 });

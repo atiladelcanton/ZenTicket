@@ -56,8 +56,8 @@ class Modules extends Seeder
         );
         Module::create(
             [
-                'name' => 'Sla',
-                'slug' => str_slug('Sla'),
+                'name' => 'Prioridade',
+                'slug' => str_slug('Prioridade'),
                 'icon' => 'icon-bubbles',
                 'parent_id' => $config->id
 
