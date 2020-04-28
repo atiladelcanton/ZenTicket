@@ -15,6 +15,7 @@ class CreateProjects extends Migration
     {
         Schema::create('projects', function (Blueprint $table) {
             $table->bigIncrements('id');
+            $table->string('hash_identify');
             $table->string('name');
             $table->string('logo');
             $table->string('responsible_name')->nullable();

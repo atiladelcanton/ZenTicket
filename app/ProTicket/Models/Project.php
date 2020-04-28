@@ -19,7 +19,8 @@
             "name",
             "logo",
             "responsible_name",
-            "responsible_email"
+            "responsible_email",
+            "hash_identify"
         ];
 
         public function usersProject()
