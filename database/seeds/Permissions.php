@@ -16,7 +16,7 @@ class Permissions extends Seeder
         $modules = DB::table('modules')->get();
 
         foreach($modules as $module) {
-            if($module->slug != '#'){
+            if($module->slug != 'configuracoes'){
                 array_push($permissions, [
                     'modules_id' => $module->id,
                     'name' => $module->slug . '.index',

@@ -16,7 +16,7 @@
     </div>
     <div class="row clearfix">
         <div class="col-lg-12 col-md-12">
-            @shield('status-ticket.create')
+            @shield('impactos.create')
                 <a href="{{route('impactos.create')}}" class="btn btn-outline-primary float-right mb-2"><i class="fa fa-plus-circle"></i>Novo</a>
             @endshield
         </div>
@@ -36,14 +36,14 @@
                         <td>{{$impact->name}}</td>
                         <td>
                             <div class="btn-group">
-                                @shield('status-ticket.edit')
+                                @shield('impactos.edit')
                                     <a href="{{ route('impactos.editar', $impact->id) }}"
                                        class="btn btn-outline-info" data-toggle="tooltip" title="Editar"
                                        data-placement="top">
                                         <i class="fa fa-edit"></i>
                                     </a>
                                 @endshield
-                                @shield('status-ticket.destroy')
+                                @shield('impactos.destroy')
                                     <a href="javascript:;"
                                        class="btn btn-outline-danger" data-toggle="tooltip" title="Remover"
                                        data-placement="top"  onclick="event.preventDefault(); document.getElementById('excluir_{{$impact->id}}').submit();">

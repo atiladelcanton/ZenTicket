@@ -16,7 +16,7 @@
     </div>
     <div class="row clearfix">
         <div class="col-lg-12 col-md-12">
-            @shield('status-ticket.create')
+            @shield('prioridade.create')
                 <a href="{{route('prioridade.create')}}" class="btn btn-outline-primary float-right mb-2"><i class="fa fa-plus-circle"></i>Novo</a>
             @endshield
         </div>
@@ -38,14 +38,14 @@
                         <td>{{$priority->sla}}</td>
                         <td>
                             <div class="btn-group">
-                                @shield('status-ticket.edit')
+                                @shield('prioridade.edit')
                                     <a href="{{ route('prioridade.editar', $priority->id) }}"
                                        class="btn btn-outline-info" data-toggle="tooltip" title="Editar"
                                        data-placement="top">
                                         <i class="fa fa-edit"></i>
                                     </a>
                                 @endshield
-                                @shield('status-ticket.destroy')
+                                @shield('prioridade.destroy')
                                     <a href="javascript:;"
                                        class="btn btn-outline-danger" data-toggle="tooltip" title="Remover"
                                        data-placement="top"  onclick="event.preventDefault(); document.getElementById('excluir_{{$priority->id}}').submit();">

@@ -34,19 +34,21 @@ class ModuleRepository
      */
     public function getByRoleId($role_id): Collection
     {
-        return $this->model->join('roles_modules',
+        $role = $this->model->join('roles_modules',
             function ($sql) use ($role_id) {
                 $sql->on('roles_modules.modules_id', '=',
-                    'modules.id')
+                         'modules.id')
                     ->where('roles_modules.roles_id', '=',
-                        $role_id);
+                            $role_id);
             })
             ->whereNull('parent_id')
             ->select('modules.id', 'modules.name', 'modules.slug',
-                'modules.icon')
+                     'modules.icon')
 
             ->orderBy('modules.name', 'ASC')
             ->get();
+
+        return $role;
     }
 
     /**

@@ -33,7 +33,7 @@ class TypeTicketController extends Controller
      */
     public function index()
     {
-        $pageTitle = '∑Tipo de Chamados';
+        $pageTitle = 'Tipo de Chamados';
         $types = $this->service->renderList();
 
         return view('dashboard.type_tickets.index', compact('pageTitle', 'types'));

@@ -73,4 +73,9 @@ class User extends Authenticatable implements MustVerifyEmail
             config('defender.permission_key')
         )->withPivot('value', 'expires');
     }
+
+    public function projectsUser()
+    {
+        return $this->hasMany(ProjectUser::class, 'user_id');
+    }
 }

@@ -3,6 +3,7 @@
 namespace App\ProTicket\Models;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\HasMany;
 
 /**
  * Model Module
@@ -17,9 +18,11 @@ class Module extends Model
     protected $fillable = [
         "name", "slug", "icon","parent_id"
     ];
+    public $keyType = 'string';
     protected $with = ['permissions','parents'];
+
     /**
-     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+     * @return HasMany
      */
     public function permissions()
     {

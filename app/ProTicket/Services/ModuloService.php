@@ -23,7 +23,7 @@ class ModuloService
      */
     public function __construct(ModuleRepository $moduleRepository)
     {
-        
+
         $this->moduleRepository = $moduleRepository;
     }
 
@@ -34,6 +34,7 @@ class ModuloService
     public function renderList($role_id)
     {
         $modules = $this->moduleRepository->getByRoleId($role_id);
+
         return $modules;
     }
 

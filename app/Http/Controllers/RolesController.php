@@ -48,6 +48,7 @@ class RolesController extends Controller
         $pageTitle = $this->pageTitle;
 
         $modules = $this->moduleService->renderList(auth()->user()->role_id);
+
         return view('dashboard.groups.create', compact('pageTitle', 'modules'));
     }
 

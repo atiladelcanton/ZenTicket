@@ -14,6 +14,7 @@ class CreateDefenderPermissionsTable extends Migration
             $table->increments('id');
             $table->string('name')->unique();
             $table->string('readable_name');
+            $table->unsignedInteger('modules_id')->nullable();
             $table->timestamps();
         });
     }

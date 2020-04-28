@@ -49,7 +49,7 @@ class Modules extends Seeder
         $config = Module::create(
             [
                 'name' => 'Configurações',
-                'slug' => '#',
+                'slug' => 'configuracoes',
                 'icon' => 'icon-equalizer',
 
             ]

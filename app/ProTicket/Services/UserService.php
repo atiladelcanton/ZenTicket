@@ -1,100 +1,106 @@
 <?php
 
 
-namespace App\ProTicket\Services;
+    namespace App\ProTicket\Services;
 
 
-use App\Mail\RegisterUser;
-use App\ProTicket\Contracts\ServiceContract;
-use App\ProTicket\Repositories\UserRepository;
-use Exception;
-use Illuminate\Support\Facades\DB;
-use Illuminate\Support\Facades\Hash;
-use Illuminate\Support\Facades\Mail;
-
-/**
- * Class UserService
- * @package App\ProTicket\Services
- * @version 1.0.0
- */
-class UserService implements ServiceContract
-{
-
-    private $user;
-
-    public function __construct(UserRepository $user)
-    {
-        $this->user = $user;
-    }
+    use App\Mail\RegisterUser;
+    use App\ProTicket\Contracts\ServiceContract;
+    use App\ProTicket\Repositories\UserRepository;
+    use Exception;
+    use Illuminate\Support\Facades\DB;
+    use Illuminate\Support\Facades\Hash;
+    use Illuminate\Support\Facades\Log;
+    use Illuminate\Support\Facades\Mail;
 
     /**
-     * @return mixed
+     * Class UserService
+     * @package App\ProTicket\Services
+     * @version 1.0.0
      */
-    public function renderList()
+    class UserService implements ServiceContract
     {
-        return $this->user->getAll();
-    }
 
-    /**
-     * @param $id
-     * @return mixed
-     * @throws Exception
-     */
-    public function renderEdit($id)
-    {
-        $user = $this->user->getById($id);
+        private $user;
 
-        if (is_null($user)) {
-            throw new Exception(env('not_found'), 404);
+        public function __construct(UserRepository $user)
+        {
+            $this->user = $user;
         }
-        return $user;
-    }
 
-    /**
-     * @param int $id
-     * @param array $data
-     * @return mixed
-     */
-    public function buildUpdate(int $id, array $data)
-    {
-        $data = $this->mapUserPassword($data);
-        return $this->user->update($id, $data['user']);
-    }
+        /**
+         * @param string $column
+         * @param string $orderColum
+         * @return mixed
+         */
+        public function renderList(string $column = 'id', $orderColum = 'DESC')
+        {
+            return $this->user->getAll();
+        }
 
-    /**
-     * @param array $data
-     * @return array
-     */
-    private function mapUserPassword(array $data)
-    {
-        return $data['password'] = $this->password_generate(8);
-    }
+        /**
+         * @param $id
+         * @return mixed
+         * @throws Exception
+         */
+        public function renderEdit($id)
+        {
+            $user = $this->user->getById($id);
 
-    /**
-     * @param array $data
-     * @return mixed
-     */
-    public function buildInsert(array $data)
-    {
-        $no_crypt = $this->mapUserPassword($data);
-        $data['password'] = Hash::make($no_crypt);
-        $data['password_no_crype'] = $no_crypt;
-        $user = $this->user->create($data);
-        DB::table('role_user')->insert(['user_id' => $user->id , 'role_id' => $data['role_id']]);
-        Mail::to($user->email)->send(new RegisterUser($user,$no_crypt));
-    }
+            if (is_null($user)) {
+                throw new Exception(env('not_found'), 404);
+            }
+            return $user;
+        }
 
-    /**
-     * @param $id
-     * @return mixed
-     */
-    public function buildDelete($id)
-    {
-        return $this->user->delete($id);
+        /**
+         * @param int $id
+         * @param array $data
+         * @return mixed
+         */
+        public function buildUpdate(int $id, array $data)
+        {
+            $data = $this->mapUserPassword($data);
+            return $this->user->update($id, $data['user']);
+        }
+
+        /**
+         * @param array $data
+         * @return array
+         */
+        private function mapUserPassword(array $data)
+        {
+            return $data['password'] = $this->password_generate(8);
+        }
+
+        /**
+         * @param array $data
+         * @return mixed
+         */
+        public function buildInsert(array $data)
+        {
+            $no_crypt = $this->mapUserPassword($data);
+            $data['password'] = Hash::make($no_crypt);
+            $data['password_no_crype'] = $no_crypt;
+            $user = $this->user->create($data);
+            DB::table('role_user')->insert(['user_id' => $user->id, 'role_id' => $data['role_id']]);
+            Log::notice(['email' => $data['email'], 'senha' => $no_crypt]);
+            //Mail::to($user->email)->send(new RegisterUser($user, $no_crypt));
+        }
+
+        /**
+         * @param $id
+         * @return mixed
+         */
+        public function buildDelete($id)
+        {
+            return $this->user->delete($id);
+        }
+
+        function password_generate($chars)
+        {
+            $data = '1234567890ABCDEFGHIJKLMNOPQRSTUVWXYZabcefghijklmnopqrstuvwxyz)(&ˆˆ$#@!*';
+            return substr(str_shuffle($data), 0, $chars);
+        }
+
     }
-    function password_generate($chars)
-    {
-        $data = '1234567890ABCDEFGHIJKLMNOPQRSTUVWXYZabcefghijklmnopqrstuvwxyz)(&ˆˆ$#@!*';
-        return substr(str_shuffle($data), 0, $chars);
-    }
-}

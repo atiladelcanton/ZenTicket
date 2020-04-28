@@ -16,7 +16,8 @@ class Administrator extends Seeder
             'name' => 'Admin',
             'email' => 'admin@email.com',
             'password' => \Illuminate\Support\Facades\Hash::make('proTicket@2020'),
-            'created_at' => now()
+            'created_at' => now(),
+            'role_id' => 1
         ]);
     }
 }
