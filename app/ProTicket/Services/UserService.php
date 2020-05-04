@@ -4,14 +4,13 @@
     namespace App\ProTicket\Services;
 
 
-    use App\Mail\RegisterUser;
     use App\ProTicket\Contracts\ServiceContract;
+    use App\ProTicket\Models\ProjectUser;
     use App\ProTicket\Repositories\UserRepository;
     use Exception;
     use Illuminate\Support\Facades\DB;
     use Illuminate\Support\Facades\Hash;
     use Illuminate\Support\Facades\Log;
-    use Illuminate\Support\Facades\Mail;
 
     /**
      * Class UserService
@@ -73,6 +72,12 @@
             return $data['password'] = $this->password_generate(8);
         }
 
+        function password_generate($chars)
+        {
+            $data = '1234567890ABCDEFGHIJKLMNOPQRSTUVWXYZabcefghijklmnopqrstuvwxyz)(&ˆˆ$#@!*';
+            return substr(str_shuffle($data), 0, $chars);
+        }
+
         /**
          * @param array $data
          * @return mixed
@@ -85,7 +90,14 @@
             $user = $this->user->create($data);
             DB::table('role_user')->insert(['user_id' => $user->id, 'role_id' => $data['role_id']]);
             Log::notice(['email' => $data['email'], 'senha' => $no_crypt]);
-            //Mail::to($user->email)->send(new RegisterUser($user, $no_crypt));
+            foreach ($data['projects'] as $project) {
+                ProjectUser::create(
+                    [
+                        'user_id' => $user->id,
+                        'project_id' => $project
+                    ]
+                );
+            }
         }
 
         /**
@@ -95,12 +107,6 @@
         public function buildDelete($id)
         {
             return $this->user->delete($id);
-        }
-
-        function password_generate($chars)
-        {
-            $data = '1234567890ABCDEFGHIJKLMNOPQRSTUVWXYZabcefghijklmnopqrstuvwxyz)(&ˆˆ$#@!*';
-            return substr(str_shuffle($data), 0, $chars);
         }
 
     }

@@ -19,7 +19,7 @@
         <div class="col-lg-12 col-md-12">
             <div class="card planned_task">
                 <div class="body">
-                    <form action="{{ route('usuarios.registrar') }}" method="post" id="frm_cadastro">
+                    <form action="{{ route('usuarios.editar',['user' => $user->id]) }}" method="post" id="frm_cadastro">
                         {{ @csrf_field() }}
                         <div class="row">
                             <div class="col-md-3">
@@ -27,23 +27,25 @@
                                 <div class="col-md-12">
                                     <select name="role_id"
                                             class="form-control @error('role_id') 'has-error' @enderror"
-                                    required>
+                                            required>
                                         <option value="">-- Selecione --</option>
                                         @foreach($roles as $role)
-                                            <option value="{{$role->id}}" {{old('role_id') == $role->id ? 'selected':''}}>{{$role->name}}</option>
+                                            <option
+                                                value="{{$role->id}}" {{$user->role_id == $role->id ? 'selected':''}}>{{$role->name}}</option>
                                         @endforeach
                                     </select>
                                     @error('role_id')
-                                        <code>{{ $message }}</code>
+                                    <code>{{ $message }}</code>
                                     @enderror
                                 </div>
                             </div>
                             <div class="col-md-4">
                                 <div class="form-group  @error('name') 'has-error' @enderror">
                                     <label name="name">Nome</label>
-                                    <input type="text" name="name" id="name" class="form-control" required value="{{old('name')}}">
+                                    <input type="text" name="name" id="name" class="form-control" required
+                                           value="{{old('name')?old('name') : $user->name}}">
                                     @error('name')
-                                        <code>{{ $message }}</code>
+                                    <code>{{ $message }}</code>
                                     @enderror
                                 </div>
                             </div>
@@ -51,23 +53,8 @@
                                 <div class="form-group  @error('email') 'has-error' @enderror">
                                     <label name="name">E-mail</label>
                                     <input type="email" name="email" id="email" class="form-control"
-                                           required value="{{old('email')}}">
+                                           required value="{{old('email') ? old('email') : $user->email}}">
                                     @error('email')
-                                        <code>{{ $message }}</code>
-                                    @enderror
-                                </div>
-                            </div>
-                            <div class="col-md-4">
-                                <div class="form-group  @error('projects') 'has-error' @enderror">
-                                    <label name="name">Projeto(s)</label>
-                                    <div class="multiselect_div">
-                                        <select id="projects" name="projects[]" class="multiselect" multiple="multiple">
-                                            @foreach($projects as $key => $project)
-                                                <option value="{{$project->id}}">{{$project->name}}</option>
-                                            @endforeach
-                                        </select>
-                                    </div>
-                                    @error('projects')
                                     <code>{{ $message }}</code>
                                     @enderror
                                 </div>
@@ -90,19 +77,11 @@
         </div>
     </div>
 @endsection
-@section('css')
-    <link rel="stylesheet" href="{{asset('assets/vendor/bootstrap-multiselect/bootstrap-multiselect.css')}}">
-@endsection
-@section('scripts')
-    <script src="{{asset('assets/vendor/multi-select/js/jquery.multi-select.js')}}"></script>
-    <script src="{{asset('assets/vendor/bootstrap-multiselect/bootstrap-multiselect.js')}}"></script>
-    <script>
 
+@section('scripts')
+    <script>
         $(function () {
             $('#frm_cadastro').parsley();
-            $('#projects').multiselect({
-                maxHeight: 300
-            });
         });
     </script>
 @endsection

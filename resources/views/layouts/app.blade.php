@@ -5,8 +5,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
-    <meta name="description" content="Oculux Bootstrap 4x admin is super flexible, powerful, clean &amp; modern responsive admin dashboard with unlimited possibilities.">
-    <meta name="keywords" content="admin template, Oculux admin template, dashboard template, flat admin template, responsive admin template, web app, Light Dark version">
+    <meta name="description" content="ProTicket">
     <meta name="author" content="GetBootstrap, design by: puffintheme.com">
     <link rel="apple-touch-icon" sizes="57x57" href="/apple-icon-57x57.png">
     <link rel="apple-touch-icon" sizes="60x60" href="/apple-icon-60x60.png">
@@ -42,12 +41,7 @@
 
 <div id="wrapper">
     @include('includes.top-navbar')
-
-
-
     @include('includes.sidebar')
-
-
     <div id="main-content">
         <div class="container-fluid">
             @yield('content')
