@@ -22,14 +22,21 @@
         {
             try{
                 $fileName = self::generateNameImage($file);
+
                 $created = '';
+                $return = '';
                 switch ($type) {
                     case 'image':
                         $created = self::uploadImage($path, $file, $fileName);
+                        $return =  $created->getPathname();
+                        break;
+                    case 'document':
+                        $created = self::uploadDocument($path, $file, $fileName);
+                        $return = $created;
                         break;
                 }
 
-                return  $created->getPathname();
+                return  $return;
             }catch (\Exception $exception){
                 LogError::Log($exception);
                 throw new \Exception('Erro ao realizar o upload da imagem',500);
@@ -63,4 +70,10 @@
         {
             return $file->move($path, $name);
         }
+
+        private static function uploadDocument(string $path, UploadedFile $file, string $name){
+
+            return Storage::putFileAs($path,$file,$name);
+        }
+
     }

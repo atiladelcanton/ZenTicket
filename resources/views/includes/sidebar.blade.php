@@ -1,6 +1,8 @@
 <div id="left-sidebar" class="sidebar mini_sidebar_on">
     <div class="navbar-brand">
-        <a href="{{url('/')}}" class="logo"><img src="{{asset('img/logo.png')}}" alt="{{env('APP_NAME')}}" style="width: 189px;"></a>
+        <a href="{{url('/')}}" class="logo"><img src="{{asset('img/small.png')}}" alt="{{env('APP_NAME')}}" style="width: 40px;">
+        <span style="font-weight: bold; font-size: 21px;"><span style="color:#008ED0; font-size: 21px;">pro</span>Ticket</span>
+        </a>
         <button type="button" class="btn-toggle-offcanvas btn btn-sm float-right"><i class="lnr lnr-menu icon-close"></i></button>
     </div>
     <div class="sidebar-scroll">

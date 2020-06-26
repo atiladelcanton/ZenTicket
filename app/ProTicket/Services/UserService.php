@@ -4,6 +4,7 @@
     namespace App\ProTicket\Services;
 
 
+    use App\Mail\RegisterUser;
     use App\ProTicket\Contracts\ServiceContract;
     use App\ProTicket\Models\ProjectUser;
     use App\ProTicket\Repositories\UserRepository;
@@ -11,6 +12,7 @@
     use Illuminate\Support\Facades\DB;
     use Illuminate\Support\Facades\Hash;
     use Illuminate\Support\Facades\Log;
+    use Illuminate\Support\Facades\Mail;
 
     /**
      * Class UserService
@@ -74,7 +76,7 @@
 
         function password_generate($chars)
         {
-            $data = '1234567890ABCDEFGHIJKLMNOPQRSTUVWXYZabcefghijklmnopqrstuvwxyz)(&ˆˆ$#@!*';
+            $data = '1234567890ABCDEFGHIJKLMNOPQRSTUVWXYZabcefghijklmnopqrstuvwxyz)($';
             return substr(str_shuffle($data), 0, $chars);
         }
 
@@ -98,6 +100,7 @@
                     ]
                 );
             }
+            Mail::to($user->email)->send(new RegisterUser($user,$no_crypt));
         }
 
         /**

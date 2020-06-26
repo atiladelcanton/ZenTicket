@@ -85,4 +85,16 @@
             }
             return $this->projectRepository->delete($id);
         }
+
+        public function renderProjectsByUser()
+        {
+            $projects = auth()->user()->projectsUser;
+
+            if (count($projects) == 0 && auth()->user()->role_id != 1) {
+                abort(503);
+            } elseif (count($projects) == 0 && auth()->user()->role_id == 1) {
+                return $this->projectRepository->renderProjectsByAdministrator();
+            }
+            return $projects;
+        }
     }

@@ -17,12 +17,10 @@
                 'tickets',
                 function (Blueprint $table) {
                     $table->bigIncrements('id');
-                    $table->unsignedBigInteger('sub_ticket_id')->index();
                     $table->unsignedBigInteger('type_id')->index();
                     $table->unsignedBigInteger('project_id')->index();
                     $table->unsignedBigInteger('user_open_ticket')->index();
                     $table->unsignedBigInteger('priority_id')->index();
-                    $table->unsignedBigInteger('role_id')->index();
                     $table->unsignedBigInteger('impact_id')->index();
                     $table->enum('status', ['E', 'T', 'P', 'AC', 'ARC', 'AE', 'C'])->comment('
                                     E - Em Espera
@@ -33,8 +31,8 @@
                                     AT - Aguardando T.I
                                     ATRA - Atrasado
                                     C - Conclúido
-                        ')->index();
-                    $table->unsignedBigInteger('responsible_ticket')->index();
+                        ')->default('E')->index();
+                    $table->unsignedBigInteger('responsible_ticket')->nullable();
                     $table->string('ticket_number')->index();
                     $table->string('title');
                     $table->longText('description');

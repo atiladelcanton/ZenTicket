@@ -17,6 +17,7 @@ class CreatePriorities extends Migration
             $table->bigIncrements('id');
             $table->string('name');
             $table->time('sla');
+            $table->string('color')->nullable();
             $table->timestamps();
         });
     }

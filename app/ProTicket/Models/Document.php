@@ -7,16 +7,17 @@
     use Illuminate\Database\Eloquent\Model;
 
     /**
-     * Class Evidence
+     * Class Document
      * @package App\ProTicket\Models
      */
-    class Evidence extends Model
+    class Document extends Model
     {
 
         protected $fillable = [
             'type',
             'ticket_id',
-            'path'
+            'extension_document',
+            'name'
         ];
 
         public function ticket()

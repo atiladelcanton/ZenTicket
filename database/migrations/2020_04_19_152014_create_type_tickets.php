@@ -17,6 +17,7 @@ class CreateTypeTickets extends Migration
             $table->bigIncrements('id');
             $table->string('name')->index();
             $table->string('icon')->nullable();
+            $table->string('color')->nullable();
             $table->timestamps();
         });
     }

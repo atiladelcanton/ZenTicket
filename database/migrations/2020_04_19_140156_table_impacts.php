@@ -16,6 +16,7 @@ class TableImpacts extends Migration
         Schema::create('impacts', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->string('name')->unique();
+            $table->string('color')->nullable();
             $table->timestamps();
         });
     }

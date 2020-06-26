@@ -16,6 +16,7 @@ class StatusTickets extends Migration
         Schema::create('status_tickets', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->string('name')->unique();
+            $table->string('color')->nullable();
             $table->timestamps();
         });
     }

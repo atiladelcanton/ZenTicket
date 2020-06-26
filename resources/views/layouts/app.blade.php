@@ -24,6 +24,7 @@
     <meta name="msapplication-TileColor" content="#ffffff">
     <meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
     <meta name="theme-color" content="#ffffff">
+    <meta name="csrf-token" content="{{ csrf_token() }}">
     <!-- VENDOR CSS -->
     <link rel="stylesheet" href="{{asset('assets/vendor/bootstrap/css/bootstrap.min.css')}}">
     <link rel="stylesheet" href="{{asset('assets/vendor/font-awesome/css/font-awesome.min.css')}}">
@@ -31,12 +32,19 @@
     <link rel="stylesheet" href="{{asset('assets/vendor/c3/c3.min.css')}}"/>
     <link rel="stylesheet" href="{{asset('assets/vendor/parsleyjs/css/parsley.css')}}">
     <link rel="stylesheet" href="{{asset('assets/vendor/toastr/toastr.min.css')}}">
+    <link rel="stylesheet" href="{{asset('assets/vendor/hover/css/hover.css')}}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.0.0/animate.min.css"/>
+    <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/selectize.js/0.12.6/css/selectize.bootstrap3.min.css"
+    integrity="sha256-ze/OEYGcFbPRmvCnrSeKbRTtjG4vGLHXgOqsyLFTRjg=" crossorigin="anonymous"/>
+
     <!-- MAIN CSS -->
     <link rel="stylesheet" href="{{asset('assets/css/site.min.css')}}">
     <link rel="stylesheet" href="{{asset('css/app.css')}}">
-
+    <link rel="stylesheet" href="{{asset('assets/vendor/summernote/dist/summernote.css')}}"/>
+    @yield('css')
 </head>
-<body class="font-montserrat theme-orange light_version">
+<body class="font-montserrat theme-orange light_version mini_sidebar">
 <!-- Page Loader -->
 
 <div id="wrapper">
@@ -44,7 +52,9 @@
     @include('includes.sidebar')
     <div id="main-content">
         <div class="container-fluid">
-            @yield('content')
+            <div class="animate__animated animate__bounceInLeft">
+                @yield('content')
+            </div>
         </div>
     </div>
 </div>
@@ -57,6 +67,11 @@
 <script src="{{asset('assets/vendor/toastr/toastr.js')}}"></script>
 <script src="{{asset('assets/vendor/parsleyjs/js/parsley.min.js')}}"></script>
 <script src="{{asset('assets/vendor/parsleyjs/js/pt-br.js')}}"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/selectize.js/0.12.6/js/standalone/selectize.min.js"
+integrity="sha256-+C0A5Ilqmu4QcSPxrlGpaZxJ04VjsRjKu+G82kl5UJk=" crossorigin="anonymous"></script>
+<script src="{{asset('assets/vendor/summernote/dist/summernote.js')}}"></script>
+<script src="{{asset('assets/vendor/summernote/dist/lang/summernote-pt-BR.js')}}"></script>
+
 <?php if (session('message')) {
     $msg = json_encode(Session::get('message'));
 }
@@ -71,6 +86,13 @@
 
     </script>
 @endif
+<script>
+     $(window).resize(function(){
+            if($(window).width()<500){
+                $('body').removeClass('mini_sidebar');
+            }
+        });
+    </script>
 @yield('scripts')
 
 </body>
