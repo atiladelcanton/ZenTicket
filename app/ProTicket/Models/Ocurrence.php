@@ -19,16 +19,11 @@ class Ocurrence extends Model
         'user_id'
     ];
     protected $with = [
-        'documents',
-        'ticket'
+        'documentsOccurences',
     ];
-    public function ticket()
-    {
-        return $this->belongsTo(Ticket::class, 'id');
-    }
 
-    public function documents()
+    public function documentsOccurences()
     {
-        return $this->hasMany(DocumentOccurence::class, 'occurences_id', 'id');
+        return $this->hasMany(DocumentOccurrence::class, 'occurences_id', 'id');
     }
 }

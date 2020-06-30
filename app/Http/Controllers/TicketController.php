@@ -10,6 +10,7 @@ use App\ProTicket\Helpers\SessionFlashMessage;
 use App\ProTicket\Helpers\Upload;
 use App\ProTicket\Models\TimeLineTicket;
 use App\ProTicket\Services\ImpactService;
+use App\ProTicket\Services\OcurrenceService;
 use App\ProTicket\Services\PriorityService;
 use App\ProTicket\Services\ProjectService;
 use App\ProTicket\Services\Specializations\CalculateHoursWorked;
@@ -32,6 +33,7 @@ class TicketController extends Controller
     private $typeTicketService;
     private $impactService;
     private $timeLineService;
+    private $occurrenceService;
     /**
      * Create a new controller instance.
      *
@@ -47,7 +49,8 @@ class TicketController extends Controller
         PriorityService $priorityService,
         TypeTicketService $typeTicketService,
         ImpactService $impactService,
-        TimeLineTicketService $timeLineTicketService
+        TimeLineTicketService $timeLineTicketService,
+        OcurrenceService $occurrenceService
     ) {
         $this->middleware('auth');
         $this->service = $ticketService;
@@ -56,6 +59,7 @@ class TicketController extends Controller
         $this->typeTicketService = $typeTicketService;
         $this->impactService = $impactService;
         $this->timeLineService = $timeLineTicketService;
+        $this->occurrenceService = $occurrenceService;
     }
 
     /**
@@ -206,11 +210,15 @@ class TicketController extends Controller
     {
         try {
             DB::beginTransaction();
+            $data = $request->all();
+            $ticket = $this->service->renderTicketByTicketNumber($data['ticketNumber']);
+            $data['ticket_id'] = $ticket->id;
 
+            $this->occurrenceService->buildInsert($data);
 
             DB::commit();
-            SessionFlashMessage::success(SessionFlashMessage::STORE);
-            return redirect()->route('chamados');
+            session()->flash('message', ['type' => 'Success', 'msg' => 'Ocorrencia incluída com sucesso!']);
+            return redirect()->route('chamados.detail', $data['ticketNumber']);
         } catch (Exception $e) {
             DB::rollBack();
             LogError::Log($e);

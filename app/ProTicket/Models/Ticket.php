@@ -54,7 +54,8 @@ class Ticket extends Model
         'impact',
         'documents',
         'userResponsible',
-        'timeLineTicket'
+        'timeLineTicket',
+        'ocurrences'
     ];
 
     public function type()
@@ -89,7 +90,10 @@ class Ticket extends Model
     {
         return $this->hasMany(Document::class, 'ticket_id');
     }
-
+    public function ocurrences()
+    {
+        return $this->hasMany(Ocurrence::class, 'ticket_id');
+    }
     public function timeLineTicket()
     {
         return $this->hasMany(TimeLineTicket::class, 'ticket_id');

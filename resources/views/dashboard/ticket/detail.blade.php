@@ -70,25 +70,8 @@
                     <h2>Documentos do chamado</h2>
                 </div>
                 <div class="body">
-                        <div class="row" style="display: flex;justify-content: center;align-items: center;">
-                            @foreach($ticket->documents as $document)
-                                <div class="col-md-2">
-                                        <div class="icon bg-warning hvr-float-shadow" style="display: flex;justify-content: center;align-items: center;border-radius: 5px;">
-                                            <a href="javascript:;" style="color: #fff;font-weight: bold;text-transform: uppercase;">
-                                                @if(in_array($document->extension_document,['jpg','png','jpeg']))
-                                                    <img src="{{asset('img/files/jpg.svg')}}" style="width: 43px;padding: 5px;"/>
-                                                @elseif(in_array($document->extension_document,['doc','docx']))
-                                                    <img src="{{asset('img/files/doc.svg')}}" style="width: 43px;padding: 5px;"/>
-                                                @elseif($document->extension_document == 'pdf')
-                                                    <img src="{{asset('img/files/pdf.svg')}}" style="width: 43px;padding: 5px;"/>
-                                                @elseif(in_array($document->extension_document,['xls','xlsx','csv']))
-                                                    <img src="{{asset('img/files/tablet.svg')}}" style="width: 43px;padding: 5px;"/>
-                                                @endif
-                                                Baixar
-                                            </a>
-                                        </div>
-                                </div>
-                            @endforeach
+                        <div class="row" style="display: flex;justify-content: start;align-items: center;">
+                            @include('dashboard.ticket.inc.documents',['documents'=>$ticket->documents])
                         </div>
                 </div>
             </div>
@@ -157,26 +140,26 @@
             </div>
         </div>
 
-        @if($ticket->getOriginal('status') == 'T')
+
             <div class="col-lg-8 col-md-12">
                 <form action="{{ route('chamados.registrar-ocorrencia') }}" method="post" id="frm_cadastro">
                     {{ @csrf_field() }}
                     <div class="card">
                         <div class="body">
                             <h5 for="title" class="control-label">Envie os arquivos como evidencias, referencias por aqui</h5>
-                            <div class="dropzone dropzone-previews" id="my-dropzone"></div>
+                            <div class="dropzone dropzone-previews" id="my-dropzone-occurence"></div>
                         </div>
                     </div>
                     <div class="card">
                         <div class="body">
                             <textarea id="description" name="description">{{old('description')}}</textarea>
-                        <input type="hidden" name="ticketNumber" value="{{$ticket->ticket_number}}" />
+                            <input type="hidden" name="ticketNumber" value="{{$ticket->ticket_number}}" />
                             <button type="submit" class="btn btn-block btn-outline-success mb-2 mt-3">Incluir Ocorrência</button>
                         </div>
                     </div>
                 </form>
             </div>
-        @endif
+
     </div>
 
     <div class="row">
@@ -196,38 +179,25 @@
                         </li>
                     </ul>
                 </div>
+
                 <div class="body">
                     <ul class="timeline timeline-split">
-                        <li class="timeline-item">
-                            <div class="timeline-info">
-                                <span>25 de Junho 2018 23:23</span>
-                            </div>
-                            <div class="timeline-marker"></div>
-                            <div class="timeline-content" style="width: 100%">
-                                <h3 class="timeline-title">Revisão Deploy</h3>
-                                <p>Foi realizado os ajuste conforme solicitado, segue evidencias de ajustes.</p>
-                                    <div class="row" style="display: flex;justify-content: center;align-items: center;">
-                                        @foreach($ticket->documents as $document)
-                                            <div class="col-md-2">
-                                                    <div class="icon bg-warning hvr-float-shadow" style="display: flex;justify-content: center;align-items: center;border-radius: 5px;">
-                                                        <a href="javascript:;" style="color: #fff;font-weight: bold;text-transform: uppercase;">
-                                                            @if(in_array($document->extension_document,['jpg','png','jpeg']))
-                                                                <img src="{{asset('img/files/jpg.svg')}}" style="width: 43px;padding: 5px;"/>
-                                                            @elseif(in_array($document->extension_document,['doc','docx']))
-                                                                <img src="{{asset('img/files/doc.svg')}}" style="width: 43px;padding: 5px;"/>
-                                                            @elseif($document->extension_document == 'pdf')
-                                                                <img src="{{asset('img/files/pdf.svg')}}" style="width: 43px;padding: 5px;"/>
-                                                            @elseif(in_array($document->extension_document,['xls','xlsx','csv']))
-                                                                <img src="{{asset('img/files/tablet.svg')}}" style="width: 43px;padding: 5px;"/>
-                                                            @endif
-                                                            Baixar
-                                                        </a>
-                                                    </div>
-                                            </div>
-                                        @endforeach
+                        @if($ticket->ocurrences)
+                            @foreach($ticket->ocurrences as $occurrence)
+                                <li class="timeline-item">
+                                    <div class="timeline-info">
+                                        <span>{{$occurrence->created_at->format('d/m/Y H:i:s')}}</span>
                                     </div>
-                            </div>
-                        </li>
+                                    <div class="timeline-marker"></div>
+                                    <div class="timeline-content" style="width: 100%">
+                                    <p>{!! $occurrence->description!!}</p>
+                                            <div class="row" style="display: flex;justify-content: start;align-items: center;">
+                                                @include('dashboard.ticket.inc.documents',['documents'=>$occurrence->documentsOccurences])
+                                            </div>
+                                    </div>
+                                </li>
+                            @endforeach
+                        @endif
                     </ul>
                 </div>
             </div>
@@ -283,7 +253,7 @@
                     ['view', ['help']]
                 ]
             });
-
+            var uploadedDocumentMap = {}
             $("#my-dropzone").dropzone({url: "/chamados/evidences",
                 maxFilesize: 3,  // 3 mb
                 acceptedFiles: ".jpeg,.jpg,.png,.pdf,.doc,.docx,zip",
@@ -305,6 +275,30 @@
                         name = uploadedDocumentMap[file.name]
                     }
                     $('form').find('input[name="document[]"][value="' + name + '"]').remove()
+                },
+            });
+            var uploadedDocumentMapOccurence = {}
+            $("#my-dropzone-occurence").dropzone({url: "/chamados/evidences",
+                maxFilesize: 3,  // 3 mb
+                acceptedFiles: ".jpeg,.jpg,.png,.pdf,.doc,.docx,zip",
+                addRemoveLinks: true,
+                paramName: "file",
+                headers: {
+                    'X-CSRF-TOKEN': "{{ csrf_token() }}"
+                },
+                success: function (file, response) {
+                    $('form').append('<input type="hidden" name="document_occurence[]" value="' + response.name + '">');
+                    uploadedDocumentMapOccurence[file.name] = response.name
+                },
+                removedfile: function (file) {
+                    file.previewElement.remove()
+                    var name = ''
+                    if (typeof file.file_name !== 'undefined') {
+                        name = file.file_name
+                    } else {
+                        name = uploadedDocumentMapOccurence[file.name]
+                    }
+                    $('form').find('input[name="document_occurence[]"][value="' + name + '"]').remove()
                 },
             });
 

@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateTableDocumentsOccurences extends Migration
+class CreateTableDocumetsOccurrences extends Migration
 {
     /**
      * Run the migrations.
@@ -13,10 +13,10 @@ class CreateTableDocumentsOccurences extends Migration
      */
     public function up()
     {
-        Schema::create('table_documents_occurences', function (Blueprint $table) {
+        Schema::create('document_occurrences', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->unsignedBigInteger('occurences_id')->index();
-            $table->foreign('occurences_id')->references('id')
+            $table->unsignedBigInteger('occurence_id')->index();
+            $table->foreign('occurence_id')->references('id')
                 ->on('occurences')
                 ->onDelete('cascade');
             $table->string('extension_document', 5)->index();
@@ -32,6 +32,6 @@ class CreateTableDocumentsOccurences extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('table_documents_occurences');
+        Schema::dropIfExists('document_occurrences');
     }
 }

@@ -8,6 +8,7 @@ use App\ProTicket\Contracts\ServiceContract;
 use App\ProTicket\Models\Project;
 use App\ProTicket\Repositories\DocumentRepository;
 use App\ProTicket\Repositories\TicketRepository;
+
 use Illuminate\Support\Facades\Storage;
 use Ramsey\Uuid\Uuid;
 
@@ -15,7 +16,6 @@ class TicketService implements ServiceContract
 {
     private $ticketRepository;
     private $documentRepository;
-
     public function __construct(TicketRepository $ticketRepository, DocumentRepository $documentRepository)
     {
         $this->ticketRepository = $ticketRepository;
@@ -62,7 +62,7 @@ class TicketService implements ServiceContract
                 $newPath = 'ticket/' . $ticket->ticket_number . '/' . end($fileName);
                 $this->documentRepository->create(
                     [
-                        'ticket_id' => $ticket->id,
+                        'occurences_id' => $ticket->id,
                         'extension_document' => explode('.', end($fileName))[1],
                         'name' => $newPath
                     ]
@@ -93,10 +93,12 @@ class TicketService implements ServiceContract
 
     private function generateTicketNumber($project_id = null)
     {
+        $project = Project::find(auth()->user()->projectsUser[0]->project_id);
+
         if (is_null($project_id)) {
-            $projectName = explode(' ', auth()->user()->projectsUser[0]->project->name);
+            $projectName = explode(' ', $project->name);
         } else {
-            $projectName = explode(' ', Project::find($project_id)->name);
+            $projectName = explode(' ', $project->name);
         }
 
         $name = '';

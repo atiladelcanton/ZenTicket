@@ -42,7 +42,7 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
         'created_at' => 'datetime'
     ];
-    protected $with = ['projects'];
+    protected $with = ['projectsUser'];
 
     /**
      * Many-to-many role-user relationship.
@@ -78,7 +78,7 @@ class User extends Authenticatable
         )->withPivot('value', 'expires');
     }
 
-    public function projects()
+    public function projectsUser()
     {
         return $this->hasMany(ProjectUser::class, 'user_id', 'id');
     }
