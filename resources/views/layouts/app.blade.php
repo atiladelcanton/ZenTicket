@@ -71,6 +71,7 @@
 integrity="sha256-+C0A5Ilqmu4QcSPxrlGpaZxJ04VjsRjKu+G82kl5UJk=" crossorigin="anonymous"></script>
 <script src="{{asset('assets/vendor/summernote/dist/summernote.js')}}"></script>
 <script src="{{asset('assets/vendor/summernote/dist/lang/summernote-pt-BR.js')}}"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.19.2/axios.js" />
 
 <?php if (session('message')) {
     $msg = json_encode(Session::get('message'));

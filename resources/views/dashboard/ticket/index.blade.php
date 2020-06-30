@@ -32,12 +32,12 @@
                     <thead>
                     <tr>
                         <th>N Ticket</th>
+                        <th>Projeto</th>
                         <th>Titulo</th>
                         <th>Prioridade</th>
                         <th>Tipo</th>
                         <th>Impacto</th>
                         <th>Responsavel</th>
-                        <th>Sla</th>
                         <th>Status</th>
                     </tr>
                     </thead>
@@ -46,13 +46,22 @@
 
                             <tr>
                                 <td><a href="{{route('chamados.detail',$ticket->ticket_number)}}">{{$ticket->ticket_number}}</a></td>
+                                <td><img class="rounded mr-3" src="{{$ticket->project->logo ?asset($ticket->project->logo)  : ''}}" style="width: 50px;"/></td>
                                 <td>{{$ticket->title}}</td>
                                 <td><span class="badge" style="background: transparent; color:{{$ticket->priority->color}}; border: 1px solid {{$ticket->priority->color}};">{{$ticket->priority->name}}</span></td>
                                 <td><span class="badge badge-default" style="background: transparent; color:{{$ticket->type->color}}; border: 1px solid {{$ticket->type->color}};">{{$ticket->type->name}}</span></td>
                                 <td><span class="badge badge-danger" style="background: transparent; color:{{$ticket->impact->color}}; border: 1px solid {{$ticket->impact->color}};">{{$ticket->impact->name}}</span></td>
                                 <td>{{$ticket->userResponsible ? $ticket->userResponsible->name : 'Aguardando...' }}</td>
-                                <td>{{$ticket->priority->sla}}</td>
-                                <td>{{$ticket->status}}</td>
+
+                                <td>
+                                    @if($ticket->getOriginal('status') === 'E')
+                                        <span class="badge badge-warning">{{$ticket->status}}</span>
+                                    @elseif($ticket->getOriginal('status') === 'T')
+                                        <span class="badge badge-info">{{$ticket->status}}</span>
+                                    @else
+                                        <span class="badge badge-success">{{$ticket->status}}</span>
+                                    @endif
+                                </td>
                             </tr>
                         @endforeach
                     </tbody>

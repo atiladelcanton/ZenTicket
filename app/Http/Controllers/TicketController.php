@@ -8,12 +8,14 @@ use App\ProTicket\Helpers\LogError;
 use App\ProTicket\Helpers\RegisterNotFound;
 use App\ProTicket\Helpers\SessionFlashMessage;
 use App\ProTicket\Helpers\Upload;
+use App\ProTicket\Models\TimeLineTicket;
 use App\ProTicket\Services\ImpactService;
 use App\ProTicket\Services\PriorityService;
 use App\ProTicket\Services\ProjectService;
 use App\ProTicket\Services\Specializations\CalculateHoursWorked;
 use App\ProTicket\Services\Specializations\UploadFilesTemp;
 use App\ProTicket\Services\TicketService;
+use App\ProTicket\Services\TimeLineTicketService;
 use App\ProTicket\Services\TypeTicketService;
 use Exception;
 use Illuminate\Contracts\Support\Renderable;
@@ -21,7 +23,6 @@ use Illuminate\Http\JsonResponse;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
-use Illuminate\Support\Facades\Storage;
 
 class TicketController extends Controller
 {
@@ -30,7 +31,7 @@ class TicketController extends Controller
     private $priorityService;
     private $typeTicketService;
     private $impactService;
-
+    private $timeLineService;
     /**
      * Create a new controller instance.
      *
@@ -45,7 +46,8 @@ class TicketController extends Controller
         ProjectService $projectService,
         PriorityService $priorityService,
         TypeTicketService $typeTicketService,
-        ImpactService $impactService
+        ImpactService $impactService,
+        TimeLineTicketService $timeLineTicketService
     ) {
         $this->middleware('auth');
         $this->service = $ticketService;
@@ -53,6 +55,7 @@ class TicketController extends Controller
         $this->priorityService = $priorityService;
         $this->typeTicketService = $typeTicketService;
         $this->impactService = $impactService;
+        $this->timeLineService = $timeLineTicketService;
     }
 
     /**
@@ -182,6 +185,7 @@ class TicketController extends Controller
 
         $calculateTimeDiff = new CalculateHoursWorked($ticket->id);
         $trackTime = $calculateTimeDiff->calculate();
+
         return view('dashboard.ticket.detail', compact('pageTitle', 'ticket', 'trackTime'));
     }
     /**
@@ -196,5 +200,45 @@ class TicketController extends Controller
         $upload = new UploadFilesTemp($path, $request->file('file'));
         $return = $upload->execute();
         return response()->json(['name' => $return]);
+    }
+
+    public function storeOccurence(Request $request)
+    {
+        try {
+            DB::beginTransaction();
+
+
+            DB::commit();
+            SessionFlashMessage::success(SessionFlashMessage::STORE);
+            return redirect()->route('chamados');
+        } catch (Exception $e) {
+            DB::rollBack();
+            LogError::Log($e);
+
+            SessionFlashMessage::error(SessionFlashMessage::STORE);
+            return back()->withInput();
+        }
+    }
+
+    public function storeActions(Request $request)
+    {
+        try {
+            DB::beginTransaction();
+
+            $track =  $this->timeLineService->storeTrack($request->all());
+            $ticket = $this->service->renderTicketByTicketNumber($request->input('ticketNumber'));
+            $calculateTimeDiff = new CalculateHoursWorked($ticket->id);
+            $trackTime = $calculateTimeDiff->calculate();
+            DB::commit();
+            SessionFlashMessage::success(SessionFlashMessage::STORE);
+            return response()->json(['data' => [
+                'time_total' => $trackTime,
+                'track' => $track
+            ]], 201);
+        } catch (Exception $e) {
+            DB::rollBack();
+            LogError::Log($e);
+            return response()->json(['data' => 'Ocorreu um problema'], 500);
+        }
     }
 }

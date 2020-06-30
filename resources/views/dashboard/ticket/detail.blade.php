@@ -35,6 +35,7 @@
                     <li class="list-group-item">
                         <small class="text-muted">Chamado: </small>
                         <p class="mb-0">{{$ticket->title}}</p>
+                    <input type="hidden" id="ticket_number" value="{{$ticket->ticket_number}}" />
                     </li>
                     <li class="list-group-item">
                         <small class="text-muted">Prioridade: </small>
@@ -99,21 +100,32 @@
             <div class="card c_grid c_yellow" style=" max-height: 615px;height: 615px;">
                 <div class="body text-center" style="height: 100%;">
                     <ul class="list-group">
-                        <li class="list-group-item">
-                            <small class="text-muted">Ações: </small>
-                            <p class="mb-0">
-                                <button type="button" data-toggle="tooltip" data-placement="top" data-html="true" title="<strong>Iniciar Tarefa</strong>" data-ticket={{$ticket->ticket_number}} data-action="play" class="btn btn-outline-info mb-2 btn-action" title="Save"><span class="sr-only">Save</span> <i class="fa fa-play"></i></button>
-                                <button type="button" data-toggle="tooltip" data-placement="top" data-html="true" title="<strong>Pausar Tarefa</strong>" data-ticket={{$ticket->ticket_number}} data-action="pause" class="btn btn-outline-warning mb-2 btn-action" title="Save" disabled><span class="sr-only">Save</span> <i class="fa fa-pause"></i></button>
-                                <button type="button" data-toggle="tooltip" data-placement="top" data-html="true" title="<strong>Finalizar Tarefa</strong>" data-ticket={{$ticket->ticket_number}} data-action="finish" class="btn btn-outline-success mb-2 btn-action" title="Save"><span class="sr-only">Save</span> <i class="fa fa-eject"></i></button>
-                            </p>
-                        </li>
+                            @if($ticket->getOriginal('status') == 'T')
+                                @if(!is_null($ticket->responsible_ticket) && auth()->user()->id === $ticket->responsible_ticket)
+                                    <li class="list-group-item" id="li_actions">
+                                        <small class="text-muted">Ações: </small>
+                                        <p class="mb-0">
+                                            <button type="button" data-toggle="tooltip" data-placement="top" data-html="true" title="<strong>Iniciar Tarefa</strong>" data-ticket={{$ticket->ticket_number}} data-action="play" class="btn btn-outline-info mb-2 btn-action" title="Save"><span class="sr-only">Save</span> <i class="fa fa-play"></i></button>
+                                            <button type="button" data-toggle="tooltip" data-placement="top" data-html="true" title="<strong>Pausar Tarefa</strong>" data-ticket={{$ticket->ticket_number}} data-action="pause" class="btn btn-outline-warning mb-2 btn-action" title="Pausar Tarefa" ><span class="sr-only">Pausar Tarefa</span> <i class="fa fa-pause"></i></button>
+                                            <button type="button" data-toggle="tooltip" data-placement="top" data-html="true" title="<strong>Finalizar Tarefa</strong>" data-ticket={{$ticket->ticket_number}} data-action="finish" class="btn btn-outline-success mb-2 btn-action" title="Save"><span class="sr-only">Save</span> <i class="fa fa-eject"></i></button>
+                                        </p>
+                                    </li>
+                                @endif
+                            @elseif(is_null($ticket->responsible_ticket))
+                                <li class="list-group-item" id="li_actions">
+                                    <small class="text-muted">Ações: </small>
+                                    <p class="mb-0">
+                                        <button type="button" data-toggle="tooltip" data-placement="top" data-html="true" title="<strong>Iniciar Tarefa</strong>" data-ticket={{$ticket->ticket_number}} data-action="play" class="btn btn-outline-info mb-2 btn-action" title="Save"><span class="sr-only">Save</span> <i class="fa fa-play"></i></button>
+
+                                        <button type="button" data-toggle="tooltip" data-placement="top" data-html="true" title="<strong>Pausar Tarefa</strong>" data-ticket={{$ticket->ticket_number}} data-action="pause" class="btn btn-outline-warning mb-2 btn-action" title="Pausar Tarefa" ><span class="sr-only">Pausar Tarefa</span> <i class="fa fa-pause"></i></button>
+                                        <button type="button" data-toggle="tooltip" data-placement="top" data-html="true" title="<strong>Finalizar Tarefa</strong>" data-ticket={{$ticket->ticket_number}} data-action="finish" class="btn btn-outline-success mb-2 btn-action" title="Save"><span class="sr-only">Save</span> <i class="fa fa-eject"></i></button>
+                                    </p>
+                                </li>
+                            @endif
                         <li class="list-group-item">
                             <small class="text-muted">Tempo investido no atendimento:&nbsp;&nbsp; </small>
-                            @if($trackTime != 0)
-                                <strong>{{$trackTime}}</strong>
-                            @else
-                                <strong>0</strong>
-                            @endif
+
+                            <strong id="trackTimeTotal">{{$trackTime}}</strong>
                         </li>
 
                         <li class="list-group-item">
@@ -123,13 +135,18 @@
                                         <th>Data</th>
                                         <th>Inicio</th>
                                         <th>Parada</th>
+                                        <th>Tempo Gasto</th>
                                     </thead>
-                                    <tbody>
+                                    <tbody id="body_track">
                                         @foreach($ticket->timeLineTicket as $timeLine)
+
                                             <tr>
                                                 <td>{{$timeLine->created_at->format('d/m/Y')}}</td>
-                                                <td>{{$timeLine->start}}</td>
-                                                <td>{{$timeLine->stop}}</td>
+                                                <td>{{$timeLine->start->format('H:i:s')}}</td>
+                                                <td>{{$timeLine->stop ? $timeLine->stop->format('H:i:s'):''}}</td>
+                                                <td>
+                                                    {{$timeLine->stop ? $timeLine->stop->diff($timeLine->start)->format('%H:%I:%S'): ''}}
+                                                </td>
                                             </tr>
                                         @endforeach
                                     </tbody>
@@ -139,24 +156,27 @@
                 </div>
             </div>
         </div>
-        <div class="col-lg-8 col-md-12">
-            <form action="{{ route('chamados.registrar-ocorrencia') }}" method="post" id="frm_cadastro">
-                {{ @csrf_field() }}
-                <div class="card">
-                    <div class="body">
-                        <h5 for="title" class="control-label">Envie os arquivos como evidencias, referencias por aqui</h5>
-                        <div class="dropzone dropzone-previews" id="my-dropzone"></div>
+
+        @if($ticket->getOriginal('status') == 'T')
+            <div class="col-lg-8 col-md-12">
+                <form action="{{ route('chamados.registrar-ocorrencia') }}" method="post" id="frm_cadastro">
+                    {{ @csrf_field() }}
+                    <div class="card">
+                        <div class="body">
+                            <h5 for="title" class="control-label">Envie os arquivos como evidencias, referencias por aqui</h5>
+                            <div class="dropzone dropzone-previews" id="my-dropzone"></div>
+                        </div>
                     </div>
-                </div>
-                <div class="card">
-                    <div class="body">
-                        <textarea id="description" name="description">{{old('description')}}</textarea>
-                    <input type="hidden" name="ticketNumber" value="{{$ticket->ticket_number}}" />
-                        <button type="submit" class="btn btn-block btn-outline-success mb-2 mt-3">Incluir Ocorrência</button>
+                    <div class="card">
+                        <div class="body">
+                            <textarea id="description" name="description">{{old('description')}}</textarea>
+                        <input type="hidden" name="ticketNumber" value="{{$ticket->ticket_number}}" />
+                            <button type="submit" class="btn btn-block btn-outline-success mb-2 mt-3">Incluir Ocorrência</button>
+                        </div>
                     </div>
-                </div>
-         </form>
-        </div>
+                </form>
+            </div>
+        @endif
     </div>
 
     <div class="row">
@@ -237,8 +257,9 @@
     <script>
         Dropzone.autoDiscover = false;
         $(function () {
-
+            let hour_start;
             $('[data-toggle="tooltip"]').tooltip()
+
             $('.selectize').selectize({
                 create: false,
                 sortField: {
@@ -247,6 +268,7 @@
                 },
                 dropdownParent: 'body'
             });
+
             $('#description').summernote({
                 tabsize: 2,
                 lang: 'pt-BR',
@@ -261,6 +283,7 @@
                     ['view', ['help']]
                 ]
             });
+
             $("#my-dropzone").dropzone({url: "/chamados/evidences",
                 maxFilesize: 3,  // 3 mb
                 acceptedFiles: ".jpeg,.jpg,.png,.pdf,.doc,.docx,zip",
@@ -284,6 +307,34 @@
                     $('form').find('input[name="document[]"][value="' + name + '"]').remove()
                 },
             });
+
+            $('.btn-action').on('click',function(){
+                let action = $(this).data('action');
+                axios.post(`/chamados/actions`,{
+                    'ticketNumber':$('#ticket_number').val(),
+                    'action':action
+                })
+                .then((response)=>{
+                        let data = response.data.data;
+
+                        $('#trackTimeTotal').html(data.time_total);
+                        $('#body_track').html('');
+                        data.track.forEach((t) => {
+                            $("#body_track").append(`<tr>
+                                <td>${t.created_at}</td>
+                                <td>${t.start}</td>
+                                <td>${t.stop}</td>
+                                <td>${t.diff}</td>
+                            </tr>`);
+                        });
+                        if(action == 'finish'){
+                            $('#li_actions').remove();
+                        }
+                })
+                .catch((error) =>{
+                    alert('Ocoreu algum problema, veja o log!');
+                });
+            })
         });
     </script>
 @endsection

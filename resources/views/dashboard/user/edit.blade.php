@@ -19,7 +19,7 @@
         <div class="col-lg-12 col-md-12">
             <div class="card planned_task">
                 <div class="body">
-                    <form action="{{ route('usuarios.editar',['user' => $user->id]) }}" method="post" id="frm_cadastro">
+                    <form action="{{ route('usuarios.editar',[$user->id]) }}" method="post" id="frm_cadastro">
                         {{ @csrf_field() }}
                         <div class="row">
                             <div class="col-md-3">
@@ -59,6 +59,20 @@
                                     @enderror
                                 </div>
                             </div>
+                            <div class="col-md-3">
+                                <label for="projects" class="control-label">Projeto(s)</label>
+                                <div class="col-md-12">
+                                    <select name="projects[]" id="projects" class="form-control selectize @error('projects') 'has-error' @enderror" required multiple>
+                                        <option value="">-- Selecione --</option>
+                                        @foreach($projects as $key => $project)
+                                            <option value="{{$project->id}}" {{in_array($project->id,$user->projectsUser->pluck('project_id')->toArray()) ? 'selected':''}}>{{$project->name}}</option>
+                                        @endforeach
+                                    </select>
+                                    @error('projects')
+                                        <code>{{ $message }}</code>
+                                    @enderror
+                                </div>
+                            </div>
                         </div>
                         <div class="row mt-3">
                             <div class="col-md-12">
@@ -82,6 +96,14 @@
     <script>
         $(function () {
             $('#frm_cadastro').parsley();
+            $('.selectize').selectize({
+                create: false,
+                plugins: ['remove_button'],
+                sortField: {
+                    field: 'text',
+                },
+                dropdownParent: 'body'
+            });
         });
     </script>
 @endsection

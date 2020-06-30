@@ -3,7 +3,7 @@
 
 namespace App\ProTicket\Models;
 
-
+use App\ProTicket\Traits\TicketsTrait;
 use Illuminate\Database\Eloquent\Model;
 
 /**
@@ -12,6 +12,8 @@ use Illuminate\Database\Eloquent\Model;
  */
 class Ticket extends Model
 {
+    use TicketsTrait;
+
     const COD_STATUS_E = 'E';
     const COD_STATUS_T = 'T';
     const COD_STATUS_P = 'P';

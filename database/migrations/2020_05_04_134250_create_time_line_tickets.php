@@ -16,8 +16,8 @@ class CreateTimeLineTickets extends Migration
         Schema::create('time_line_tickets', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->unsignedBigInteger('ticket_id')->index();
-            $table->dateTime('start')->index();
-            $table->dateTime('stop')->index();
+            $table->timestamp('start')->index();
+            $table->timestamp('stop')->nullable()->index();
             $table->timestamps();
         });
     }

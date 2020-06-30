@@ -52,11 +52,6 @@
                     <option>Selecione</option>
                     <option value="E">Em Espera</option>
                     <option value="T">Em Tratamento</option>
-                    <option value="P">Pausado</option>
-                    <option value="AC">Aguardando Cliente</option>
-                    <option value="AE">Aguardando Evidencia</option>
-                    <option value="AT">Aguardando T.I</option>
-                    <option value="ATRA">Atrasado</option>
                     <option value="C">Concluído</option>
                 </select>
             </div>

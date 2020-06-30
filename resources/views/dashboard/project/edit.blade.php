@@ -40,7 +40,7 @@
                                 <label for="name" class="col-md-12 control-label">E-mail do Responsável</label>
                                 <div class="col-md-12">
                                     <input type="email" class="form-control" id="responsible_email"
-                                           name="responsible_email" value="{{old('responsible_email') ? old('responsible_email') :  $project->responsible_name}}">
+                                           name="responsible_email" value="{{old('responsible_email') ? old('responsible_email') :  $project->responsible_email}}">
                                 </div>
                             </div>
                             <div class="col-md-4">
@@ -49,16 +49,23 @@
                                     <input type="file" name="logo" id="logo" class="form-control"/>
                                 </div>
                             </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-md-4">
-                                @if($project->logo)
-                                    <figure style="margin-top: 20px;margin-left: 18px;">
-                                        <img src="{{asset($project->logo)}}" />
-                                    </figure>
-                                @endif
+                            <div class="col-md-8">
+                                <label for="projects" class="control-label">Usuários(s)</label>
+                                <div class="col-md-12">
+                                    <select name="users[]" id="users" class="form-control selectize @error('users') 'has-error' @enderror" required multiple>
+                                        <option value="">-- Selecione --</option>
+                                        @foreach($users as $key => $user)
+
+                                            <option value="{{$user->id}}" {{in_array($user->id,$project->usersProject->pluck('user_id')->toArray()) ? 'selected':''}}>{{$user->name}}</option>
+                                        @endforeach
+                                    </select>
+                                    @error('users')
+                                        <code>{{ $message }}</code>
+                                    @enderror
+                                </div>
                             </div>
                         </div>
+
                         <br/>
                         <div class="form-group">
                             <button type='button' class="btn btn-outline-warning"
@@ -74,6 +81,22 @@
     </div>
 @endsection
 
-@section('scripts')
 
+@section('scripts')
+<script type="text/javascript">
+
+    $(function () {
+        $('#frm_cadastro').parsley();
+        $('.selectize').selectize({
+            create: false,
+            plugins: ['remove_button'],
+            sortField: {
+                field: 'text',
+            },
+            dropdownParent: 'body'
+        });
+
+
+    });
+    </script>
 @endsection

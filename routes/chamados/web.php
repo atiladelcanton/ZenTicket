@@ -28,5 +28,10 @@ Route::prefix('chamados')->middleware('needsPermission')->group(
         Route::post('/criar-ocorrencia', ['shield' => ['chamados.create'], 'uses' => 'TicketController@storeOccurence'])->name(
             'chamados.registrar-ocorrencia'
         );
+
+
+        Route::post('/actions', ['shield' => ['chamados.create'], 'uses' => 'TicketController@storeActions'])->name(
+            'chamados.registrar-actions'
+        );
     }
 );

@@ -49,6 +49,20 @@
                                     <input type="file" name="logo" id="logo" class="form-control"/>
                                 </div>
                             </div>
+                            <div class="col-md-8">
+                                <label for="projects" class="control-label">Usuários(s)</label>
+                                <div class="col-md-12">
+                                    <select name="users[]" id="users" class="form-control selectize @error('users') 'has-error' @enderror" required multiple>
+                                        <option value="">-- Selecione --</option>
+                                        @foreach($users as $key => $user)
+                                            <option value="{{$user->id}}">{{$user->name}}</option>
+                                        @endforeach
+                                    </select>
+                                    @error('users')
+                                        <code>{{ $message }}</code>
+                                    @enderror
+                                </div>
+                            </div>
                         </div>
                         <br/>
                         <div class="form-group">
@@ -66,5 +80,20 @@
 @endsection
 
 @section('scripts')
+<script type="text/javascript">
 
+    $(function () {
+        $('#frm_cadastro').parsley();
+        $('.selectize').selectize({
+            create: false,
+            plugins: ['remove_button'],
+            sortField: {
+                field: 'text',
+            },
+            dropdownParent: 'body'
+        });
+
+
+    });
+    </script>
 @endsection

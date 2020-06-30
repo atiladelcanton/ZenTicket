@@ -25,9 +25,7 @@
                             <div class="col-md-3">
                                 <label for="role_id" class="control-label">Grupo</label>
                                 <div class="col-md-12">
-                                    <select name="role_id"
-                                            class="form-control @error('role_id') 'has-error' @enderror"
-                                    required>
+                                    <select name="role_id" class="form-control selectize @error('role_id') 'has-error' @enderror" required>
                                         <option value="">-- Selecione --</option>
                                         @foreach($roles as $role)
                                             <option value="{{$role->id}}" {{old('role_id') == $role->id ? 'selected':''}}>{{$role->name}}</option>
@@ -57,18 +55,18 @@
                                     @enderror
                                 </div>
                             </div>
-                            <div class="col-md-4">
-                                <div class="form-group  @error('projects') 'has-error' @enderror">
-                                    <label name="name">Projeto(s)</label>
-                                    <div class="multiselect_div">
-                                        <select id="projects" name="projects[]" class="multiselect" multiple="multiple">
-                                            @foreach($projects as $key => $project)
-                                                <option value="{{$project->id}}">{{$project->name}}</option>
-                                            @endforeach
-                                        </select>
-                                    </div>
+
+                            <div class="col-md-3">
+                                <label for="projects" class="control-label">Projeto(s)</label>
+                                <div class="col-md-12">
+                                    <select name="projects[]" id="projects" class="form-control selectize @error('projects') 'has-error' @enderror" required multiple>
+                                        <option value="">-- Selecione --</option>
+                                        @foreach($projects as $key => $project)
+                                            <option value="{{$project->id}}">{{$project->name}}</option>
+                                        @endforeach
+                                    </select>
                                     @error('projects')
-                                    <code>{{ $message }}</code>
+                                        <code>{{ $message }}</code>
                                     @enderror
                                 </div>
                             </div>
@@ -91,18 +89,24 @@
     </div>
 @endsection
 @section('css')
-    <link rel="stylesheet" href="{{asset('assets/vendor/bootstrap-multiselect/bootstrap-multiselect.css')}}">
+
 @endsection
 @section('scripts')
-    <script src="{{asset('assets/vendor/multi-select/js/jquery.multi-select.js')}}"></script>
-    <script src="{{asset('assets/vendor/bootstrap-multiselect/bootstrap-multiselect.js')}}"></script>
-    <script>
+<script type="text/javascript">
 
-        $(function () {
-            $('#frm_cadastro').parsley();
-            $('#projects').multiselect({
-                maxHeight: 300
-            });
+    $(function () {
+        $('#frm_cadastro').parsley();
+        $('.selectize').selectize({
+            create: false,
+            plugins: ['remove_button'],
+            sortField: {
+                field: 'text',
+            },
+            dropdownParent: 'body'
         });
+
+
+    });
     </script>
+
 @endsection
