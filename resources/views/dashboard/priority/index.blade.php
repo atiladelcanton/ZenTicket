@@ -27,6 +27,7 @@
                         <th style="width:3%;">#</th>
                         <th>Nome</th>
                         <th>Sla</th>
+                        <th>Cor</th>
                         <th style="width:10%;">Ações</th>
                     </tr>
                 </thead>
@@ -36,6 +37,7 @@
                         <td>{{$priority->id}}</td>
                         <td>{{$priority->name}}</td>
                         <td>{{$priority->sla}}</td>
+                        <td><div style="    width: 30px; height: 30px;     border-radius: 50%; background-color:{{$priority->color}}"></div></td>
                         <td>
                             <div class="btn-group">
                                 @shield('prioridade.edit')

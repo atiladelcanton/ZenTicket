@@ -26,6 +26,7 @@
                     <tr>
                         <th style="width:3%;">#</th>
                         <th>Nome</th>
+                        <th>Cor</th>
                         <th style="width:10%;">Ações</th>
                     </tr>
                 </thead>
@@ -34,6 +35,9 @@
                     <tr>
                         <td>{{$impact->id}}</td>
                         <td>{{$impact->name}}</td>
+                        <td>
+                            <div style="    width: 30px; height: 30px;     border-radius: 50%; background-color:{{$impact->color}}"></div>
+                        </td>
                         <td>
                             <div class="btn-group">
                                 @shield('impactos.edit')

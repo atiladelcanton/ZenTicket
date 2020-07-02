@@ -34,6 +34,12 @@
                                         <input type="time" class="form-control" id="sla" name="sla" value="{{old('sla')}}">
                                     </div>
                                 </div>
+                                <div class="col-md-2">
+                                    <label for="name" class="col-md-12 control-label">Cor</label>
+                                    <div class="col-md-12">
+                                        <input type="color" class="form-control" id="color" name="color" value="{{old('color')}}">
+                                    </div>
+                                </div>
                             </div>
                         <br/>
                         <div class="form-group">

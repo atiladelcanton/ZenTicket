@@ -39,6 +39,7 @@
                         <th>Impacto</th>
                         <th>Responsavel</th>
                         <th>Status</th>
+                        <th></th>
                     </tr>
                     </thead>
                     <tbody>
@@ -46,12 +47,12 @@
 
                             <tr>
                                 <td><a href="{{route('chamados.detail',$ticket->ticket_number)}}">{{$ticket->ticket_number}}</a></td>
-                                <td><img class="rounded mr-3" src="{{$ticket->project->logo ?asset($ticket->project->logo)  : ''}}" style="width: 50px;"/></td>
+                                <td><img class="rounded mr-3" src="{{$ticket->logo ?asset($ticket->logo)  : ''}}" style="width: 50px;"/></td>
                                 <td>{{$ticket->title}}</td>
-                                <td><span class="badge" style="background: transparent; color:{{$ticket->priority->color}}; border: 1px solid {{$ticket->priority->color}};">{{$ticket->priority->name}}</span></td>
-                                <td><span class="badge badge-default" style="background: transparent; color:{{$ticket->type->color}}; border: 1px solid {{$ticket->type->color}};">{{$ticket->type->name}}</span></td>
-                                <td><span class="badge badge-danger" style="background: transparent; color:{{$ticket->impact->color}}; border: 1px solid {{$ticket->impact->color}};">{{$ticket->impact->name}}</span></td>
-                                <td>{{$ticket->userResponsible ? $ticket->userResponsible->name : 'Aguardando...' }}</td>
+                                <td><span class="badge" style="background: transparent; color:{{$ticket->priority_color}}; border: 1px solid {{$ticket->priority_color}};">{{$ticket->priority_name}}</span></td>
+                                <td><span class="badge badge-default" style="background: transparent; color:{{$ticket->type_ticket_color}}; border: 1px solid {{$ticket->type_ticket_color}};">{{$ticket->type_ticket_name}}</span></td>
+                                <td><span class="badge badge-danger" style="background: transparent; color:{{$ticket->impact_color}}; border: 1px solid {{$ticket->impact_color}};">{{$ticket->impact_name}}</span></td>
+                                <td>{{$ticket->responsible_ticket? $ticket->responsible_ticket : 'Aguardando...' }}</td>
 
                                 <td>
                                     @if($ticket->getOriginal('status') === 'E')
@@ -62,9 +63,40 @@
                                         <span class="badge badge-success">{{$ticket->status}}</span>
                                     @endif
                                 </td>
+                                <td>
+                                    <div class="btn-group">
+                                        @shield('chamados.edit')
+                                        <a href="{{ route('chamados.editar', $ticket->ticket_number) }}"
+                                           class="btn btn-outline-info" data-toggle="tooltip" title="Editar"
+                                           data-placement="top">
+                                            <i class="fa fa-edit"></i>
+                                        </a>
+                                        @endshield
+                                        @shield('chamados.destroy')
+                                        <a href="javascript:"
+                                           class="btn btn-outline-danger" data-toggle="tooltip" title="Remover"
+                                           data-placement="top"
+                                           onclick="event.preventDefault(); document.getElementById('excluir_{{$ticket->id}}').submit();">
+                                            <i class="fa fa-trash"></i>
+                                        </a>
+                                        <form action="{{ route('chamados.deletar',[$ticket->id]) }}" method="post"
+                                              id="excluir_{{$ticket->id}}" style="display:inline-block;">
+                                            @csrf
+                                            @method("DELETE")
+                                        </form>
+                                        @endshield
+                                    </div>
+                                </td>
                             </tr>
                         @endforeach
                     </tbody>
+                    <tfoot>
+                        <tr>
+                            <td colspan="8">
+                                {{ $tickets->appends(request()->input())->links() }}
+                            </td>
+                        </tr>
+                    </tfoot>
                 </table>
             </div>
         </div>
@@ -75,7 +107,6 @@
     <link rel="stylesheet"
           href="https://cdnjs.cloudflare.com/ajax/libs/selectize.js/0.12.6/css/selectize.bootstrap3.min.css"
           integrity="sha256-ze/OEYGcFbPRmvCnrSeKbRTtjG4vGLHXgOqsyLFTRjg=" crossorigin="anonymous"/>
-
 @endsection
 @section('scripts')
     <script src="{{asset('assets/vendor/bootstrap-datepicker/js/bootstrap-datepicker.min.js')}}"></script>

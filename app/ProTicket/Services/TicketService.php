@@ -44,7 +44,34 @@ class TicketService implements ServiceContract
      */
     public function buildUpdate(int $id, array $data)
     {
-        return $this->ticketRepository->update($id, $data);
+        $data = $this->sanitilizeData($data);
+
+        $this->ticketRepository->update($id, $data);
+        $ticket = $this->ticketRepository->getById($id);
+        if (isset($data['document'])) {
+            foreach ($data['document'] as $key => $document) {
+
+                if (Storage::exists($document)) {
+
+                    $fileName = explode('/', $document);
+                    $newPath = 'ticket/' . $ticket->ticket_number . '/' . end($fileName);
+                    $this->documentRepository->create(
+                        [
+                            'ticket_id' => $ticket->id,
+                            'extension_document' => explode('.', end($fileName))[1],
+                            'name' => $newPath
+                        ]
+                    );
+
+                    Storage::move($document, $newPath);
+                }
+            }
+            $path = 'tmp/evidences/' . auth()->user()->id;
+            Storage::deleteDirectory($path);
+        }
+
+
+        return $ticket;
     }
 
     /**
@@ -55,24 +82,27 @@ class TicketService implements ServiceContract
         $data = $this->sanitilizeData($data);
 
         $ticket = $this->ticketRepository->create($data);
-        foreach ($data['document'] as $key => $document) {
+        if (isset($data['document'])) {
+            foreach ($data['document'] as $key => $document) {
 
-            if (Storage::exists($document)) {
-                $fileName = explode('/', $document);
-                $newPath = 'ticket/' . $ticket->ticket_number . '/' . end($fileName);
-                $this->documentRepository->create(
-                    [
-                        'occurences_id' => $ticket->id,
-                        'extension_document' => explode('.', end($fileName))[1],
-                        'name' => $newPath
-                    ]
-                );
+                if (Storage::exists($document)) {
+                    $fileName = explode('/', $document);
+                    $newPath = 'ticket/' . $ticket->ticket_number . '/' . end($fileName);
+                    $this->documentRepository->create(
+                        [
+                            'ticket_id' => $ticket->id,
+                            'extension_document' => explode('.', end($fileName))[1],
+                            'name' => $newPath
+                        ]
+                    );
 
-                Storage::move($document, $newPath);
+                    Storage::move($document, $newPath);
+                }
             }
+            $path = 'tmp/evidences/' . auth()->user()->id;
+            Storage::deleteDirectory($path);
         }
-        $path = 'tmp/evidences/' . auth()->user()->id;
-        Storage::deleteDirectory($path);
+
 
         return $ticket;
     }
@@ -119,5 +149,10 @@ class TicketService implements ServiceContract
     public function buildDelete(int $id)
     {
         return $this->ticketRepository->delete($id);
+    }
+
+    public function totalTickets(string $status)
+    {
+        return $this->ticketRepository->totalTickets($status);
     }
 }

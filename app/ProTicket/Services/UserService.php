@@ -61,16 +61,26 @@ class UserService implements ServiceContract
      */
     public function buildUpdate(int $id, array $data)
     {
+        if (isset($data['password'])) {
+            if (!is_null($data['password'])) {
+                $data['password'] = Hash::make($data['password']);
+            } else {
+                unset($data['password']);
+            }
+        }
+
 
         $user =  $this->user->update($id, $data);
-        ProjectUser::where('user_id', $id)->delete();
-        foreach ($data['projects'] as $project) {
-            ProjectUser::create(
-                [
-                    'user_id' => $id,
-                    'project_id' => $project
-                ]
-            );
+        if (isset($data['projects'])) {
+            ProjectUser::where('user_id', $id)->delete();
+            foreach ($data['projects'] as $project) {
+                ProjectUser::create(
+                    [
+                        'user_id' => $id,
+                        'project_id' => $project
+                    ]
+                );
+            }
         }
     }
 

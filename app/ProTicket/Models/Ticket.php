@@ -16,20 +16,11 @@ class Ticket extends Model
 
     const COD_STATUS_E = 'E';
     const COD_STATUS_T = 'T';
-    const COD_STATUS_P = 'P';
-    const COD_STATUS_AC = 'AC';
-    const COD_STATUS_AE = 'AE';
-    const COD_STATUS_AT = 'AT';
-    const COD_STATUS_TRA = 'ATRA';
+
     const COD_STATUS_C = 'C';
 
     const DESC_STATUS_E = 'Em Espera';
     const DESC_STATUS_T = 'Em Tratamento';
-    const DESC_STATUS_P = 'Pausado';
-    const DESC_STATUS_AC = 'Aguardando Cliente';
-    const DESC_STATUS_AE = 'Aguardando Evidencia';
-    const DESC_STATUS_AT = 'Aguardando T.I';
-    const DESC_STATUS_TRA = 'Atrasado';
     const DESC_STATUS_C = 'Concluído';
 
     protected $fillable = [

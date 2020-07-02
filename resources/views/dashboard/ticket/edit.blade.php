@@ -20,7 +20,7 @@
         <div class="col-lg-12 col-md-12">
             <div class="card planned_task">
                 <div class="body">
-                    <form action="{{ route('chamados.registrar') }}" method="post" id="frm_cadastro">
+                    <form action="{{ route('chamados.alterar',$ticket->id) }}" method="post" id="frm_cadastro">
                         {{ @csrf_field() }}
                         <div class="row">
                             <div class="col-md-2">
@@ -28,7 +28,7 @@
                                 <select name="product_id" id="product_id" class="form-control selectize ">
                                     <option value="0">-- Selecione --</option>
                                     @foreach ($projects as $project)
-                                        <option value="{{$project->id}}" {{old('priority_id') == $project->id ? 'selected':'' }}>{{$project->name}}</option>
+                                        <option value="{{$project->id}}" {{$ticket->priority_id == $project->id ? 'selected':'' }}>{{$project->name}}</option>
                                     @endforeach
                                 </select>
                                 @error('product_id')
@@ -40,7 +40,7 @@
                                 <select name="priority_id" id="priority_id" class="form-control selectize ">
                                     <option value="0">-- Selecione --</option>
                                     @foreach ($priorities as $priority)
-                                        <option value="{{$priority->id}}" {{old('priority_id') == $priority->id ? 'selected':'' }}>{{$priority->name}}</option>
+                                        <option value="{{$priority->id}}" {{$ticket->priority_id == $priority->id ? 'selected':'' }}>{{$priority->name}}</option>
                                     @endforeach
                                 </select>
                                 @error('priority_id')
@@ -52,7 +52,7 @@
                                 <select name="type_id" class="form-control selectize">
                                     <option value="0">-- Selecione --</option>
                                     @forelse ($types as $type)
-                                        <option value="{{$type->id}}" {{old('type_id') == $type->id ? 'selected':'' }}>{{$type->name}}</option>
+                                        <option value="{{$type->id}}" {{$ticket->type_id == $type->id ? 'selected':'' }}>{{$type->name}}</option>
                                     @empty
                                         <option>Nenhum Tipo encontrado</option>>
                                     @endforelse
@@ -66,7 +66,7 @@
                                 <select name="impact_id" class="form-control selectize">
                                     <option  value="0">-- Selecione --</option>
                                     @forelse ($impacts as $impact)
-                                        <option value="{{$impact->id}}" {{old('impact_id') == $impact->id ? 'selected':'' }}>{{$impact->name}}</option>
+                                        <option value="{{$impact->id}}" {{$ticket->impact_id == $impact->id ? 'selected':'' }}>{{$impact->name}}</option>
                                     @empty
                                         <option>Nenhum Impacto encontrado</option>>
                                     @endforelse
@@ -78,7 +78,7 @@
                             <div class="col-md-4">
                                 <div class="form-group">
                                     <label for="title" class="control-label">Titulo do Chamado</label>
-                                    <input type="text" class="form-control" name="title" id="title" value="{{old('title')}}">
+                                    <input type="text" class="form-control" name="title" id="title" value="{{$ticket->title}}">
                                 </div>
                                 @error('title')
                                     <code>{{ $message }}</code>
@@ -88,7 +88,7 @@
                         <div class="row mt-4">
                             <div class="col-md-12">
                                 <h5 for="title" class="control-label">Descreva o detalhadamente o motivo do chamado</h5>
-                                <textarea id="description" name="description">{{old('description')}}</textarea>
+                                <textarea id="description" name="description">{{$ticket->description}}</textarea>
                                 @error('impact_id')
                                     <code>{{ $message }}</code>
                                 @enderror
@@ -155,7 +155,7 @@
             });
             var CSRF_TOKEN = document.querySelector('meta[name="csrf-token"]').getAttribute("content");
             var uploadedDocumentMap = {}
-
+            Dropzone.autoDiscover = false;
             $("#my-dropzone").dropzone({url: "/chamados/evidences",
                 maxFilesize: 3,  // 3 mb
                 acceptedFiles: ".jpeg,.jpg,.png,.pdf,.doc,.docx,zip,rar",
@@ -163,6 +163,27 @@
                 paramName: "file",
                 headers: {
                     'X-CSRF-TOKEN': "{{ csrf_token() }}"
+                },
+                init: function() {
+                    myDropzone = this;
+                    $.ajax({
+                        url: '/chamados/arquivos/'+{{$ticket->id}},
+                        type: 'get',
+
+                        dataType: 'json',
+                        success: function(response){
+
+                            $.each(response, function(key,value) {
+                            var mockFile = { name: value.name, size: value.size };
+
+                            myDropzone.emit("addedfile", mockFile);
+                            myDropzone.emit("thumbnail", mockFile, value.path);
+                            myDropzone.emit("complete", mockFile);
+
+                            });
+
+                        }
+                    })
                 },
                 success: function (file, response) {
                     $('form').append('<input type="hidden" name="document[]" value="' + response.name + '">');

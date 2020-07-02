@@ -12,7 +12,7 @@ use Illuminate\Database\Eloquent\Model;
  */
 class Priority extends Model
 {
-    protected $fillable = ['name', 'sla'];
+    protected $fillable = ['name', 'sla', 'color'];
 
     protected $casts = ['sla' => 'time'];
 }

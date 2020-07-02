@@ -58,6 +58,7 @@
         </div>
     </div>
 </div>
+
 <!-- Javascript -->
 <script src="{{asset('assets/bundles/libscripts.bundle.js')}}"></script>
 <script src="{{asset('assets/bundles/vendorscripts.bundle.js')}}"></script>
@@ -71,8 +72,9 @@
 integrity="sha256-+C0A5Ilqmu4QcSPxrlGpaZxJ04VjsRjKu+G82kl5UJk=" crossorigin="anonymous"></script>
 <script src="{{asset('assets/vendor/summernote/dist/summernote.js')}}"></script>
 <script src="{{asset('assets/vendor/summernote/dist/lang/summernote-pt-BR.js')}}"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.19.2/axios.js" />
-
+<script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.19.2/axios.js"></script>
+<script src="https://cdn.onesignal.com/sdks/OneSignalSDK.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.3/dist/Chart.min.js"></script>
 <?php if (session('message')) {
     $msg = json_encode(Session::get('message'));
 }
@@ -87,11 +89,40 @@ integrity="sha256-+C0A5Ilqmu4QcSPxrlGpaZxJ04VjsRjKu+G82kl5UJk=" crossorigin="ano
 
     </script>
 @endif
+
 <script>
+  window.OneSignal = window.OneSignal || [];
+  OneSignal.push(function() {
+    OneSignal.init({
+      appId: "f6cba8da-d57e-43c8-94c7-7ea6702e378e",
+      notifyButton: {
+        enable: true,
+      },
+      subdomainName: "proticket",
+    });
+    OneSignal.getUserId(function(userId){
+        console.log("OneSignal User ID: ",userId);
+        axios.post(`/register-user-one-signal`,{
+            'device_id':userId,
+            'user_id' : {{auth()->user()->id}}
+        })
+        .then(response => {
+            console.log(response);
+        })
+        .catch(error => {
+            consolo.error(error);
+        })
+    })
+  });
+</script>
+<script>
+
      $(window).resize(function(){
             if($(window).width()<500){
                 $('body').removeClass('mini_sidebar');
             }
+
+
         });
     </script>
 @yield('scripts')

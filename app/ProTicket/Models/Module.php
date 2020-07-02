@@ -12,14 +12,15 @@ use Illuminate\Database\Eloquent\Relations\HasMany;
  */
 class Module extends Model
 {
+
     /**
      * @var array
      */
     protected $fillable = [
-        "name", "slug", "icon","parent_id"
+        "name", "slug", "icon", "parent_id"
     ];
     public $keyType = 'string';
-    protected $with = ['permissions','parents'];
+    protected $with = ['permissions', 'parents'];
 
     /**
      * @return HasMany
@@ -28,7 +29,8 @@ class Module extends Model
     {
         return $this->hasMany(Permission::class, 'modules_id', 'id');
     }
-    public function parents(){
-        return $this->hasMany(Module::class,'parent_id','id');
+    public function parents()
+    {
+        return $this->hasMany(Module::class, 'parent_id', 'id');
     }
 }

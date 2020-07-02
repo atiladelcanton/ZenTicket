@@ -12,21 +12,8 @@
 
                 <li class="dropdown">
                     <a href="javascript:void(0);" class="dropdown-toggle icon-menu" data-toggle="dropdown">
-                        <i class="icon-bell"></i>
-                        <span class="notification-dot bg-azura">4</span>
+                        <span class="badge badge-success ml-0 mr-0">Versão 1.0</span>
                     </a>
-                    <ul class="dropdown-menu feeds_widget vivify fadeIn">
-                        <li class="header blue">Notificações</li>
-                        <li>
-                            <a href="javascript:void(0);">
-                                <div class="feeds-left bg-red"><i class="fa fa-check"></i></div>
-                                <div class="feeds-body">
-                                    <h4 class="title text-danger">Issue Fixed <small class="float-right text-muted">9:10 AM</small></h4>
-                                    <small>WE have fix all Design bug with Responsive</small>
-                                </div>
-                            </a>
-                        </li>
-                    </ul>
                 </li>
             </ul>
         </div>

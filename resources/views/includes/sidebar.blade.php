@@ -14,7 +14,7 @@
                 <span>Olá,</span>
                 <a href="javascript:void(0);" class="dropdown-toggle user-name" data-toggle="dropdown"><strong>{{auth()->user()->name}}</strong></a>
                 <ul class="dropdown-menu dropdown-menu-right account vivify flipInY">
-                    <li><a href="page-profile.html"><i class="icon-user"></i>Perfil</a></li>
+                    <li><a href="{{route('usuarios.profile')}}"><i class="icon-user"></i>Perfil</a></li>
                     <li class="divider"></li>
                     <li>
                         <a  onclick="event.preventDefault(); document.getElementById('logout-form').submit();"><i class="icon-power"></i>Sair</a>
@@ -61,5 +61,6 @@
                 @endforeach
             </ul>
         </nav>
+
     </div>
 </div>

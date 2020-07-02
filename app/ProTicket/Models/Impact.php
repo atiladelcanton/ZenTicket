@@ -12,5 +12,5 @@ use Illuminate\Database\Eloquent\Model;
  */
 class Impact extends Model
 {
-    protected $fillable = ['name'];
+    protected $fillable = ['name', 'color'];
 }

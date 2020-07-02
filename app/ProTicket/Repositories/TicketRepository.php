@@ -21,4 +21,9 @@ class TicketRepository extends EloquentRepository
     {
         return $this->model->where('ticket_number', $ticketNumber)->first();
     }
+
+    public function totalTickets(string $status)
+    {
+        return $this->model->whereStatus($status)->count();
+    }
 }

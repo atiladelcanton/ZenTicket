@@ -52,7 +52,7 @@
                             <div class="col-md-8">
                                 <label for="projects" class="control-label">Usuários(s)</label>
                                 <div class="col-md-12">
-                                    <select name="users[]" id="users" class="form-control selectize @error('users') 'has-error' @enderror" required multiple>
+                                    <select name="users[]" id="users" class="form-control selectize @error('users') 'has-error' @enderror"  multiple>
                                         <option value="">-- Selecione --</option>
                                         @foreach($users as $key => $user)
                                             <option value="{{$user->id}}">{{$user->name}}</option>

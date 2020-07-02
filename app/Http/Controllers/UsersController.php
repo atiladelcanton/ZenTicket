@@ -144,4 +144,34 @@ class UsersController extends Controller
             return redirect()->route('usuarios');
         }
     }
+
+    public function profile()
+    {
+        $user = $this->userService->renderEdit(auth()->user()->id);
+        if (is_null($user)) {
+            SessionFlashMessage::error(SessionFlashMessage::DESTROY);
+            return redirect()->route('home');
+        }
+
+        $pageTitle = 'Perfil';
+        return view('dashboard.profile.index', compact('user',  'pageTitle'));
+    }
+
+    public function updateProfile($id, Request $request)
+    {
+        try {
+            DB::beginTransaction();
+            $data = $request->all();
+
+            $this->userService->buildUpdate($id, $data);
+            DB::commit();
+            $request->session()->flash('message', ['type' => 'Success', 'msg' => __('messages.success_update')]);
+            return redirect()->route('usuarios.profile');
+        } catch (Exception $e) {
+            DB::rollBack();
+            LogError::Log($e);
+            SessionFlashMessage::error(SessionFlashMessage::UPDATE);
+            return back()->withInput();
+        }
+    }
 }

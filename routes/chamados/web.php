@@ -33,5 +33,9 @@ Route::prefix('chamados')->middleware('needsPermission')->group(
         Route::post('/actions', ['shield' => ['chamados.create'], 'uses' => 'TicketController@storeActions'])->name(
             'chamados.registrar-actions'
         );
+
+        Route::get('/arquivos/{ticket_number}', ['shield' => ['chamados.edit'], 'uses' => 'TicketController@getArchives'])->name(
+            'chamados.arquivos'
+        );
     }
 );

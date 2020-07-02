@@ -22,13 +22,20 @@
                     <form action="{{ route('tipos-de-chamados.alterar',[$type->id]) }}" method="post">
                         {{ @csrf_field() }}
                             <div class="row">
-                                <div class="col-md-12">
+                                <div class="col-md-8">
                                     <label for="name" class="col-md-12 control-label">Descrição</label>
                                     <div class="col-md-12">
                                         <input type="text" class="form-control" id="name" name="name" value="{{$type->name}}">
                                     </div>
                                 </div>
+                                <div class="col-md-2">
+                                    <label for="name" class="col-md-12 control-label">Cor</label>
+                                    <div class="col-md-12">
+                                        <input type="color" class="form-control" id="color" name="color" value="{{$type->color}}">
+                                    </div>
+                                </div>
                             </div>
+
                         <br/>
                         <div class="form-group">
                             <button type='button' class="btn btn-outline-warning"

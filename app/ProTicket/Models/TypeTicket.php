@@ -12,5 +12,5 @@ use Illuminate\Database\Eloquent\Model;
  */
 class TypeTicket extends Model
 {
-    protected $fillable = ['name', 'icon'];
+    protected $fillable = ['name', 'icon', 'color'];
 }

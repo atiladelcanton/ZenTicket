@@ -6,6 +6,7 @@ namespace App\ProTicket\Services;
 
 use App\ProTicket\Contracts\ServiceContract;
 use App\ProTicket\Helpers\Upload;
+use App\ProTicket\Models\Project;
 use App\ProTicket\Repositories\ProjectRepository;
 use App\ProTicket\Services\Specializations\VinculeProjectUsers;
 use Exception;
@@ -75,8 +76,11 @@ class ProjectService implements ServiceContract
         $data['hash_identify'] = Uuid::uuid1()->toString();
         $data['logo'] = $this->executeUpload($data, $data['hash_identify']);
         $project =  $this->projectRepository->create($data);
-        $vincule = new VinculeProjectUsers($data['users'], $project->id);
-        $vincule->vincule();
+        if (isset($data['users'])) {
+            $vincule = new VinculeProjectUsers($data['users'], $project->id);
+            $vincule->vincule();
+        }
+
         return $project;
     }
 
@@ -95,7 +99,8 @@ class ProjectService implements ServiceContract
 
     public function renderProjectsByUser()
     {
-        $projects = auth()->user()->projectsUser;
+
+        $projects = $this->projectRepository->renderProjectsByUser();
 
         if (count($projects) == 0 && auth()->user()->role_id != 1) {
             abort(503);

@@ -5,5 +5,6 @@ Route::prefix('usuarios')->middleware('needsPermission')->group(function () {
     Route::post('/criar', ['shield' => ['usuarios.create'], 'uses' => 'UsersController@store'])->name('usuarios.registrar');
     Route::get('/editar/{id}', ['shield' => ['usuarios.edit'], 'uses' => 'UsersController@edit'])->name('usuarios.editar');
     Route::post('/editar/{id}', ['shield' => ['usuarios.edit'], 'uses' => 'UsersController@update'])->name('usuarios.alterar');
+
     Route::delete('/{id}', ['shield' => ['usuarios.destroy'], 'uses' => 'UsersController@destroy'])->name('usuarios.deletar');
 });

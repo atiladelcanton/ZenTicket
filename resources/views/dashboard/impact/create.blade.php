@@ -22,10 +22,16 @@
                     <form action="{{ route('impactos.registrar') }}" method="post">
                         {{ @csrf_field() }}
                             <div class="row">
-                                <div class="col-md-12">
+                                <div class="col-md-10">
                                     <label for="name" class="col-md-12 control-label">Descrição</label>
                                     <div class="col-md-12">
                                         <input type="text" class="form-control" id="name" name="name" value="{{old('name')}}">
+                                    </div>
+                                </div>
+                                <div class="col-md-2">
+                                    <label for="name" class="col-md-12 control-label">Cor</label>
+                                    <div class="col-md-12">
+                                        <input type="color" class="form-control" id="color" name="color" value="{{old('color')}}">
                                     </div>
                                 </div>
                             </div>

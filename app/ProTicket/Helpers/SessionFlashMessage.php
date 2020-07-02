@@ -20,7 +20,7 @@ class SessionFlashMessage
         if ($type === self::UPDATE) {
             $msg = __('messages.success_update');
         } elseif ($type === self::STORE) {
-            $msg = __('messages.catch_message_store');
+            $msg = __('messages.success_store');
         } else {
             $msg = __('messages.success_destroy');
         }
