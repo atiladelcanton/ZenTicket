@@ -24,7 +24,7 @@
             <div class="content">
                 <table bgcolor="#3dc33c">
                     <tr>
-                        <td><img src="{{asset('img/sigais_logo_azul.png')}}" /></td>
+                        <td><img src="" /></td>
                     </tr>
                 </table>
             </div>
