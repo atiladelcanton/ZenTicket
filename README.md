@@ -1,10 +1,3 @@
-# template
+# ZenTicket
 
-Rodar o composer
-
-
-# Requisitos
-
-* Php 7.3 (Devido a criptografia Argon2)
-
-
+Desenvolvimento de uma ferramenta, para atendimento de chamados e suportes, a fim de padronizar e organizar um fluxo de trabalho!
