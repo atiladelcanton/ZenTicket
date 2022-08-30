@@ -16,7 +16,7 @@ class Modules extends Seeder
         Module::create(
             [
                 'name' => 'Grupos',
-                'slug' => str_slug('Grupos'),
+                'slug' => 'grupos',
                 'icon' => 'icon-users',
 
             ]
@@ -24,7 +24,7 @@ class Modules extends Seeder
         Module::create(
             [
                 'name' => 'Usuários',
-                'slug' => str_slug('Usuários'),
+                'slug' => 'usuarios',
                 'icon' => 'icon-user',
 
             ]
@@ -32,7 +32,7 @@ class Modules extends Seeder
         Module::create(
             [
                 'name' => 'Projetos',
-                'slug' => str_slug('Projetos'),
+                'slug' => 'projetos',
                 'icon' => 'icon-screen-desktop',
 
             ]
@@ -40,7 +40,7 @@ class Modules extends Seeder
         Module::create(
             [
                 'name' => 'Chamados',
-                'slug' => str_slug('Chamados'),
+                'slug' => 'chamados',
                 'icon' => 'icon-bubbles',
 
             ]
@@ -57,7 +57,7 @@ class Modules extends Seeder
         Module::create(
             [
                 'name' => 'Prioridade',
-                'slug' => str_slug('Prioridade'),
+                'slug' => 'prioridade',
                 'icon' => 'icon-bubbles',
                 'parent_id' => $config->id
 
@@ -66,7 +66,7 @@ class Modules extends Seeder
         Module::create(
             [
                 'name' => 'Tipos de Chamados',
-                'slug' => str_slug('Tipos de Chamados'),
+                'slug' => 'tipos-de-chamados',
                 'icon' => 'icon-bubbles',
                 'parent_id' => $config->id
             ]
@@ -74,7 +74,7 @@ class Modules extends Seeder
         Module::create(
             [
                 'name' => 'Impactos',
-                'slug' => str_slug('Impactos'),
+                'slug' => 'impactos',
                 'icon' => 'icon-bubbles',
                 'parent_id' => $config->id
             ]

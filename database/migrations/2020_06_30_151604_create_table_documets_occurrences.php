@@ -15,9 +15,9 @@ class CreateTableDocumetsOccurrences extends Migration
     {
         Schema::create('document_occurrences', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->unsignedBigInteger('occurence_id')->index();
-            $table->foreign('occurence_id')->references('id')
-                ->on('occurences')
+            $table->unsignedBigInteger('occurrence_id')->index();
+            $table->foreign('occurrence_id')->references('id')
+                ->on('occurrences')
                 ->onDelete('cascade');
             $table->string('extension_document', 5)->index();
             $table->string('name');

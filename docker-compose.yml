@@ -1,0 +1,58 @@
+version: "3.8"
+
+services:
+  zenticket-app:
+    image: zenticket_oficial/zenticket_v2
+    user: "${UXID}:${GID}"
+    build:
+      context: .
+      target: dev
+    container_name: zenticket-app
+    volumes:
+      - ./:/var/www/html/
+    restart: unless-stopped
+    env_file:
+      - docker/docker-compose-env/application.env
+    depends_on:
+      - zenticket-redis
+    networks:
+      - zenticket
+
+  zenticket-nginx:
+    image: nginx:alpine
+    container_name: zenticket-nginx
+    restart: always
+    ports:
+      - 80:80
+    volumes:
+      - ./:/var/www/html/
+      - ./docker/nginx/:/etc/nginx/conf.d/
+    networks:
+      - zenticket
+  zenticket-postgres:
+    image: postgres
+    container_name: zenticket-postgres
+    environment:
+      POSTGRES_USER: zenticket
+      POSTGRES_PASSWORD: 'tioJ0bs@T0p'
+      POSTGRES_DB: zenticket
+    ports:
+      - "5432:5432"
+    volumes:
+      - "pgsql:/var/lib/postgresql/data"
+    restart: unless-stopped
+    networks:
+      - zenticket
+
+  zenticket-redis:
+    image: redis:latest
+    container_name: zenticket-redis
+    networks:
+      - zenticket
+
+networks:
+  zenticket:
+    driver: bridge
+volumes:
+  pgsql:
+    driver: local

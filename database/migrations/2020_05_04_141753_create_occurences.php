@@ -13,10 +13,12 @@ class CreateOccurences extends Migration
      */
     public function up()
     {
-        Schema::create('ocurrences', function (Blueprint $table) {
+        Schema::create('occurrences', function (Blueprint $table) {
             $table->bigIncrements('id');
+            $table->integer('user_id')->index();
             $table->unsignedBigInteger('ticket_id')->index();
             $table->longText('description');
+
             $table->timestamps();
         });
     }
