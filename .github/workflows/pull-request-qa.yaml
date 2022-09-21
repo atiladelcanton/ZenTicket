@@ -8,18 +8,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-      - name: Build Image
-        run: |
-          echo --- Build Container 🧪---
-          docker-compose run --rm zenticket-app sh -c "composer install --no-interaction"
-
-  run-test:
-    runs-on: ubuntu-latest
-    needs:
-      - build
-    steps:
-      - uses: actions/checkout@v2
-      - name: Run Test
+      - name: Run Tests 🧪
         run: |
           echo --- Run Test 🧪---
-          docker-compose run --rm zenticket-app sh -c "XDEBUG_MODE=coverage vendor/bin/phpunit --testdox"
+          docker-compose run --rm zenticket-app sh -c "composer install --no-interaction && XDEBUG_MODE=coverage vendor/bin/phpunit --testdox"
