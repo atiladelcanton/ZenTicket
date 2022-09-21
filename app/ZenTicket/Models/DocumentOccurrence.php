@@ -12,9 +12,9 @@ use Illuminate\Database\Eloquent\Model;
  */
 class DocumentOccurrence extends Model
 {
-
+    protected $table = 'document_occurrences';
     protected $fillable = [
-        'occurences_id',
+        'occurrence_id',
         'extension_document',
         'name'
     ];

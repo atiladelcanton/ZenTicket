@@ -49,6 +49,7 @@
 
 <div id="wrapper">
     @include('includes.top-navbar')
+
     @include('includes.sidebar')
     <div id="main-content">
         <div class="container-fluid">

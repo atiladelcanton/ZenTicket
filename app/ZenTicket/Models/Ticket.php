@@ -16,12 +16,13 @@ class Ticket extends Model
 
     const COD_STATUS_E = 'E';
     const COD_STATUS_T = 'T';
-
     const COD_STATUS_C = 'C';
+    const COD_STATUS_P = 'P';
 
     const DESC_STATUS_E = 'Em Espera';
     const DESC_STATUS_T = 'Em Tratamento';
     const DESC_STATUS_C = 'Concluído';
+    const DESC_STATUS_P = 'Pausado';
 
     protected $fillable = [
         'type_id',
@@ -63,10 +64,12 @@ class Ticket extends Model
     {
         return $this->hasOne(User::class, 'id', 'user_open_ticket');
     }
+
     public function userResponsible()
     {
-        return  $this->hasOne(User::class, 'id', 'responsible_ticket');
+        return $this->hasOne(User::class, 'id', 'responsible_ticket');
     }
+
     public function priority()
     {
         return $this->hasOne(Priority::class, 'id', 'priority_id');
@@ -81,10 +84,12 @@ class Ticket extends Model
     {
         return $this->hasMany(Document::class, 'ticket_id');
     }
+
     public function ocurrences()
     {
         return $this->hasMany(Ocurrence::class, 'ticket_id');
     }
+
     public function timeLineTicket()
     {
         return $this->hasMany(TimeLineTicket::class, 'ticket_id');
@@ -99,15 +104,6 @@ class Ticket extends Model
                 return self::DESC_STATUS_T;
             case self::COD_STATUS_P:
                 return self::DESC_STATUS_P;
-            case self::COD_STATUS_AC:
-                return self::DESC_STATUS_AC;
-            case self::COD_STATUS_AE:
-                return self::DESC_STATUS_AE;
-            case self::COD_STATUS_AT:
-                return self::DESC_STATUS_AT;
-            case self::COD_STATUS_TRA:
-                return self::DESC_STATUS_TRA;
-
             default:
                 return self::DESC_STATUS_C;
         }

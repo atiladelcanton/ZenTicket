@@ -53,6 +53,7 @@ class OcurrenceService implements ServiceContract
         $data['user_id'] = auth()->user()->id;
 
         $occurence = $this->ocurrenceRepository->create($data);
+
         if (isset($data['document_occurence'])) {
             foreach ($data['document_occurence'] as $key => $document) {
 
@@ -63,7 +64,7 @@ class OcurrenceService implements ServiceContract
 
                     $this->documentOccurenceRepository->create(
                         [
-                            'occurences_id' => $occurence->id,
+                            'occurrence_id' => $occurence->id,
                             'extension_document' => explode('.', end($fileName))[1],
                             'name' => $newPath
                         ]
