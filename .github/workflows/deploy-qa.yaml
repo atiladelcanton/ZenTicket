@@ -1,0 +1,14 @@
+name: Build After Deploy
+on:
+  pull_request:
+    branches:
+      - qa
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Run Tests 🧪
+        run: |
+          echo --- Run Test 🧪---
+          docker-compose run --rm zenticket-app sh -c "composer install --no-interaction && XDEBUG_MODE=coverage vendor/bin/phpunit --testdox"
