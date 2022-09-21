@@ -12,7 +12,7 @@ use Illuminate\Database\Eloquent\Model;
  */
 class Ocurrence extends Model
 {
-
+    protected $table = 'occurrences';
     protected $fillable = [
         'ticket_id',
         'description',
@@ -24,6 +24,6 @@ class Ocurrence extends Model
 
     public function documentsOccurences()
     {
-        return $this->hasMany(DocumentOccurrence::class, 'occurences_id', 'id');
+        return $this->hasMany(DocumentOccurrence::class, 'occurrence_id', 'id');
     }
 }

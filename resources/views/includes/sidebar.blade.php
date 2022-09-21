@@ -43,8 +43,8 @@ C/O https://placeholder.com/" alt="{{env('APP_NAME')}}" style="width: 40px;">
                                     </a>
 
                                     <ul>
-                                        @foreach($module->parents as $parent)
 
+                                        @foreach($module->parents as $parent)
                                             @shield($parent->slug.'.index')
                                                 <li class="{{explode('/',url()->current())[3] == $parent->slug ? 'active' : '' }}">
                                                     <a href="{{ route($parent->slug) }}"><span>{{$parent->name}}</span></a>

@@ -62,12 +62,12 @@
                         </td>
                     </tr>
                     @empty
-                        @include('dashboard.inc.not_found_register',['colspan'=>4])
+                        @include('dashboard.inc.not_found_register',['colspan'=>5])
                     @endforelse
                 </tbody>
                 <tfoot>
                     <tr>
-                        <td colspan="9">{{ $priorities->links() }}</td>
+                        <td colspan="5">{{ $priorities->links() }}</td>
                     </tr>
                 </tfoot>
             </table>

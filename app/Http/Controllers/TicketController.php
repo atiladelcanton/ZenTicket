@@ -2,7 +2,6 @@
 
 namespace App\Http\Controllers;
 
-use App\Http\Requests\StatusTicketStore;
 use App\Http\Requests\TicketStore;
 use App\ZenTicket\Helpers\LogError;
 use App\ZenTicket\Helpers\RegisterNotFound;
@@ -14,7 +13,6 @@ use App\ZenTicket\Services\ProjectService;
 use App\ZenTicket\Services\Specializations\CalculateHoursWorked;
 use App\ZenTicket\Services\Specializations\UploadFilesTemp;
 use App\ZenTicket\Services\TicketService;
-use App\ZenTicket\Services\TicketViewService;
 use App\ZenTicket\Services\TimeLineTicketService;
 use App\ZenTicket\Services\TypeTicketService;
 use Exception;
@@ -27,14 +25,14 @@ use Storage;
 
 class TicketController extends Controller
 {
-    private $service;
+    private TicketService $service;
     private $projectService;
     private $priorityService;
     private $typeTicketService;
     private $impactService;
     private $timeLineService;
     private $occurrenceService;
-    private $ticketViewService;
+
     /**
      * Create a new controller instance.
      *
@@ -51,8 +49,7 @@ class TicketController extends Controller
         TypeTicketService $typeTicketService,
         ImpactService $impactService,
         TimeLineTicketService $timeLineTicketService,
-        OcurrenceService $occurrenceService,
-        TicketViewService $ticketViewService
+        OcurrenceService $occurrenceService
     ) {
         $this->middleware('auth');
         $this->service = $ticketService;
@@ -62,7 +59,7 @@ class TicketController extends Controller
         $this->impactService = $impactService;
         $this->timeLineService = $timeLineTicketService;
         $this->occurrenceService = $occurrenceService;
-        $this->ticketViewService = $ticketViewService;
+        $this->timeLineService = $timeLineTicketService;
     }
 
     /**
@@ -70,16 +67,10 @@ class TicketController extends Controller
      *
      * @return Renderable
      */
-    public function index()
+    public function index(): Renderable
     {
         $pageTitle = 'Chamados';
-        if (request()->has('filter')) {
-            $tickets = $this->ticketViewService->renderByFilter(request()->all());
-        } else {
-            $tickets = $this->ticketViewService->renderList();
-        }
-
-
+        $tickets = $this->service->renderList();
         return view(
             'dashboard.ticket.index',
             compact(
@@ -146,14 +137,17 @@ class TicketController extends Controller
         $priorities = $this->priorityService->renderList();
         $types = $this->typeTicketService->renderList();
         $impacts = $this->impactService->renderList();
-        return view('dashboard.ticket.edit', compact(
-            'pageTitle',
-            'projects',
-            'priorities',
-            'types',
-            'impacts',
-            'ticket'
-        ));
+        return view(
+            'dashboard.ticket.edit',
+            compact(
+                'pageTitle',
+                'projects',
+                'priorities',
+                'types',
+                'impacts',
+                'ticket'
+            )
+        );
     }
 
     public function update($id, TicketStore $request)
@@ -196,7 +190,6 @@ class TicketController extends Controller
 
     public function detail($ticketNumber)
     {
-
         $ticket = $this->service->renderTicketByTicketNumber($ticketNumber);
         if (is_null($ticket)) {
             return redirect()->route('chamados');
@@ -208,6 +201,7 @@ class TicketController extends Controller
 
         return view('dashboard.ticket.detail', compact('pageTitle', 'ticket', 'trackTime'));
     }
+
     /**
      * @param Request $request
      * @return JsonResponse
@@ -249,16 +243,18 @@ class TicketController extends Controller
         try {
             DB::beginTransaction();
 
-            $track =  $this->timeLineService->storeTrack($request->all());
+            $track = $this->timeLineService->storeTrack($request->all());
             $ticket = $this->service->renderTicketByTicketNumber($request->input('ticketNumber'));
             $calculateTimeDiff = new CalculateHoursWorked($ticket->id);
             $trackTime = $calculateTimeDiff->calculate();
             DB::commit();
             SessionFlashMessage::success(SessionFlashMessage::STORE);
-            return response()->json(['data' => [
-                'time_total' => $trackTime,
-                'track' => $track
-            ]], 201);
+            return response()->json([
+                'data' => [
+                    'time_total' => $trackTime,
+                    'track' => $track
+                ]
+            ], 201);
         } catch (Exception $e) {
             DB::rollBack();
             LogError::Log($e);
@@ -273,13 +269,11 @@ class TicketController extends Controller
         if (count($ticket->documents) > 0) {
             $file_list = array();
             foreach ($ticket->documents as $document) {
-
-
-                array_push($file_list, [
+                $file_list[] = [
                     'name' => $document->name,
                     'size' => Storage::size('storage/' . $document->name),
                     'path' => asset('storage/' . $document->name)
-                ]);
+                ];
             }
             return json_encode($file_list);
         }
