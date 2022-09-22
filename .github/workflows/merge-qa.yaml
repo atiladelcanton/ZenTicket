@@ -17,7 +17,7 @@ jobs:
   build:
     runs-on: ubuntu-latest
     needs:
-      - run-test
+      - test
     steps:
       - name: Check out the repo
         uses: actions/checkout@v3
@@ -34,6 +34,7 @@ jobs:
       - name: Build and push
         uses: docker/build-push-action@v3
         with:
+          push: true
           context: .
           tags: ${{ steps.meta.outputs.tags }}
           labels: ${{ steps.meta.outputs.labels }}
