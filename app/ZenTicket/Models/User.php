@@ -15,7 +15,8 @@ use Artesaos\Defender\Traits\HasDefender;
  */
 class User extends Authenticatable implements MustVerifyEmail
 {
-    use  Notifiable, HasDefender;
+    use HasDefender;
+    use Notifiable;
 
     /**
      * The attributes that are mass assignable.
@@ -62,21 +63,6 @@ class User extends Authenticatable implements MustVerifyEmail
             'user_id',
             $roleKey
         );
-    }
-
-    /**
-     * Many-to-many permission-user relationship.
-     *
-     * @return \Illuminate\Database\Eloquent\Relations\BelongsToMany
-     */
-    public function permissions()
-    {
-        return $this->belongsToMany(
-            config('defender.permission_model'),
-            config('defender.permission_role_table'),
-            'role_id',
-            config('defender.permission_key')
-        )->withPivot('value', 'expires');
     }
 
     public function projectsUser()

@@ -12,6 +12,7 @@ use Illuminate\Database\Eloquent\Relations\HasMany;
  */
 class Project extends Model
 {
+
     /**
      * @var array
      */

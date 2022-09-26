@@ -51,6 +51,7 @@
     "minimum-stability": "dev",
     "prefer-stable": true,
     "scripts": {
+        "test":"rm -rf coverage && mkdir coverage && XDEBUG_MODE=coverage phpunit --testdox --coverage-html coverage",
         "post-autoload-dump": [
             "Illuminate\\Foundation\\ComposerScripts::postAutoloadDump",
             "@php artisan package:discover --ansi"

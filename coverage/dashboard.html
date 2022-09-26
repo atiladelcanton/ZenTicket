@@ -1,0 +1,741 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <title>Dashboard for /var/www/html/app</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="_css/bootstrap.min.css" rel="stylesheet" type="text/css">
+  <link href="_css/nv.d3.min.css" rel="stylesheet" type="text/css">
+  <link href="_css/style.css" rel="stylesheet" type="text/css">
+  <link href="_css/custom.css" rel="stylesheet" type="text/css">
+ </head>
+ <body>
+  <header>
+   <div class="container-fluid">
+    <div class="row">
+     <div class="col-md-12">
+      <nav aria-label="breadcrumb">
+       <ol class="breadcrumb">
+         <li class="breadcrumb-item"><a href="index.html">/var/www/html/app</a></li>
+         <li class="breadcrumb-item active">(Dashboard)</li>
+
+       </ol>
+      </nav>
+     </div>
+    </div>
+   </div>
+  </header>
+  <div class="container-fluid">
+   <div class="row">
+    <div class="col-md-12">
+     <h2>Classes</h2>
+    </div>
+   </div>
+   <div class="row">
+    <div class="col-md-6">
+     <h3>Coverage Distribution</h3>
+     <div id="classCoverageDistribution" style="height: 300px;">
+       <svg></svg>
+     </div>
+    </div>
+    <div class="col-md-6">
+     <h3>Complexity</h3>
+     <div id="classComplexity" style="height: 300px;">
+       <svg></svg>
+     </div>
+    </div>
+   </div>
+   <div class="row">
+    <div class="col-md-6">
+     <h3>Insufficient Coverage</h3>
+     <div class="scrollbox">
+      <table class="table">
+       <thead>
+        <tr>
+         <th>Class</th>
+         <th class="text-right">Coverage</th>
+        </tr>
+       </thead>
+       <tbody>
+       <tr><td><a href="ZenTicket/Services/UserService.php.html#22">App\ZenTicket\Services\UserService</a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="ZenTicket/Repositories/TypeTicketRepository.php.html#13">App\ZenTicket\Repositories\TypeTicketRepository</a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="ZenTicket/Services/MailService.php.html#9">App\ZenTicket\Services\MailService</a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="ZenTicket/Services/ImpactService.php.html#10">App\ZenTicket\Services\ImpactService</a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="ZenTicket/Services/DocumentService.php.html#10">App\ZenTicket\Services\DocumentService</a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="ZenTicket/Services/DocumentOccurenceService.php.html#10">App\ZenTicket\Services\DocumentOccurenceService</a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="ZenTicket/Scopes/TicketsScope.php.html#9">App\ZenTicket\Scopes\TicketsScope</a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="ZenTicket/Repositories/UserRepository.php.html#13">App\ZenTicket\Repositories\UserRepository</a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="ZenTicket/Repositories/TimeLineTicketRepository.php.html#13">App\ZenTicket\Repositories\TimeLineTicketRepository</a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="ZenTicket/Services/OcurrenceService.php.html#12">App\ZenTicket\Services\OcurrenceService</a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="ZenTicket/Repositories/TicketViewRepository.php.html#14">App\ZenTicket\Repositories\TicketViewRepository</a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="ZenTicket/Repositories/TicketRepository.php.html#13">App\ZenTicket\Repositories\TicketRepository</a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="ZenTicket/Repositories/StatusTicketRepository.php.html#13">App\ZenTicket\Repositories\StatusTicketRepository</a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="ZenTicket/Repositories/RoleRepository.php.html#12">App\ZenTicket\Repositories\RoleRepository</a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="ZenTicket/Repositories/ProjectUserRepository.php.html#12">App\ZenTicket\Repositories\ProjectUserRepository</a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="ZenTicket/Repositories/ProjectRepository.php.html#12">App\ZenTicket\Repositories\ProjectRepository</a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="ZenTicket/Repositories/PriorityRepository.php.html#12">App\ZenTicket\Repositories\PriorityRepository</a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="ZenTicket/Services/ModuloService.php.html#13">App\ZenTicket\Services\ModuloService</a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="ZenTicket/Services/PriorityService.php.html#10">App\ZenTicket\Services\PriorityService</a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="ZenTicket/Repositories/ModuleRepository.php.html#14">App\ZenTicket\Repositories\ModuleRepository</a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="ZenTicket/Services/Specializations/Ticket/StopTrackingTicket.php.html#8">App\ZenTicket\Services\Specializations\Ticket\StopTrackingTicket</a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="ZenTicket/Services/TypeTicketService.php.html#10">App\ZenTicket\Services\TypeTicketService</a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="ZenTicket/Services/TimeLineTicketService.php.html#13">App\ZenTicket\Services\TimeLineTicketService</a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="ZenTicket/Services/TicketViewService.php.html#8">App\ZenTicket\Services\TicketViewService</a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="ZenTicket/Services/TicketService.php.html#15">App\ZenTicket\Services\TicketService</a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="ZenTicket/Services/StatusTicketService.php.html#10">App\ZenTicket\Services\StatusTicketService</a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="ZenTicket/Services/Specializations/VinculeProjectUsers.php.html#8">App\ZenTicket\Services\Specializations\VinculeProjectUsers</a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="ZenTicket/Services/Specializations/UploadFilesTemp.php.html#11">App\ZenTicket\Services\Specializations\UploadFilesTemp</a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="ZenTicket/Services/Specializations/Ticket/PlayTrackingTicket.php.html#8">App\ZenTicket\Services\Specializations\Ticket\PlayTrackingTicket</a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="ZenTicket/Services/ProjectService.php.html#15">App\ZenTicket\Services\ProjectService</a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="ZenTicket/Services/Specializations/Ticket/FinishTrackingTicket.php.html#8">App\ZenTicket\Services\Specializations\Ticket\FinishTrackingTicket</a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="ZenTicket/Services/Specializations/Ticket/ChangeStatusToProcessing.php.html#8">App\ZenTicket\Services\Specializations\Ticket\ChangeStatusToProcessing</a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="ZenTicket/Services/Specializations/Ticket/ChangeStatusToFinish.php.html#8">App\ZenTicket\Services\Specializations\Ticket\ChangeStatusToFinish</a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="ZenTicket/Services/Specializations/SaveEvidencesOccurences.php.html#9">App\ZenTicket\Services\Specializations\SaveEvidencesOccurences</a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="ZenTicket/Services/Specializations/CalculateHoursWorked.php.html#9">App\ZenTicket\Services\Specializations\CalculateHoursWorked</a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="ZenTicket/Services/RoleService.php.html#12">App\ZenTicket\Services\RoleService</a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="ZenTicket/Services/ProjectUserService.php.html#9">App\ZenTicket\Services\ProjectUserService</a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="ZenTicket/Repositories/OcurrenceRepository.php.html#13">App\ZenTicket\Repositories\OcurrenceRepository</a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="ZenTicket/Repositories/ImpactRepository.php.html#13">App\ZenTicket\Repositories\ImpactRepository</a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Exceptions/Handler.php.html#8">App\Exceptions\Handler</a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Http/Controllers/RolesController.php.html#13">App\Http\Controllers\RolesController</a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Http/Middleware/RedirectIfAuthenticated.php.html#8">App\Http\Middleware\RedirectIfAuthenticated</a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Http/Middleware/Authenticate.php.html#7">App\Http\Middleware\Authenticate</a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Http/Controllers/UsersController.php.html#26">App\Http\Controllers\UsersController</a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Http/Controllers/TypeTicketController.php.html#14">App\Http\Controllers\TypeTicketController</a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Http/Controllers/TicketController.php.html#26">App\Http\Controllers\TicketController</a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Http/Controllers/StatusTicketController.php.html#13">App\Http\Controllers\StatusTicketController</a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Http/Controllers/ProjectController.php.html#16">App\Http\Controllers\ProjectController</a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Http/Requests/RoleStore.php.html#7">App\Http\Requests\RoleStore</a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Http/Controllers/PriorityController.php.html#15">App\Http\Controllers\PriorityController</a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Http/Controllers/ImpactController.php.html#15">App\Http\Controllers\ImpactController</a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Http/Controllers/HomeController.php.html#11">App\Http\Controllers\HomeController</a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Http/Controllers/Auth/VerificationController.php.html#8">App\Http\Controllers\Auth\VerificationController</a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Http/Controllers/Auth/RegisterController.php.html#11">App\Http\Controllers\Auth\RegisterController</a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Http/Controllers/Auth/LoginController.php.html#8">App\Http\Controllers\Auth\LoginController</a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Http/Controllers/Auth/ConfirmPasswordController.php.html#8">App\Http\Controllers\Auth\ConfirmPasswordController</a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Http/Requests/PriorityStore.php.html#7">App\Http\Requests\PriorityStore</a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Http/Requests/StatusTicketStore.php.html#7">App\Http\Requests\StatusTicketStore</a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="ZenTicket/Repositories/EloquentRepository.php.html#12">App\ZenTicket\Repositories\EloquentRepository</a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="ZenTicket/Helpers/Upload.php.html#12">App\ZenTicket\Helpers\Upload</a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="ZenTicket/Repositories/DocumentRepository.php.html#13">App\ZenTicket\Repositories\DocumentRepository</a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="ZenTicket/Repositories/DocumentOccurenceRepository.php.html#13">App\ZenTicket\Repositories\DocumentOccurenceRepository</a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="ZenTicket/Models/TimeLineTicket.php.html#13">App\ZenTicket\Models\TimeLineTicket</a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="ZenTicket/Models/Role.php.html#14">App\ZenTicket\Models\Role</a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="ZenTicket/Models/Ocurrence.php.html#13">App\ZenTicket\Models\Ocurrence</a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="ZenTicket/Models/Document.php.html#13">App\ZenTicket\Models\Document</a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="ZenTicket/Helpers/SessionFlashMessage.php.html#7">App\ZenTicket\Helpers\SessionFlashMessage</a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Http/Requests/TicketStore.php.html#7">App\Http\Requests\TicketStore</a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="ZenTicket/Helpers/RegisterNotFound.php.html#9">App\ZenTicket\Helpers\RegisterNotFound</a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="ZenTicket/Helpers/LogError.php.html#9">App\ZenTicket\Helpers\LogError</a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="User.php.html#11">App\User</a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Providers/BroadcastServiceProvider.php.html#8">App\Providers\BroadcastServiceProvider</a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Mail/RegisterUser.php.html#11">App\Mail\RegisterUser</a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Http/Requests/UserStore.php.html#7">App\Http\Requests\UserStore</a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="ZenTicket/Models/Permission.php.html#14">App\ZenTicket\Models\Permission</a></td><td class="text-right">20%</td></tr>
+       <tr><td><a href="Providers/ViewComposerServiceProvider.php.html#9">App\Providers\ViewComposerServiceProvider</a></td><td class="text-right">42%</td></tr>
+       <tr><td><a href="Console/Kernel.php.html#8">App\Console\Kernel</a></td><td class="text-right">75%</td></tr>
+
+       </tbody>
+      </table>
+     </div>
+    </div>
+    <div class="col-md-6">
+     <h3>Project Risks</h3>
+     <div class="scrollbox">
+      <table class="table">
+       <thead>
+        <tr>
+         <th>Class</th>
+         <th class="text-right"><abbr title="Change Risk Anti-Patterns (CRAP) Index">CRAP</abbr></th>
+        </tr>
+       </thead>
+       <tbody>
+       <tr><td><a href="Http/Controllers/TicketController.php.html#26">App\Http\Controllers\TicketController</a></td><td class="text-right">552</td></tr>
+       <tr><td><a href="ZenTicket/Services/TicketService.php.html#15">App\ZenTicket\Services\TicketService</a></td><td class="text-right">380</td></tr>
+       <tr><td><a href="ZenTicket/Services/ProjectService.php.html#15">App\ZenTicket\Services\ProjectService</a></td><td class="text-right">272</td></tr>
+       <tr><td><a href="Http/Controllers/UsersController.php.html#26">App\Http\Controllers\UsersController</a></td><td class="text-right">272</td></tr>
+       <tr><td><a href="ZenTicket/Repositories/ModuleRepository.php.html#14">App\ZenTicket\Repositories\ModuleRepository</a></td><td class="text-right">240</td></tr>
+       <tr><td><a href="ZenTicket/Services/UserService.php.html#22">App\ZenTicket\Services\UserService</a></td><td class="text-right">210</td></tr>
+       <tr><td><a href="Http/Controllers/StatusTicketController.php.html#13">App\Http\Controllers\StatusTicketController</a></td><td class="text-right">182</td></tr>
+       <tr><td><a href="Http/Controllers/TypeTicketController.php.html#14">App\Http\Controllers\TypeTicketController</a></td><td class="text-right">182</td></tr>
+       <tr><td><a href="Http/Controllers/ProjectController.php.html#16">App\Http\Controllers\ProjectController</a></td><td class="text-right">182</td></tr>
+       <tr><td><a href="Http/Controllers/ImpactController.php.html#15">App\Http\Controllers\ImpactController</a></td><td class="text-right">182</td></tr>
+       <tr><td><a href="Http/Controllers/PriorityController.php.html#15">App\Http\Controllers\PriorityController</a></td><td class="text-right">182</td></tr>
+       <tr><td><a href="ZenTicket/Services/TimeLineTicketService.php.html#13">App\ZenTicket\Services\TimeLineTicketService</a></td><td class="text-right">156</td></tr>
+       <tr><td><a href="Http/Controllers/RolesController.php.html#13">App\Http\Controllers\RolesController</a></td><td class="text-right">132</td></tr>
+       <tr><td><a href="ZenTicket/Services/OcurrenceService.php.html#12">App\ZenTicket\Services\OcurrenceService</a></td><td class="text-right">90</td></tr>
+       <tr><td><a href="ZenTicket/Repositories/TicketViewRepository.php.html#14">App\ZenTicket\Repositories\TicketViewRepository</a></td><td class="text-right">90</td></tr>
+       <tr><td><a href="ZenTicket/Helpers/Upload.php.html#12">App\ZenTicket\Helpers\Upload</a></td><td class="text-right">72</td></tr>
+       <tr><td><a href="ZenTicket/Helpers/SessionFlashMessage.php.html#7">App\ZenTicket\Helpers\SessionFlashMessage</a></td><td class="text-right">56</td></tr>
+       <tr><td><a href="ZenTicket/Services/Specializations/CalculateHoursWorked.php.html#9">App\ZenTicket\Services\Specializations\CalculateHoursWorked</a></td><td class="text-right">30</td></tr>
+       <tr><td><a href="ZenTicket/Models/Permission.php.html#14">App\ZenTicket\Models\Permission</a></td><td class="text-right">23</td></tr>
+       <tr><td><a href="ZenTicket/Scopes/TicketsScope.php.html#9">App\ZenTicket\Scopes\TicketsScope</a></td><td class="text-right">20</td></tr>
+       <tr><td><a href="ZenTicket/Services/Specializations/SaveEvidencesOccurences.php.html#9">App\ZenTicket\Services\Specializations\SaveEvidencesOccurences</a></td><td class="text-right">20</td></tr>
+       <tr><td><a href="ZenTicket/Services/Specializations/UploadFilesTemp.php.html#11">App\ZenTicket\Services\Specializations\UploadFilesTemp</a></td><td class="text-right">20</td></tr>
+       <tr><td><a href="ZenTicket/Services/Specializations/VinculeProjectUsers.php.html#8">App\ZenTicket\Services\Specializations\VinculeProjectUsers</a></td><td class="text-right">20</td></tr>
+       <tr><td><a href="Http/Controllers/HomeController.php.html#11">App\Http\Controllers\HomeController</a></td><td class="text-right">20</td></tr>
+       <tr><td><a href="ZenTicket/Services/Specializations/Ticket/FinishTrackingTicket.php.html#8">App\ZenTicket\Services\Specializations\Ticket\FinishTrackingTicket</a></td><td class="text-right">12</td></tr>
+       <tr><td><a href="ZenTicket/Services/Specializations/Ticket/PlayTrackingTicket.php.html#8">App\ZenTicket\Services\Specializations\Ticket\PlayTrackingTicket</a></td><td class="text-right">12</td></tr>
+       <tr><td><a href="ZenTicket/Helpers/RegisterNotFound.php.html#9">App\ZenTicket\Helpers\RegisterNotFound</a></td><td class="text-right">6</td></tr>
+       <tr><td><a href="Http/Middleware/RedirectIfAuthenticated.php.html#8">App\Http\Middleware\RedirectIfAuthenticated</a></td><td class="text-right">6</td></tr>
+       <tr><td><a href="Http/Middleware/Authenticate.php.html#7">App\Http\Middleware\Authenticate</a></td><td class="text-right">6</td></tr>
+
+       </tbody>
+      </table>
+     </div>
+    </div>
+   </div>
+   <div class="row">
+    <div class="col-md-12">
+     <h2>Methods</h2>
+    </div>
+   </div>
+   <div class="row">
+    <div class="col-md-6">
+     <h3>Coverage Distribution</h3>
+     <div id="methodCoverageDistribution" style="height: 300px;">
+       <svg></svg>
+     </div>
+    </div>
+    <div class="col-md-6">
+     <h3>Complexity</h3>
+     <div id="methodComplexity" style="height: 300px;">
+       <svg></svg>
+     </div>
+    </div>
+   </div>
+   <div class="row">
+    <div class="col-md-6">
+     <h3>Insufficient Coverage</h3>
+     <div class="scrollbox">
+      <table class="table">
+       <thead>
+        <tr>
+         <th>Method</th>
+         <th class="text-right">Coverage</th>
+        </tr>
+       </thead>
+       <tbody>
+       <tr><td><a href="Console/Kernel.php.html#25"><abbr title="App\Console\Kernel::schedule">schedule</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="ZenTicket/Services/OcurrenceService.php.html#84"><abbr title="App\ZenTicket\Services\OcurrenceService::buildDelete">buildDelete</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="ZenTicket/Services/ModuloService.php.html#24"><abbr title="App\ZenTicket\Services\ModuloService::__construct">__construct</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="ZenTicket/Services/ModuloService.php.html#34"><abbr title="App\ZenTicket\Services\ModuloService::renderList">renderList</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="ZenTicket/Services/ModuloService.php.html#41"><abbr title="App\ZenTicket\Services\ModuloService::renderEdit">renderEdit</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="ZenTicket/Services/ModuloService.php.html#49"><abbr title="App\ZenTicket\Services\ModuloService::renderWithPermission">renderWithPermission</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="ZenTicket/Services/ModuloService.php.html#60"><abbr title="App\ZenTicket\Services\ModuloService::updatePermissionsAdministrator">updatePermissionsAdministrator</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="ZenTicket/Services/ModuloService.php.html#70"><abbr title="App\ZenTicket\Services\ModuloService::createPermissionsAdministrator">createPermissionsAdministrator</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="ZenTicket/Services/ModuloService.php.html#79"><abbr title="App\ZenTicket\Services\ModuloService::deletePermissionsAdministrator">deletePermissionsAdministrator</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="ZenTicket/Services/ModuloService.php.html#88"><abbr title="App\ZenTicket\Services\ModuloService::getAllModules">getAllModules</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="ZenTicket/Services/ModuloService.php.html#99"><abbr title="App\ZenTicket\Services\ModuloService::getAllModulesActive">getAllModulesActive</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="ZenTicket/Services/OcurrenceService.php.html#16"><abbr title="App\ZenTicket\Services\OcurrenceService::__construct">__construct</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="ZenTicket/Services/OcurrenceService.php.html#26"><abbr title="App\ZenTicket\Services\OcurrenceService::renderList">renderList</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="ZenTicket/Services/OcurrenceService.php.html#34"><abbr title="App\ZenTicket\Services\OcurrenceService::renderEdit">renderEdit</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="ZenTicket/Services/OcurrenceService.php.html#42"><abbr title="App\ZenTicket\Services\OcurrenceService::buildUpdate">buildUpdate</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="ZenTicket/Services/OcurrenceService.php.html#50"><abbr title="App\ZenTicket\Services\OcurrenceService::buildInsert">buildInsert</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="ZenTicket/Services/PriorityService.php.html#14"><abbr title="App\ZenTicket\Services\PriorityService::__construct">__construct</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="ZenTicket/Services/ImpactService.php.html#55"><abbr title="App\ZenTicket\Services\ImpactService::buildDelete">buildDelete</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="ZenTicket/Services/ProjectService.php.html#45"><abbr title="App\ZenTicket\Services\ProjectService::buildUpdate">buildUpdate</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="ZenTicket/Services/ProjectUserService.php.html#22"><abbr title="App\ZenTicket\Services\ProjectUserService::renderList">renderList</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="ZenTicket/Services/ProjectUserService.php.html#13"><abbr title="App\ZenTicket\Services\ProjectUserService::__construct">__construct</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="ZenTicket/Services/ProjectService.php.html#100"><abbr title="App\ZenTicket\Services\ProjectService::renderProjectsByUser">renderProjectsByUser</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="ZenTicket/Services/ProjectService.php.html#90"><abbr title="App\ZenTicket\Services\ProjectService::buildDelete">buildDelete</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="ZenTicket/Services/ProjectService.php.html#73"><abbr title="App\ZenTicket\Services\ProjectService::buildInsert">buildInsert</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="ZenTicket/Services/ProjectService.php.html#62"><abbr title="App\ZenTicket\Services\ProjectService::executeUpload">executeUpload</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="ZenTicket/Services/ProjectService.php.html#36"><abbr title="App\ZenTicket\Services\ProjectService::renderEdit">renderEdit</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="ZenTicket/Services/PriorityService.php.html#23"><abbr title="App\ZenTicket\Services\PriorityService::renderList">renderList</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="ZenTicket/Services/ProjectService.php.html#28"><abbr title="App\ZenTicket\Services\ProjectService::renderList">renderList</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="ZenTicket/Services/ProjectService.php.html#19"><abbr title="App\ZenTicket\Services\ProjectService::__construct">__construct</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="ZenTicket/Services/PriorityService.php.html#55"><abbr title="App\ZenTicket\Services\PriorityService::buildDelete">buildDelete</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="ZenTicket/Services/PriorityService.php.html#47"><abbr title="App\ZenTicket\Services\PriorityService::buildInsert">buildInsert</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="ZenTicket/Services/PriorityService.php.html#39"><abbr title="App\ZenTicket\Services\PriorityService::buildUpdate">buildUpdate</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="ZenTicket/Services/PriorityService.php.html#31"><abbr title="App\ZenTicket\Services\PriorityService::renderEdit">renderEdit</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="ZenTicket/Services/MailService.php.html#21"><abbr title="App\ZenTicket\Services\MailService::sendMailSendGrid">sendMailSendGrid</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="ZenTicket/Services/ImpactService.php.html#47"><abbr title="App\ZenTicket\Services\ImpactService::buildInsert">buildInsert</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="ZenTicket/Services/ProjectUserService.php.html#38"><abbr title="App\ZenTicket\Services\ProjectUserService::buildUpdate">buildUpdate</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="ZenTicket/Repositories/UserRepository.php.html#73"><abbr title="App\ZenTicket\Repositories\UserRepository::delete">delete</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="ZenTicket/Repositories/StatusTicketRepository.php.html#15"><abbr title="App\ZenTicket\Repositories\StatusTicketRepository::__construct">__construct</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="ZenTicket/Repositories/TicketRepository.php.html#15"><abbr title="App\ZenTicket\Repositories\TicketRepository::__construct">__construct</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="ZenTicket/Repositories/TicketRepository.php.html#20"><abbr title="App\ZenTicket\Repositories\TicketRepository::getTicketByTicketNumber">getTicketByTicketNumber</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="ZenTicket/Repositories/TicketRepository.php.html#25"><abbr title="App\ZenTicket\Repositories\TicketRepository::totalTickets">totalTickets</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="ZenTicket/Repositories/TicketViewRepository.php.html#16"><abbr title="App\ZenTicket\Repositories\TicketViewRepository::__construct">__construct</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="ZenTicket/Repositories/TicketViewRepository.php.html#21"><abbr title="App\ZenTicket\Repositories\TicketViewRepository::getByFilter">getByFilter</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="ZenTicket/Repositories/TimeLineTicketRepository.php.html#15"><abbr title="App\ZenTicket\Repositories\TimeLineTicketRepository::__construct">__construct</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="ZenTicket/Repositories/TimeLineTicketRepository.php.html#20"><abbr title="App\ZenTicket\Repositories\TimeLineTicketRepository::returnAllTrackByTicket">returnAllTrackByTicket</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="ZenTicket/Repositories/TypeTicketRepository.php.html#15"><abbr title="App\ZenTicket\Repositories\TypeTicketRepository::__construct">__construct</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="ZenTicket/Repositories/UserRepository.php.html#24"><abbr title="App\ZenTicket\Repositories\UserRepository::__construct">__construct</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="ZenTicket/Repositories/UserRepository.php.html#33"><abbr title="App\ZenTicket\Repositories\UserRepository::getAll">getAll</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="ZenTicket/Repositories/UserRepository.php.html#43"><abbr title="App\ZenTicket\Repositories\UserRepository::getById">getById</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="ZenTicket/Repositories/UserRepository.php.html#54"><abbr title="App\ZenTicket\Repositories\UserRepository::create">create</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="ZenTicket/Repositories/UserRepository.php.html#64"><abbr title="App\ZenTicket\Repositories\UserRepository::update">update</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="ZenTicket/Scopes/TicketsScope.php.html#11"><abbr title="App\ZenTicket\Scopes\TicketsScope::apply">apply</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="ZenTicket/Services/ImpactService.php.html#39"><abbr title="App\ZenTicket\Services\ImpactService::buildUpdate">buildUpdate</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="ZenTicket/Services/DocumentService.php.html#31"><abbr title="App\ZenTicket\Services\DocumentService::renderEdit">renderEdit</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="ZenTicket/Services/ImpactService.php.html#31"><abbr title="App\ZenTicket\Services\ImpactService::renderEdit">renderEdit</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="ZenTicket/Services/ImpactService.php.html#23"><abbr title="App\ZenTicket\Services\ImpactService::renderList">renderList</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="ZenTicket/Services/ImpactService.php.html#14"><abbr title="App\ZenTicket\Services\ImpactService::__construct">__construct</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="ZenTicket/Services/DocumentService.php.html#55"><abbr title="App\ZenTicket\Services\DocumentService::buildDelete">buildDelete</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="ZenTicket/Services/DocumentService.php.html#47"><abbr title="App\ZenTicket\Services\DocumentService::buildInsert">buildInsert</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="ZenTicket/Services/DocumentService.php.html#39"><abbr title="App\ZenTicket\Services\DocumentService::buildUpdate">buildUpdate</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="ZenTicket/Services/DocumentService.php.html#23"><abbr title="App\ZenTicket\Services\DocumentService::renderList">renderList</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="ZenTicket/Services/DocumentOccurenceService.php.html#14"><abbr title="App\ZenTicket\Services\DocumentOccurenceService::__construct">__construct</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="ZenTicket/Services/DocumentService.php.html#14"><abbr title="App\ZenTicket\Services\DocumentService::__construct">__construct</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="ZenTicket/Services/DocumentOccurenceService.php.html#55"><abbr title="App\ZenTicket\Services\DocumentOccurenceService::buildDelete">buildDelete</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="ZenTicket/Services/DocumentOccurenceService.php.html#47"><abbr title="App\ZenTicket\Services\DocumentOccurenceService::buildInsert">buildInsert</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="ZenTicket/Services/DocumentOccurenceService.php.html#39"><abbr title="App\ZenTicket\Services\DocumentOccurenceService::buildUpdate">buildUpdate</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="ZenTicket/Services/DocumentOccurenceService.php.html#31"><abbr title="App\ZenTicket\Services\DocumentOccurenceService::renderEdit">renderEdit</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="ZenTicket/Services/DocumentOccurenceService.php.html#23"><abbr title="App\ZenTicket\Services\DocumentOccurenceService::renderList">renderList</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="ZenTicket/Services/ProjectUserService.php.html#30"><abbr title="App\ZenTicket\Services\ProjectUserService::renderEdit">renderEdit</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="ZenTicket/Services/ProjectUserService.php.html#46"><abbr title="App\ZenTicket\Services\ProjectUserService::buildInsert">buildInsert</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="ZenTicket/Repositories/RoleRepository.php.html#69"><abbr title="App\ZenTicket\Repositories\RoleRepository::update">update</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="ZenTicket/Services/TimeLineTicketService.php.html#43"><abbr title="App\ZenTicket\Services\TimeLineTicketService::buildUpdate">buildUpdate</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="ZenTicket/Services/TicketService.php.html#124"><abbr title="App\ZenTicket\Services\TicketService::generateTicketNumber">generateTicketNumber</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="ZenTicket/Services/TicketService.php.html#142"><abbr title="App\ZenTicket\Services\TicketService::renderTicketByTicketNumber">renderTicketByTicketNumber</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="ZenTicket/Services/TicketService.php.html#149"><abbr title="App\ZenTicket\Services\TicketService::buildDelete">buildDelete</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="ZenTicket/Services/TicketService.php.html#154"><abbr title="App\ZenTicket\Services\TicketService::totalTickets">totalTickets</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="ZenTicket/Services/TicketViewService.php.html#12"><abbr title="App\ZenTicket\Services\TicketViewService::__construct">__construct</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="ZenTicket/Services/TicketViewService.php.html#20"><abbr title="App\ZenTicket\Services\TicketViewService::renderList">renderList</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="ZenTicket/Services/TicketViewService.php.html#26"><abbr title="App\ZenTicket\Services\TicketViewService::renderByFilter">renderByFilter</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="ZenTicket/Services/TicketViewService.php.html#34"><abbr title="App\ZenTicket\Services\TicketViewService::renderEdit">renderEdit</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="ZenTicket/Services/TicketViewService.php.html#42"><abbr title="App\ZenTicket\Services\TicketViewService::buildUpdate">buildUpdate</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="ZenTicket/Services/TicketViewService.php.html#50"><abbr title="App\ZenTicket\Services\TicketViewService::buildInsert">buildInsert</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="ZenTicket/Services/TicketViewService.php.html#58"><abbr title="App\ZenTicket\Services\TicketViewService::buildDelete">buildDelete</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="ZenTicket/Services/TimeLineTicketService.php.html#17"><abbr title="App\ZenTicket\Services\TimeLineTicketService::__construct">__construct</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="ZenTicket/Services/TimeLineTicketService.php.html#27"><abbr title="App\ZenTicket\Services\TimeLineTicketService::renderList">renderList</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="ZenTicket/Services/TimeLineTicketService.php.html#35"><abbr title="App\ZenTicket\Services\TimeLineTicketService::renderEdit">renderEdit</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="ZenTicket/Services/TimeLineTicketService.php.html#51"><abbr title="App\ZenTicket\Services\TimeLineTicketService::buildInsert">buildInsert</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="ZenTicket/Services/TicketService.php.html#80"><abbr title="App\ZenTicket\Services\TicketService::buildInsert">buildInsert</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="ZenTicket/Services/UserService.php.html#27"><abbr title="App\ZenTicket\Services\UserService::__construct">__construct</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="ZenTicket/Services/UserService.php.html#106"><abbr title="App\ZenTicket\Services\UserService::buildInsert">buildInsert</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="ZenTicket/Services/UserService.php.html#96"><abbr title="App\ZenTicket\Services\UserService::password_generate">password_generate</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="ZenTicket/Services/UserService.php.html#91"><abbr title="App\ZenTicket\Services\UserService::mapUserPassword">mapUserPassword</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="ZenTicket/Services/UserService.php.html#62"><abbr title="App\ZenTicket\Services\UserService::buildUpdate">buildUpdate</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="ZenTicket/Services/UserService.php.html#47"><abbr title="App\ZenTicket\Services\UserService::renderEdit">renderEdit</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="ZenTicket/Services/UserService.php.html#37"><abbr title="App\ZenTicket\Services\UserService::renderList">renderList</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="ZenTicket/Services/TypeTicketService.php.html#55"><abbr title="App\ZenTicket\Services\TypeTicketService::buildDelete">buildDelete</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="ZenTicket/Services/TimeLineTicketService.php.html#59"><abbr title="App\ZenTicket\Services\TimeLineTicketService::buildDelete">buildDelete</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="ZenTicket/Services/TypeTicketService.php.html#47"><abbr title="App\ZenTicket\Services\TypeTicketService::buildInsert">buildInsert</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="ZenTicket/Services/TypeTicketService.php.html#39"><abbr title="App\ZenTicket\Services\TypeTicketService::buildUpdate">buildUpdate</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="ZenTicket/Services/TypeTicketService.php.html#31"><abbr title="App\ZenTicket\Services\TypeTicketService::renderEdit">renderEdit</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="ZenTicket/Services/TypeTicketService.php.html#23"><abbr title="App\ZenTicket\Services\TypeTicketService::renderList">renderList</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="ZenTicket/Services/TypeTicketService.php.html#14"><abbr title="App\ZenTicket\Services\TypeTicketService::__construct">__construct</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="ZenTicket/Services/TimeLineTicketService.php.html#64"><abbr title="App\ZenTicket\Services\TimeLineTicketService::storeTrack">storeTrack</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="ZenTicket/Services/TicketService.php.html#110"><abbr title="App\ZenTicket\Services\TicketService::sanitilizeData">sanitilizeData</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="ZenTicket/Services/TicketService.php.html#45"><abbr title="App\ZenTicket\Services\TicketService::buildUpdate">buildUpdate</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="ZenTicket/Services/ProjectUserService.php.html#54"><abbr title="App\ZenTicket\Services\ProjectUserService::buildDelete">buildDelete</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="ZenTicket/Services/Specializations/CalculateHoursWorked.php.html#18"><abbr title="App\ZenTicket\Services\Specializations\CalculateHoursWorked::calculate">calculate</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="ZenTicket/Services/Specializations/Ticket/ChangeStatusToProcessing.php.html#18"><abbr title="App\ZenTicket\Services\Specializations\Ticket\ChangeStatusToProcessing::execute">execute</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="ZenTicket/Services/Specializations/Ticket/ChangeStatusToProcessing.php.html#13"><abbr title="App\ZenTicket\Services\Specializations\Ticket\ChangeStatusToProcessing::__construct">__construct</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="ZenTicket/Services/Specializations/Ticket/ChangeStatusToFinish.php.html#18"><abbr title="App\ZenTicket\Services\Specializations\Ticket\ChangeStatusToFinish::execute">execute</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="ZenTicket/Services/Specializations/Ticket/ChangeStatusToFinish.php.html#13"><abbr title="App\ZenTicket\Services\Specializations\Ticket\ChangeStatusToFinish::__construct">__construct</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="ZenTicket/Services/Specializations/SaveEvidencesOccurences.php.html#23"><abbr title="App\ZenTicket\Services\Specializations\SaveEvidencesOccurences::execute">execute</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="ZenTicket/Services/Specializations/SaveEvidencesOccurences.php.html#16"><abbr title="App\ZenTicket\Services\Specializations\SaveEvidencesOccurences::__construct">__construct</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="ZenTicket/Services/Specializations/CalculateHoursWorked.php.html#13"><abbr title="App\ZenTicket\Services\Specializations\CalculateHoursWorked::__construct">__construct</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="ZenTicket/Services/Specializations/Ticket/FinishTrackingTicket.php.html#18"><abbr title="App\ZenTicket\Services\Specializations\Ticket\FinishTrackingTicket::execute">execute</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="ZenTicket/Services/RoleService.php.html#94"><abbr title="App\ZenTicket\Services\RoleService::buildDelete">buildDelete</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="ZenTicket/Services/RoleService.php.html#82"><abbr title="App\ZenTicket\Services\RoleService::buildInsert">buildInsert</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="ZenTicket/Services/RoleService.php.html#69"><abbr title="App\ZenTicket\Services\RoleService::buildUpdate">buildUpdate</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="ZenTicket/Services/RoleService.php.html#50"><abbr title="App\ZenTicket\Services\RoleService::renderEdit">renderEdit</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="ZenTicket/Services/RoleService.php.html#39"><abbr title="App\ZenTicket\Services\RoleService::renderList">renderList</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="ZenTicket/Services/RoleService.php.html#28"><abbr title="App\ZenTicket\Services\RoleService::__construct">__construct</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="ZenTicket/Services/Specializations/Ticket/FinishTrackingTicket.php.html#13"><abbr title="App\ZenTicket\Services\Specializations\Ticket\FinishTrackingTicket::__construct">__construct</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="ZenTicket/Services/Specializations/Ticket/PlayTrackingTicket.php.html#13"><abbr title="App\ZenTicket\Services\Specializations\Ticket\PlayTrackingTicket::__construct">__construct</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="ZenTicket/Services/TicketService.php.html#37"><abbr title="App\ZenTicket\Services\TicketService::renderEdit">renderEdit</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="ZenTicket/Services/StatusTicketService.php.html#23"><abbr title="App\ZenTicket\Services\StatusTicketService::renderList">renderList</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="ZenTicket/Services/TicketService.php.html#29"><abbr title="App\ZenTicket\Services\TicketService::renderList">renderList</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="ZenTicket/Services/TicketService.php.html#19"><abbr title="App\ZenTicket\Services\TicketService::__construct">__construct</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="ZenTicket/Services/StatusTicketService.php.html#56"><abbr title="App\ZenTicket\Services\StatusTicketService::buildDelete">buildDelete</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="ZenTicket/Services/StatusTicketService.php.html#48"><abbr title="App\ZenTicket\Services\StatusTicketService::buildInsert">buildInsert</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="ZenTicket/Services/StatusTicketService.php.html#40"><abbr title="App\ZenTicket\Services\StatusTicketService::buildUpdate">buildUpdate</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="ZenTicket/Services/StatusTicketService.php.html#32"><abbr title="App\ZenTicket\Services\StatusTicketService::renderEdit">renderEdit</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="ZenTicket/Services/StatusTicketService.php.html#14"><abbr title="App\ZenTicket\Services\StatusTicketService::__construct">__construct</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="ZenTicket/Services/Specializations/Ticket/PlayTrackingTicket.php.html#18"><abbr title="App\ZenTicket\Services\Specializations\Ticket\PlayTrackingTicket::execute">execute</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="ZenTicket/Services/Specializations/VinculeProjectUsers.php.html#19"><abbr title="App\ZenTicket\Services\Specializations\VinculeProjectUsers::vincule">vincule</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="ZenTicket/Services/Specializations/VinculeProjectUsers.php.html#13"><abbr title="App\ZenTicket\Services\Specializations\VinculeProjectUsers::__construct">__construct</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="ZenTicket/Services/Specializations/UploadFilesTemp.php.html#23"><abbr title="App\ZenTicket\Services\Specializations\UploadFilesTemp::execute">execute</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="ZenTicket/Services/Specializations/UploadFilesTemp.php.html#17"><abbr title="App\ZenTicket\Services\Specializations\UploadFilesTemp::__construct">__construct</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="ZenTicket/Services/Specializations/Ticket/StopTrackingTicket.php.html#18"><abbr title="App\ZenTicket\Services\Specializations\Ticket\StopTrackingTicket::execute">execute</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="ZenTicket/Services/Specializations/Ticket/StopTrackingTicket.php.html#13"><abbr title="App\ZenTicket\Services\Specializations\Ticket\StopTrackingTicket::__construct">__construct</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="ZenTicket/Repositories/RoleRepository.php.html#78"><abbr title="App\ZenTicket\Repositories\RoleRepository::delete">delete</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="ZenTicket/Repositories/RoleRepository.php.html#59"><abbr title="App\ZenTicket\Repositories\RoleRepository::create">create</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Exceptions/Handler.php.html#35"><abbr title="App\Exceptions\Handler::report">report</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Http/Controllers/TicketController.php.html#175"><abbr title="App\Http\Controllers\TicketController::destroy">destroy</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Http/Controllers/RolesController.php.html#95"><abbr title="App\Http\Controllers\RolesController::update">update</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Http/Controllers/StatusTicketController.php.html#22"><abbr title="App\Http\Controllers\StatusTicketController::__construct">__construct</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Http/Controllers/StatusTicketController.php.html#33"><abbr title="App\Http\Controllers\StatusTicketController::index">index</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Http/Controllers/StatusTicketController.php.html#41"><abbr title="App\Http\Controllers\StatusTicketController::create">create</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Http/Controllers/StatusTicketController.php.html#48"><abbr title="App\Http\Controllers\StatusTicketController::store">store</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Http/Controllers/StatusTicketController.php.html#66"><abbr title="App\Http\Controllers\StatusTicketController::edit">edit</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Http/Controllers/StatusTicketController.php.html#80"><abbr title="App\Http\Controllers\StatusTicketController::update">update</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Http/Controllers/StatusTicketController.php.html#103"><abbr title="App\Http\Controllers\StatusTicketController::destroy">destroy</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Http/Controllers/TicketController.php.html#45"><abbr title="App\Http\Controllers\TicketController::__construct">__construct</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Http/Controllers/TicketController.php.html#70"><abbr title="App\Http\Controllers\TicketController::index">index</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Http/Controllers/TicketController.php.html#83"><abbr title="App\Http\Controllers\TicketController::create">create</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Http/Controllers/TicketController.php.html#108"><abbr title="App\Http\Controllers\TicketController::store">store</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Http/Controllers/TicketController.php.html#126"><abbr title="App\Http\Controllers\TicketController::edit">edit</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Http/Controllers/TicketController.php.html#153"><abbr title="App\Http\Controllers\TicketController::update">update</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Http/Controllers/TicketController.php.html#191"><abbr title="App\Http\Controllers\TicketController::detail">detail</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Http/Controllers/RolesController.php.html#55"><abbr title="App\Http\Controllers\RolesController::store">store</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Http/Controllers/TypeTicketController.php.html#66"><abbr title="App\Http\Controllers\TypeTicketController::edit">edit</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Http/Controllers/UsersController.php.html#64"><abbr title="App\Http\Controllers\UsersController::store">store</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Http/Controllers/UsersController.php.html#52"><abbr title="App\Http\Controllers\UsersController::create">create</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Http/Controllers/UsersController.php.html#42"><abbr title="App\Http\Controllers\UsersController::index">index</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Http/Controllers/UsersController.php.html#31"><abbr title="App\Http\Controllers\UsersController::__construct">__construct</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Http/Controllers/TypeTicketController.php.html#99"><abbr title="App\Http\Controllers\TypeTicketController::destroy">destroy</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Http/Controllers/TypeTicketController.php.html#77"><abbr title="App\Http\Controllers\TypeTicketController::update">update</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Http/Controllers/TypeTicketController.php.html#49"><abbr title="App\Http\Controllers\TypeTicketController::store">store</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Http/Controllers/TicketController.php.html#210"><abbr title="App\Http\Controllers\TicketController::upload">upload</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Http/Controllers/TypeTicketController.php.html#42"><abbr title="App\Http\Controllers\TypeTicketController::create">create</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Http/Controllers/TypeTicketController.php.html#34"><abbr title="App\Http\Controllers\TypeTicketController::index">index</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Http/Controllers/TypeTicketController.php.html#23"><abbr title="App\Http\Controllers\TypeTicketController::__construct">__construct</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Http/Controllers/TicketController.php.html#265"><abbr title="App\Http\Controllers\TicketController::getArchives">getArchives</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Http/Controllers/TicketController.php.html#241"><abbr title="App\Http\Controllers\TicketController::storeActions">storeActions</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Http/Controllers/TicketController.php.html#219"><abbr title="App\Http\Controllers\TicketController::storeOccurence">storeOccurence</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Http/Controllers/RolesController.php.html#78"><abbr title="App\Http\Controllers\RolesController::edit">edit</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Http/Controllers/RolesController.php.html#46"><abbr title="App\Http\Controllers\RolesController::create">create</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Http/Controllers/UsersController.php.html#111"><abbr title="App\Http\Controllers\UsersController::update">update</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Http/Controllers/HomeController.php.html#19"><abbr title="App\Http\Controllers\HomeController::__construct">__construct</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Http/Controllers/ImpactController.php.html#54"><abbr title="App\Http\Controllers\ImpactController::store">store</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Http/Controllers/ImpactController.php.html#43"><abbr title="App\Http\Controllers\ImpactController::create">create</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Http/Controllers/ImpactController.php.html#35"><abbr title="App\Http\Controllers\ImpactController::index">index</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Http/Controllers/ImpactController.php.html#24"><abbr title="App\Http\Controllers\ImpactController::__construct">__construct</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Http/Controllers/HomeController.php.html#38"><abbr title="App\Http\Controllers\HomeController::registerUserOneSignal">registerUserOneSignal</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Http/Controllers/HomeController.php.html#30"><abbr title="App\Http\Controllers\HomeController::index">index</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Http/Controllers/Auth/VerificationController.php.html#35"><abbr title="App\Http\Controllers\Auth\VerificationController::__construct">__construct</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Http/Controllers/ImpactController.php.html#83"><abbr title="App\Http\Controllers\ImpactController::update">update</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Http/Controllers/Auth/RegisterController.php.html#64"><abbr title="App\Http\Controllers\Auth\RegisterController::create">create</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Http/Controllers/Auth/RegisterController.php.html#49"><abbr title="App\Http\Controllers\Auth\RegisterController::validator">validator</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Http/Controllers/Auth/RegisterController.php.html#38"><abbr title="App\Http\Controllers\Auth\RegisterController::__construct">__construct</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Http/Controllers/Auth/LoginController.php.html#35"><abbr title="App\Http\Controllers\Auth\LoginController::__construct">__construct</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Http/Controllers/Auth/ConfirmPasswordController.php.html#35"><abbr title="App\Http\Controllers\Auth\ConfirmPasswordController::__construct">__construct</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Exceptions/Handler.php.html#47"><abbr title="App\Exceptions\Handler::render">render</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Http/Controllers/ImpactController.php.html#72"><abbr title="App\Http\Controllers\ImpactController::edit">edit</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Http/Controllers/ImpactController.php.html#105"><abbr title="App\Http\Controllers\ImpactController::destroy">destroy</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Http/Controllers/RolesController.php.html#38"><abbr title="App\Http\Controllers\RolesController::index">index</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Http/Controllers/ProjectController.php.html#37"><abbr title="App\Http\Controllers\ProjectController::index">index</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Http/Controllers/RolesController.php.html#25"><abbr title="App\Http\Controllers\RolesController::__construct">__construct</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Http/Controllers/ProjectController.php.html#109"><abbr title="App\Http\Controllers\ProjectController::destroy">destroy</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Http/Controllers/ProjectController.php.html#87"><abbr title="App\Http\Controllers\ProjectController::update">update</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Http/Controllers/ProjectController.php.html#74"><abbr title="App\Http\Controllers\ProjectController::edit">edit</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Http/Controllers/ProjectController.php.html#57"><abbr title="App\Http\Controllers\ProjectController::store">store</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Http/Controllers/ProjectController.php.html#45"><abbr title="App\Http\Controllers\ProjectController::create">create</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Http/Controllers/ProjectController.php.html#25"><abbr title="App\Http\Controllers\ProjectController::__construct">__construct</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Http/Controllers/PriorityController.php.html#24"><abbr title="App\Http\Controllers\PriorityController::__construct">__construct</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Http/Controllers/PriorityController.php.html#100"><abbr title="App\Http\Controllers\PriorityController::destroy">destroy</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Http/Controllers/PriorityController.php.html#78"><abbr title="App\Http\Controllers\PriorityController::update">update</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Http/Controllers/PriorityController.php.html#67"><abbr title="App\Http\Controllers\PriorityController::edit">edit</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Http/Controllers/PriorityController.php.html#50"><abbr title="App\Http\Controllers\PriorityController::store">store</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Http/Controllers/PriorityController.php.html#43"><abbr title="App\Http\Controllers\PriorityController::create">create</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Http/Controllers/PriorityController.php.html#35"><abbr title="App\Http\Controllers\PriorityController::index">index</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Http/Controllers/UsersController.php.html#94"><abbr title="App\Http\Controllers\UsersController::edit">edit</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Http/Controllers/UsersController.php.html#129"><abbr title="App\Http\Controllers\UsersController::destroy">destroy</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="ZenTicket/Repositories/RoleRepository.php.html#51"><abbr title="App\ZenTicket\Repositories\RoleRepository::getByRoleName">getByRoleName</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="ZenTicket/Repositories/ModuleRepository.php.html#70"><abbr title="App\ZenTicket\Repositories\ModuleRepository::getByUsersIdWithPermissions">getByUsersIdWithPermissions</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="ZenTicket/Models/Permission.php.html#72"><abbr title="App\ZenTicket\Models\Permission::newPivot">newPivot</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="ZenTicket/Models/Role.php.html#27"><abbr title="App\ZenTicket\Models\Role::permissions">permissions</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="ZenTicket/Models/TimeLineTicket.php.html#26"><abbr title="App\ZenTicket\Models\TimeLineTicket::ticket">ticket</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="ZenTicket/Repositories/DocumentOccurenceRepository.php.html#15"><abbr title="App\ZenTicket\Repositories\DocumentOccurenceRepository::__construct">__construct</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="ZenTicket/Repositories/DocumentRepository.php.html#15"><abbr title="App\ZenTicket\Repositories\DocumentRepository::__construct">__construct</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="ZenTicket/Repositories/EloquentRepository.php.html#24"><abbr title="App\ZenTicket\Repositories\EloquentRepository::__construct">__construct</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="ZenTicket/Repositories/EloquentRepository.php.html#34"><abbr title="App\ZenTicket\Repositories\EloquentRepository::getAll">getAll</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="ZenTicket/Repositories/EloquentRepository.php.html#44"><abbr title="App\ZenTicket\Repositories\EloquentRepository::getById">getById</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="ZenTicket/Repositories/EloquentRepository.php.html#53"><abbr title="App\ZenTicket\Repositories\EloquentRepository::create">create</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="ZenTicket/Repositories/EloquentRepository.php.html#63"><abbr title="App\ZenTicket\Repositories\EloquentRepository::update">update</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="ZenTicket/Repositories/EloquentRepository.php.html#72"><abbr title="App\ZenTicket\Repositories\EloquentRepository::delete">delete</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="ZenTicket/Repositories/ImpactRepository.php.html#15"><abbr title="App\ZenTicket\Repositories\ImpactRepository::__construct">__construct</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="ZenTicket/Repositories/ModuleRepository.php.html#25"><abbr title="App\ZenTicket\Repositories\ModuleRepository::__construct">__construct</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="ZenTicket/Repositories/ModuleRepository.php.html#35"><abbr title="App\ZenTicket\Repositories\ModuleRepository::getByRoleId">getByRoleId</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="ZenTicket/Repositories/ModuleRepository.php.html#93"><abbr title="App\ZenTicket\Repositories\ModuleRepository::updatePermissionByAdministrator">updatePermissionByAdministrator</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="ZenTicket/Models/Permission.php.html#38"><abbr title="App\ZenTicket\Models\Permission::roles">roles</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="ZenTicket/Repositories/ProjectRepository.php.html#14"><abbr title="App\ZenTicket\Repositories\ProjectRepository::__construct">__construct</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="ZenTicket/Repositories/RoleRepository.php.html#40"><abbr title="App\ZenTicket\Repositories\RoleRepository::getById">getById</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="ZenTicket/Repositories/RoleRepository.php.html#31"><abbr title="App\ZenTicket\Repositories\RoleRepository::getAll">getAll</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="ZenTicket/Repositories/RoleRepository.php.html#23"><abbr title="App\ZenTicket\Repositories\RoleRepository::__construct">__construct</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="ZenTicket/Repositories/ProjectUserRepository.php.html#14"><abbr title="App\ZenTicket\Repositories\ProjectUserRepository::__construct">__construct</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="ZenTicket/Repositories/ProjectRepository.php.html#22"><abbr title="App\ZenTicket\Repositories\ProjectRepository::renderProjectsByUser">renderProjectsByUser</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="ZenTicket/Repositories/ProjectRepository.php.html#18"><abbr title="App\ZenTicket\Repositories\ProjectRepository::renderProjectsByAdministrator">renderProjectsByAdministrator</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="ZenTicket/Repositories/PriorityRepository.php.html#14"><abbr title="App\ZenTicket\Repositories\PriorityRepository::__construct">__construct</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="ZenTicket/Repositories/ModuleRepository.php.html#121"><abbr title="App\ZenTicket\Repositories\ModuleRepository::mapPermissions">mapPermissions</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="ZenTicket/Repositories/OcurrenceRepository.php.html#15"><abbr title="App\ZenTicket\Repositories\OcurrenceRepository::__construct">__construct</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="ZenTicket/Repositories/ModuleRepository.php.html#180"><abbr title="App\ZenTicket\Repositories\ModuleRepository::getAllModulesActive">getAllModulesActive</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="ZenTicket/Repositories/ModuleRepository.php.html#175"><abbr title="App\ZenTicket\Repositories\ModuleRepository::getAllModules">getAllModules</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="ZenTicket/Repositories/ModuleRepository.php.html#169"><abbr title="App\ZenTicket\Repositories\ModuleRepository::deletePermissionsAdministrator">deletePermissionsAdministrator</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="ZenTicket/Repositories/ModuleRepository.php.html#161"><abbr title="App\ZenTicket\Repositories\ModuleRepository::renderEdit">renderEdit</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="ZenTicket/Repositories/ModuleRepository.php.html#140"><abbr title="App\ZenTicket\Repositories\ModuleRepository::createPermissionByAdministrator">createPermissionByAdministrator</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="ZenTicket/Models/Permission.php.html#53"><abbr title="App\ZenTicket\Models\Permission::users">users</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="ZenTicket/Models/Ocurrence.php.html#25"><abbr title="App\ZenTicket\Models\Ocurrence::documentsOccurences">documentsOccurences</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Http/Controllers/UsersController.php.html#148"><abbr title="App\Http\Controllers\UsersController::profile">profile</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Http/Requests/StatusTicketStore.php.html#14"><abbr title="App\Http\Requests\StatusTicketStore::authorize">authorize</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Http/Requests/UserStore.php.html#24"><abbr title="App\Http\Requests\UserStore::rules">rules</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Http/Requests/UserStore.php.html#14"><abbr title="App\Http\Requests\UserStore::authorize">authorize</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Http/Requests/TicketStore.php.html#35"><abbr title="App\Http\Requests\TicketStore::messages">messages</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Http/Requests/TicketStore.php.html#24"><abbr title="App\Http\Requests\TicketStore::rules">rules</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Http/Requests/TicketStore.php.html#14"><abbr title="App\Http\Requests\TicketStore::authorize">authorize</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Http/Requests/StatusTicketStore.php.html#24"><abbr title="App\Http\Requests\StatusTicketStore::rules">rules</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Http/Requests/RoleStore.php.html#24"><abbr title="App\Http\Requests\RoleStore::rules">rules</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Mail/RegisterUser.php.html#23"><abbr title="App\Mail\RegisterUser::__construct">__construct</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Http/Requests/RoleStore.php.html#14"><abbr title="App\Http\Requests\RoleStore::authorize">authorize</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Http/Requests/PriorityStore.php.html#24"><abbr title="App\Http\Requests\PriorityStore::rules">rules</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Http/Requests/PriorityStore.php.html#14"><abbr title="App\Http\Requests\PriorityStore::authorize">authorize</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Http/Middleware/RedirectIfAuthenticated.php.html#18"><abbr title="App\Http\Middleware\RedirectIfAuthenticated::handle">handle</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Http/Middleware/Authenticate.php.html#15"><abbr title="App\Http\Middleware\Authenticate::redirectTo">redirectTo</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Http/Controllers/UsersController.php.html#160"><abbr title="App\Http\Controllers\UsersController::updateProfile">updateProfile</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Http/Requests/UserStore.php.html#33"><abbr title="App\Http\Requests\UserStore::messages">messages</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Mail/RegisterUser.php.html#34"><abbr title="App\Mail\RegisterUser::build">build</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="ZenTicket/Models/Document.php.html#23"><abbr title="App\ZenTicket\Models\Document::ticket">ticket</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="ZenTicket/Helpers/SessionFlashMessage.php.html#30"><abbr title="App\ZenTicket\Helpers\SessionFlashMessage::sessionFlash">sessionFlash</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="ZenTicket/Helpers/Upload.php.html#75"><abbr title="App\ZenTicket\Helpers\Upload::uploadDocument">uploadDocument</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="ZenTicket/Helpers/Upload.php.html#70"><abbr title="App\ZenTicket\Helpers\Upload::uploadImage">uploadImage</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="ZenTicket/Helpers/Upload.php.html#59"><abbr title="App\ZenTicket\Helpers\Upload::generateNameImage">generateNameImage</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="ZenTicket/Helpers/Upload.php.html#50"><abbr title="App\ZenTicket\Helpers\Upload::deleteFile">deleteFile</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="ZenTicket/Helpers/Upload.php.html#21"><abbr title="App\ZenTicket\Helpers\Upload::uploadFile">uploadFile</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="ZenTicket/Helpers/SessionFlashMessage.php.html#39"><abbr title="App\ZenTicket\Helpers\SessionFlashMessage::error">error</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="ZenTicket/Helpers/SessionFlashMessage.php.html#18"><abbr title="App\ZenTicket\Helpers\SessionFlashMessage::success">success</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Providers/BroadcastServiceProvider.php.html#15"><abbr title="App\Providers\BroadcastServiceProvider::boot">boot</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="ZenTicket/Helpers/RegisterNotFound.php.html#17"><abbr title="App\ZenTicket\Helpers\RegisterNotFound::validate">validate</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="ZenTicket/Helpers/LogError.php.html#11"><abbr title="App\ZenTicket\Helpers\LogError::Log">Log</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="User.php.html#81"><abbr title="App\User::projectsUser">projectsUser</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="User.php.html#71"><abbr title="App\User::permissions">permissions</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="User.php.html#52"><abbr title="App\User::roles">roles</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="ZenTicket/Services/UserService.php.html#129"><abbr title="App\ZenTicket\Services\UserService::buildDelete">buildDelete</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Providers/ViewComposerServiceProvider.php.html#16"><abbr title="App\Providers\ViewComposerServiceProvider::boot">boot</abbr></a></td><td class="text-right">33%</td></tr>
+
+       </tbody>
+      </table>
+     </div>
+    </div>
+    <div class="col-md-6">
+     <h3>Project Risks</h3>
+     <div class="scrollbox">
+      <table class="table">
+       <thead>
+        <tr>
+         <th>Method</th>
+         <th class="text-right"><abbr title="Change Risk Anti-Patterns (CRAP) Index">CRAP</abbr></th>
+        </tr>
+       </thead>
+       <tbody>
+       <tr><td><a href="ZenTicket/Repositories/TicketViewRepository.php.html#21"><abbr title="App\ZenTicket\Repositories\TicketViewRepository::getByFilter">getByFilter</abbr></a></td><td class="text-right">72</td></tr>
+       <tr><td><a href="ZenTicket/Services/TimeLineTicketService.php.html#64"><abbr title="App\ZenTicket\Services\TimeLineTicketService::storeTrack">storeTrack</abbr></a></td><td class="text-right">42</td></tr>
+       <tr><td><a href="ZenTicket/Services/UserService.php.html#62"><abbr title="App\ZenTicket\Services\UserService::buildUpdate">buildUpdate</abbr></a></td><td class="text-right">30</td></tr>
+       <tr><td><a href="ZenTicket/Services/ProjectService.php.html#100"><abbr title="App\ZenTicket\Services\ProjectService::renderProjectsByUser">renderProjectsByUser</abbr></a></td><td class="text-right">30</td></tr>
+       <tr><td><a href="ZenTicket/Helpers/Upload.php.html#21"><abbr title="App\ZenTicket\Helpers\Upload::uploadFile">uploadFile</abbr></a></td><td class="text-right">20</td></tr>
+       <tr><td><a href="ZenTicket/Services/Specializations/CalculateHoursWorked.php.html#18"><abbr title="App\ZenTicket\Services\Specializations\CalculateHoursWorked::calculate">calculate</abbr></a></td><td class="text-right">20</td></tr>
+       <tr><td><a href="ZenTicket/Services/TicketService.php.html#45"><abbr title="App\ZenTicket\Services\TicketService::buildUpdate">buildUpdate</abbr></a></td><td class="text-right">20</td></tr>
+       <tr><td><a href="ZenTicket/Services/TicketService.php.html#80"><abbr title="App\ZenTicket\Services\TicketService::buildInsert">buildInsert</abbr></a></td><td class="text-right">20</td></tr>
+       <tr><td><a href="ZenTicket/Services/OcurrenceService.php.html#50"><abbr title="App\ZenTicket\Services\OcurrenceService::buildInsert">buildInsert</abbr></a></td><td class="text-right">20</td></tr>
+       <tr><td><a href="ZenTicket/Scopes/TicketsScope.php.html#11"><abbr title="App\ZenTicket\Scopes\TicketsScope::apply">apply</abbr></a></td><td class="text-right">20</td></tr>
+       <tr><td><a href="ZenTicket/Models/Permission.php.html#72"><abbr title="App\ZenTicket\Models\Permission::newPivot">newPivot</abbr></a></td><td class="text-right">12</td></tr>
+       <tr><td><a href="Http/Controllers/TypeTicketController.php.html#99"><abbr title="App\Http\Controllers\TypeTicketController::destroy">destroy</abbr></a></td><td class="text-right">12</td></tr>
+       <tr><td><a href="Http/Controllers/TypeTicketController.php.html#77"><abbr title="App\Http\Controllers\TypeTicketController::update">update</abbr></a></td><td class="text-right">12</td></tr>
+       <tr><td><a href="ZenTicket/Repositories/ModuleRepository.php.html#140"><abbr title="App\ZenTicket\Repositories\ModuleRepository::createPermissionByAdministrator">createPermissionByAdministrator</abbr></a></td><td class="text-right">12</td></tr>
+       <tr><td><a href="ZenTicket/Repositories/ModuleRepository.php.html#93"><abbr title="App\ZenTicket\Repositories\ModuleRepository::updatePermissionByAdministrator">updatePermissionByAdministrator</abbr></a></td><td class="text-right">12</td></tr>
+       <tr><td><a href="Http/Controllers/TicketController.php.html#265"><abbr title="App\Http\Controllers\TicketController::getArchives">getArchives</abbr></a></td><td class="text-right">12</td></tr>
+       <tr><td><a href="ZenTicket/Helpers/SessionFlashMessage.php.html#18"><abbr title="App\ZenTicket\Helpers\SessionFlashMessage::success">success</abbr></a></td><td class="text-right">12</td></tr>
+       <tr><td><a href="ZenTicket/Helpers/SessionFlashMessage.php.html#39"><abbr title="App\ZenTicket\Helpers\SessionFlashMessage::error">error</abbr></a></td><td class="text-right">12</td></tr>
+       <tr><td><a href="ZenTicket/Services/Specializations/SaveEvidencesOccurences.php.html#23"><abbr title="App\ZenTicket\Services\Specializations\SaveEvidencesOccurences::execute">execute</abbr></a></td><td class="text-right">12</td></tr>
+       <tr><td><a href="Http/Controllers/TicketController.php.html#175"><abbr title="App\Http\Controllers\TicketController::destroy">destroy</abbr></a></td><td class="text-right">12</td></tr>
+       <tr><td><a href="Http/Controllers/UsersController.php.html#129"><abbr title="App\Http\Controllers\UsersController::destroy">destroy</abbr></a></td><td class="text-right">12</td></tr>
+       <tr><td><a href="Http/Controllers/TicketController.php.html#153"><abbr title="App\Http\Controllers\TicketController::update">update</abbr></a></td><td class="text-right">12</td></tr>
+       <tr><td><a href="Http/Controllers/PriorityController.php.html#100"><abbr title="App\Http\Controllers\PriorityController::destroy">destroy</abbr></a></td><td class="text-right">12</td></tr>
+       <tr><td><a href="Http/Controllers/StatusTicketController.php.html#103"><abbr title="App\Http\Controllers\StatusTicketController::destroy">destroy</abbr></a></td><td class="text-right">12</td></tr>
+       <tr><td><a href="Http/Controllers/ImpactController.php.html#83"><abbr title="App\Http\Controllers\ImpactController::update">update</abbr></a></td><td class="text-right">12</td></tr>
+       <tr><td><a href="Http/Controllers/StatusTicketController.php.html#80"><abbr title="App\Http\Controllers\StatusTicketController::update">update</abbr></a></td><td class="text-right">12</td></tr>
+       <tr><td><a href="ZenTicket/Services/Specializations/VinculeProjectUsers.php.html#19"><abbr title="App\ZenTicket\Services\Specializations\VinculeProjectUsers::vincule">vincule</abbr></a></td><td class="text-right">12</td></tr>
+       <tr><td><a href="Http/Controllers/RolesController.php.html#95"><abbr title="App\Http\Controllers\RolesController::update">update</abbr></a></td><td class="text-right">12</td></tr>
+       <tr><td><a href="Http/Controllers/RolesController.php.html#55"><abbr title="App\Http\Controllers\RolesController::store">store</abbr></a></td><td class="text-right">12</td></tr>
+       <tr><td><a href="Http/Controllers/ImpactController.php.html#105"><abbr title="App\Http\Controllers\ImpactController::destroy">destroy</abbr></a></td><td class="text-right">12</td></tr>
+       <tr><td><a href="Http/Controllers/ProjectController.php.html#109"><abbr title="App\Http\Controllers\ProjectController::destroy">destroy</abbr></a></td><td class="text-right">12</td></tr>
+       <tr><td><a href="Http/Controllers/ProjectController.php.html#87"><abbr title="App\Http\Controllers\ProjectController::update">update</abbr></a></td><td class="text-right">12</td></tr>
+       <tr><td><a href="ZenTicket/Services/Specializations/UploadFilesTemp.php.html#23"><abbr title="App\ZenTicket\Services\Specializations\UploadFilesTemp::execute">execute</abbr></a></td><td class="text-right">12</td></tr>
+       <tr><td><a href="Http/Controllers/PriorityController.php.html#78"><abbr title="App\Http\Controllers\PriorityController::update">update</abbr></a></td><td class="text-right">12</td></tr>
+       <tr><td><a href="ZenTicket/Services/TicketService.php.html#124"><abbr title="App\ZenTicket\Services\TicketService::generateTicketNumber">generateTicketNumber</abbr></a></td><td class="text-right">12</td></tr>
+       <tr><td><a href="ZenTicket/Services/UserService.php.html#47"><abbr title="App\ZenTicket\Services\UserService::renderEdit">renderEdit</abbr></a></td><td class="text-right">6</td></tr>
+       <tr><td><a href="ZenTicket/Repositories/ModuleRepository.php.html#121"><abbr title="App\ZenTicket\Repositories\ModuleRepository::mapPermissions">mapPermissions</abbr></a></td><td class="text-right">6</td></tr>
+       <tr><td><a href="ZenTicket/Services/Specializations/Ticket/PlayTrackingTicket.php.html#18"><abbr title="App\ZenTicket\Services\Specializations\Ticket\PlayTrackingTicket::execute">execute</abbr></a></td><td class="text-right">6</td></tr>
+       <tr><td><a href="ZenTicket/Services/TicketService.php.html#110"><abbr title="App\ZenTicket\Services\TicketService::sanitilizeData">sanitilizeData</abbr></a></td><td class="text-right">6</td></tr>
+       <tr><td><a href="ZenTicket/Services/ProjectService.php.html#45"><abbr title="App\ZenTicket\Services\ProjectService::buildUpdate">buildUpdate</abbr></a></td><td class="text-right">6</td></tr>
+       <tr><td><a href="ZenTicket/Services/ProjectService.php.html#62"><abbr title="App\ZenTicket\Services\ProjectService::executeUpload">executeUpload</abbr></a></td><td class="text-right">6</td></tr>
+       <tr><td><a href="ZenTicket/Services/ProjectService.php.html#90"><abbr title="App\ZenTicket\Services\ProjectService::buildDelete">buildDelete</abbr></a></td><td class="text-right">6</td></tr>
+       <tr><td><a href="ZenTicket/Services/Specializations/Ticket/FinishTrackingTicket.php.html#18"><abbr title="App\ZenTicket\Services\Specializations\Ticket\FinishTrackingTicket::execute">execute</abbr></a></td><td class="text-right">6</td></tr>
+       <tr><td><a href="ZenTicket/Services/ProjectService.php.html#73"><abbr title="App\ZenTicket\Services\ProjectService::buildInsert">buildInsert</abbr></a></td><td class="text-right">6</td></tr>
+       <tr><td><a href="Http/Controllers/HomeController.php.html#38"><abbr title="App\Http\Controllers\HomeController::registerUserOneSignal">registerUserOneSignal</abbr></a></td><td class="text-right">6</td></tr>
+       <tr><td><a href="ZenTicket/Helpers/RegisterNotFound.php.html#17"><abbr title="App\ZenTicket\Helpers\RegisterNotFound::validate">validate</abbr></a></td><td class="text-right">6</td></tr>
+       <tr><td><a href="Http/Controllers/TicketController.php.html#191"><abbr title="App\Http\Controllers\TicketController::detail">detail</abbr></a></td><td class="text-right">6</td></tr>
+       <tr><td><a href="Http/Controllers/ImpactController.php.html#72"><abbr title="App\Http\Controllers\ImpactController::edit">edit</abbr></a></td><td class="text-right">6</td></tr>
+       <tr><td><a href="Http/Controllers/PriorityController.php.html#50"><abbr title="App\Http\Controllers\PriorityController::store">store</abbr></a></td><td class="text-right">6</td></tr>
+       <tr><td><a href="Http/Controllers/PriorityController.php.html#67"><abbr title="App\Http\Controllers\PriorityController::edit">edit</abbr></a></td><td class="text-right">6</td></tr>
+       <tr><td><a href="Http/Controllers/ProjectController.php.html#57"><abbr title="App\Http\Controllers\ProjectController::store">store</abbr></a></td><td class="text-right">6</td></tr>
+       <tr><td><a href="Http/Controllers/ProjectController.php.html#74"><abbr title="App\Http\Controllers\ProjectController::edit">edit</abbr></a></td><td class="text-right">6</td></tr>
+       <tr><td><a href="Http/Controllers/RolesController.php.html#78"><abbr title="App\Http\Controllers\RolesController::edit">edit</abbr></a></td><td class="text-right">6</td></tr>
+       <tr><td><a href="Http/Controllers/StatusTicketController.php.html#48"><abbr title="App\Http\Controllers\StatusTicketController::store">store</abbr></a></td><td class="text-right">6</td></tr>
+       <tr><td><a href="Http/Controllers/StatusTicketController.php.html#66"><abbr title="App\Http\Controllers\StatusTicketController::edit">edit</abbr></a></td><td class="text-right">6</td></tr>
+       <tr><td><a href="Http/Controllers/TicketController.php.html#108"><abbr title="App\Http\Controllers\TicketController::store">store</abbr></a></td><td class="text-right">6</td></tr>
+       <tr><td><a href="Http/Controllers/TicketController.php.html#126"><abbr title="App\Http\Controllers\TicketController::edit">edit</abbr></a></td><td class="text-right">6</td></tr>
+       <tr><td><a href="Http/Controllers/TicketController.php.html#219"><abbr title="App\Http\Controllers\TicketController::storeOccurence">storeOccurence</abbr></a></td><td class="text-right">6</td></tr>
+       <tr><td><a href="Http/Middleware/RedirectIfAuthenticated.php.html#18"><abbr title="App\Http\Middleware\RedirectIfAuthenticated::handle">handle</abbr></a></td><td class="text-right">6</td></tr>
+       <tr><td><a href="Http/Controllers/TicketController.php.html#241"><abbr title="App\Http\Controllers\TicketController::storeActions">storeActions</abbr></a></td><td class="text-right">6</td></tr>
+       <tr><td><a href="Http/Controllers/TypeTicketController.php.html#49"><abbr title="App\Http\Controllers\TypeTicketController::store">store</abbr></a></td><td class="text-right">6</td></tr>
+       <tr><td><a href="Http/Controllers/TypeTicketController.php.html#66"><abbr title="App\Http\Controllers\TypeTicketController::edit">edit</abbr></a></td><td class="text-right">6</td></tr>
+       <tr><td><a href="Http/Controllers/UsersController.php.html#64"><abbr title="App\Http\Controllers\UsersController::store">store</abbr></a></td><td class="text-right">6</td></tr>
+       <tr><td><a href="Http/Controllers/UsersController.php.html#94"><abbr title="App\Http\Controllers\UsersController::edit">edit</abbr></a></td><td class="text-right">6</td></tr>
+       <tr><td><a href="Http/Controllers/UsersController.php.html#111"><abbr title="App\Http\Controllers\UsersController::update">update</abbr></a></td><td class="text-right">6</td></tr>
+       <tr><td><a href="Http/Controllers/ImpactController.php.html#54"><abbr title="App\Http\Controllers\ImpactController::store">store</abbr></a></td><td class="text-right">6</td></tr>
+       <tr><td><a href="Http/Controllers/UsersController.php.html#148"><abbr title="App\Http\Controllers\UsersController::profile">profile</abbr></a></td><td class="text-right">6</td></tr>
+       <tr><td><a href="Http/Controllers/UsersController.php.html#160"><abbr title="App\Http\Controllers\UsersController::updateProfile">updateProfile</abbr></a></td><td class="text-right">6</td></tr>
+       <tr><td><a href="Http/Middleware/Authenticate.php.html#15"><abbr title="App\Http\Middleware\Authenticate::redirectTo">redirectTo</abbr></a></td><td class="text-right">6</td></tr>
+       <tr><td><a href="ZenTicket/Services/UserService.php.html#106"><abbr title="App\ZenTicket\Services\UserService::buildInsert">buildInsert</abbr></a></td><td class="text-right">6</td></tr>
+
+       </tbody>
+      </table>
+     </div>
+    </div>
+   </div>
+   <footer>
+    <hr/>
+    <p>
+     <small>Generated by <a href="https://github.com/sebastianbergmann/php-code-coverage" target="_top">php-code-coverage 7.0.15</a> using <a href="https://secure.php.net/" target="_top">PHP 7.4.29</a> with <a href="https://xdebug.org/">Xdebug 3.1.5</a> and <a href="https://phpunit.de/">PHPUnit 8.5.29</a> at Mon Sep 26 12:55:12 UTC 2022.</small>
+    </p>
+   </footer>
+  </div>
+  <script src="_js/jquery.min.js" type="text/javascript"></script>
+  <script src="_js/d3.min.js" type="text/javascript"></script>
+  <script src="_js/nv.d3.min.js" type="text/javascript"></script>
+  <script type="text/javascript">
+$(document).ready(function() {
+  nv.addGraph(function() {
+    var chart = nv.models.multiBarChart();
+    chart.tooltips(false)
+      .showControls(false)
+      .showLegend(false)
+      .reduceXTicks(false)
+      .staggerLabels(true)
+      .yAxis.tickFormat(d3.format('d'));
+
+    d3.select('#classCoverageDistribution svg')
+      .datum(getCoverageDistributionData([74,0,0,1,0,1,0,0,1,0,0,25], "Class Coverage"))
+      .transition().duration(500).call(chart);
+
+    nv.utils.windowResize(chart.update);
+
+    return chart;
+  });
+
+  nv.addGraph(function() {
+    var chart = nv.models.multiBarChart();
+    chart.tooltips(false)
+      .showControls(false)
+      .showLegend(false)
+      .reduceXTicks(false)
+      .staggerLabels(true)
+      .yAxis.tickFormat(d3.format('d'));
+
+    d3.select('#methodCoverageDistribution svg')
+      .datum(getCoverageDistributionData([281,0,0,0,1,0,0,0,0,0,0,27], "Method Coverage"))
+      .transition().duration(500).call(chart);
+
+    nv.utils.windowResize(chart.update);
+
+    return chart;
+  });
+
+  function getCoverageDistributionData(data, label) {
+    var labels = [
+      '0%',
+      '0-10%',
+      '10-20%',
+      '20-30%',
+      '30-40%',
+      '40-50%',
+      '50-60%',
+      '60-70%',
+      '70-80%',
+      '80-90%',
+      '90-100%',
+      '100%'
+    ];
+    var values = [];
+    $.each(labels, function(key) {
+      values.push({x: labels[key], y: data[key]});
+    });
+
+    return [
+      {
+        key: label,
+        values: values,
+        color: "#4572A7"
+      }
+    ];
+  }
+  nv.addGraph(function() {
+    var chart = nv.models.scatterChart()
+      .showDistX(true)
+      .showDistY(true)
+      .showLegend(false)
+      .forceX([0, 100]);
+    chart.tooltipContent(function(graph) {
+      return '<p>' + graph.point.class + '</p>';
+    });
+
+    chart.xAxis.axisLabel('Code Coverage (in percent)');
+    chart.yAxis.axisLabel('Cyclomatic Complexity');
+
+    d3.select('#classComplexity svg')
+      .datum(getComplexityData([[75,2,"<a href=\"Console\/Kernel.php.html#8\">App\\Console\\Kernel<\/a>"],[0,2,"<a href=\"Exceptions\/Handler.php.html#8\">App\\Exceptions\\Handler<\/a>"],[0,1,"<a href=\"Http\/Controllers\/Auth\/ConfirmPasswordController.php.html#8\">App\\Http\\Controllers\\Auth\\ConfirmPasswordController<\/a>"],[100,0,"<a href=\"Http\/Controllers\/Auth\/ForgotPasswordController.php.html#8\">App\\Http\\Controllers\\Auth\\ForgotPasswordController<\/a>"],[0,1,"<a href=\"Http\/Controllers\/Auth\/LoginController.php.html#8\">App\\Http\\Controllers\\Auth\\LoginController<\/a>"],[0,3,"<a href=\"Http\/Controllers\/Auth\/RegisterController.php.html#11\">App\\Http\\Controllers\\Auth\\RegisterController<\/a>"],[100,0,"<a href=\"Http\/Controllers\/Auth\/ResetPasswordController.php.html#8\">App\\Http\\Controllers\\Auth\\ResetPasswordController<\/a>"],[0,1,"<a href=\"Http\/Controllers\/Auth\/VerificationController.php.html#8\">App\\Http\\Controllers\\Auth\\VerificationController<\/a>"],[100,0,"<a href=\"Http\/Controllers\/Controller.php.html#10\">App\\Http\\Controllers\\Controller<\/a>"],[0,4,"<a href=\"Http\/Controllers\/HomeController.php.html#11\">App\\Http\\Controllers\\HomeController<\/a>"],[0,13,"<a href=\"Http\/Controllers\/ImpactController.php.html#15\">App\\Http\\Controllers\\ImpactController<\/a>"],[0,13,"<a href=\"Http\/Controllers\/PriorityController.php.html#15\">App\\Http\\Controllers\\PriorityController<\/a>"],[0,13,"<a href=\"Http\/Controllers\/ProjectController.php.html#16\">App\\Http\\Controllers\\ProjectController<\/a>"],[0,11,"<a href=\"Http\/Controllers\/RolesController.php.html#13\">App\\Http\\Controllers\\RolesController<\/a>"],[0,13,"<a href=\"Http\/Controllers\/StatusTicketController.php.html#13\">App\\Http\\Controllers\\StatusTicketController<\/a>"],[0,23,"<a href=\"Http\/Controllers\/TicketController.php.html#26\">App\\Http\\Controllers\\TicketController<\/a>"],[0,13,"<a href=\"Http\/Controllers\/TypeTicketController.php.html#14\">App\\Http\\Controllers\\TypeTicketController<\/a>"],[0,16,"<a href=\"Http\/Controllers\/UsersController.php.html#26\">App\\Http\\Controllers\\UsersController<\/a>"],[100,0,"<a href=\"Http\/Kernel.php.html#7\">App\\Http\\Kernel<\/a>"],[0,2,"<a href=\"Http\/Middleware\/Authenticate.php.html#7\">App\\Http\\Middleware\\Authenticate<\/a>"],[100,0,"<a href=\"Http\/Middleware\/CheckForMaintenanceMode.php.html#7\">App\\Http\\Middleware\\CheckForMaintenanceMode<\/a>"],[100,0,"<a href=\"Http\/Middleware\/EncryptCookies.php.html#7\">App\\Http\\Middleware\\EncryptCookies<\/a>"],[0,2,"<a href=\"Http\/Middleware\/RedirectIfAuthenticated.php.html#8\">App\\Http\\Middleware\\RedirectIfAuthenticated<\/a>"],[100,0,"<a href=\"Http\/Middleware\/TrimStrings.php.html#7\">App\\Http\\Middleware\\TrimStrings<\/a>"],[100,0,"<a href=\"Http\/Middleware\/TrustProxies.php.html#8\">App\\Http\\Middleware\\TrustProxies<\/a>"],[100,0,"<a href=\"Http\/Middleware\/VerifyCsrfToken.php.html#7\">App\\Http\\Middleware\\VerifyCsrfToken<\/a>"],[0,2,"<a href=\"Http\/Requests\/PriorityStore.php.html#7\">App\\Http\\Requests\\PriorityStore<\/a>"],[0,2,"<a href=\"Http\/Requests\/RoleStore.php.html#7\">App\\Http\\Requests\\RoleStore<\/a>"],[0,2,"<a href=\"Http\/Requests\/StatusTicketStore.php.html#7\">App\\Http\\Requests\\StatusTicketStore<\/a>"],[0,3,"<a href=\"Http\/Requests\/TicketStore.php.html#7\">App\\Http\\Requests\\TicketStore<\/a>"],[0,3,"<a href=\"Http\/Requests\/UserStore.php.html#7\">App\\Http\\Requests\\UserStore<\/a>"],[0,2,"<a href=\"Mail\/RegisterUser.php.html#11\">App\\Mail\\RegisterUser<\/a>"],[100,2,"<a href=\"Providers\/AppServiceProvider.php.html#7\">App\\Providers\\AppServiceProvider<\/a>"],[100,1,"<a href=\"Providers\/AuthServiceProvider.php.html#8\">App\\Providers\\AuthServiceProvider<\/a>"],[0,1,"<a href=\"Providers\/BroadcastServiceProvider.php.html#8\">App\\Providers\\BroadcastServiceProvider<\/a>"],[100,1,"<a href=\"Providers\/EventServiceProvider.php.html#10\">App\\Providers\\EventServiceProvider<\/a>"],[100,4,"<a href=\"Providers\/RouteServiceProvider.php.html#8\">App\\Providers\\RouteServiceProvider<\/a>"],[42.857142857142854,2,"<a href=\"Providers\/ViewComposerServiceProvider.php.html#9\">App\\Providers\\ViewComposerServiceProvider<\/a>"],[0,3,"<a href=\"User.php.html#11\">App\\User<\/a>"],[0,1,"<a href=\"ZenTicket\/Helpers\/LogError.php.html#9\">App\\ZenTicket\\Helpers\\LogError<\/a>"],[0,2,"<a href=\"ZenTicket\/Helpers\/RegisterNotFound.php.html#9\">App\\ZenTicket\\Helpers\\RegisterNotFound<\/a>"],[0,7,"<a href=\"ZenTicket\/Helpers\/SessionFlashMessage.php.html#7\">App\\ZenTicket\\Helpers\\SessionFlashMessage<\/a>"],[0,8,"<a href=\"ZenTicket\/Helpers\/Upload.php.html#12\">App\\ZenTicket\\Helpers\\Upload<\/a>"],[0,1,"<a href=\"ZenTicket\/Models\/Document.php.html#13\">App\\ZenTicket\\Models\\Document<\/a>"],[100,0,"<a href=\"ZenTicket\/Models\/DocumentOccurrence.php.html#13\">App\\ZenTicket\\Models\\DocumentOccurrence<\/a>"],[100,0,"<a href=\"ZenTicket\/Models\/Impact.php.html#13\">App\\ZenTicket\\Models\\Impact<\/a>"],[100,2,"<a href=\"ZenTicket\/Models\/Module.php.html#13\">App\\ZenTicket\\Models\\Module<\/a>"],[0,1,"<a href=\"ZenTicket\/Models\/Ocurrence.php.html#13\">App\\ZenTicket\\Models\\Ocurrence<\/a>"],[20.833333333333336,6,"<a href=\"ZenTicket\/Models\/Permission.php.html#14\">App\\ZenTicket\\Models\\Permission<\/a>"],[100,0,"<a href=\"ZenTicket\/Models\/Priority.php.html#13\">App\\ZenTicket\\Models\\Priority<\/a>"],[100,1,"<a href=\"ZenTicket\/Models\/Project.php.html#13\">App\\ZenTicket\\Models\\Project<\/a>"],[100,0,"<a href=\"ZenTicket\/Models\/ProjectUser.php.html#12\">App\\ZenTicket\\Models\\ProjectUser<\/a>"],[0,1,"<a href=\"ZenTicket\/Models\/Role.php.html#14\">App\\ZenTicket\\Models\\Role<\/a>"],[100,0,"<a href=\"ZenTicket\/Models\/StatusTicket.php.html#13\">App\\ZenTicket\\Models\\StatusTicket<\/a>"],[100,13,"<a href=\"ZenTicket\/Models\/Ticket.php.html#13\">App\\ZenTicket\\Models\\Ticket<\/a>"],[0,1,"<a href=\"ZenTicket\/Models\/TimeLineTicket.php.html#13\">App\\ZenTicket\\Models\\TimeLineTicket<\/a>"],[100,0,"<a href=\"ZenTicket\/Models\/TypeTicket.php.html#13\">App\\ZenTicket\\Models\\TypeTicket<\/a>"],[100,2,"<a href=\"ZenTicket\/Models\/User.php.html#16\">App\\ZenTicket\\Models\\User<\/a>"],[100,0,"<a href=\"ZenTicket\/Models\/UserOneSignal.php.html#12\">App\\ZenTicket\\Models\\UserOneSignal<\/a>"],[0,1,"<a href=\"ZenTicket\/Repositories\/DocumentOccurenceRepository.php.html#13\">App\\ZenTicket\\Repositories\\DocumentOccurenceRepository<\/a>"],[0,1,"<a href=\"ZenTicket\/Repositories\/DocumentRepository.php.html#13\">App\\ZenTicket\\Repositories\\DocumentRepository<\/a>"],[0,6,"<a href=\"ZenTicket\/Repositories\/EloquentRepository.php.html#12\">App\\ZenTicket\\Repositories\\EloquentRepository<\/a>"],[0,1,"<a href=\"ZenTicket\/Repositories\/ImpactRepository.php.html#13\">App\\ZenTicket\\Repositories\\ImpactRepository<\/a>"],[0,15,"<a href=\"ZenTicket\/Repositories\/ModuleRepository.php.html#14\">App\\ZenTicket\\Repositories\\ModuleRepository<\/a>"],[0,1,"<a href=\"ZenTicket\/Repositories\/OcurrenceRepository.php.html#13\">App\\ZenTicket\\Repositories\\OcurrenceRepository<\/a>"],[0,1,"<a href=\"ZenTicket\/Repositories\/PriorityRepository.php.html#12\">App\\ZenTicket\\Repositories\\PriorityRepository<\/a>"],[0,3,"<a href=\"ZenTicket\/Repositories\/ProjectRepository.php.html#12\">App\\ZenTicket\\Repositories\\ProjectRepository<\/a>"],[0,1,"<a href=\"ZenTicket\/Repositories\/ProjectUserRepository.php.html#12\">App\\ZenTicket\\Repositories\\ProjectUserRepository<\/a>"],[0,7,"<a href=\"ZenTicket\/Repositories\/RoleRepository.php.html#12\">App\\ZenTicket\\Repositories\\RoleRepository<\/a>"],[0,1,"<a href=\"ZenTicket\/Repositories\/StatusTicketRepository.php.html#13\">App\\ZenTicket\\Repositories\\StatusTicketRepository<\/a>"],[0,3,"<a href=\"ZenTicket\/Repositories\/TicketRepository.php.html#13\">App\\ZenTicket\\Repositories\\TicketRepository<\/a>"],[0,9,"<a href=\"ZenTicket\/Repositories\/TicketViewRepository.php.html#14\">App\\ZenTicket\\Repositories\\TicketViewRepository<\/a>"],[0,2,"<a href=\"ZenTicket\/Repositories\/TimeLineTicketRepository.php.html#13\">App\\ZenTicket\\Repositories\\TimeLineTicketRepository<\/a>"],[0,1,"<a href=\"ZenTicket\/Repositories\/TypeTicketRepository.php.html#13\">App\\ZenTicket\\Repositories\\TypeTicketRepository<\/a>"],[0,6,"<a href=\"ZenTicket\/Repositories\/UserRepository.php.html#13\">App\\ZenTicket\\Repositories\\UserRepository<\/a>"],[0,4,"<a href=\"ZenTicket\/Scopes\/TicketsScope.php.html#9\">App\\ZenTicket\\Scopes\\TicketsScope<\/a>"],[0,6,"<a href=\"ZenTicket\/Services\/DocumentOccurenceService.php.html#10\">App\\ZenTicket\\Services\\DocumentOccurenceService<\/a>"],[0,6,"<a href=\"ZenTicket\/Services\/DocumentService.php.html#10\">App\\ZenTicket\\Services\\DocumentService<\/a>"],[0,6,"<a href=\"ZenTicket\/Services\/ImpactService.php.html#10\">App\\ZenTicket\\Services\\ImpactService<\/a>"],[0,1,"<a href=\"ZenTicket\/Services\/MailService.php.html#9\">App\\ZenTicket\\Services\\MailService<\/a>"],[0,9,"<a href=\"ZenTicket\/Services\/ModuloService.php.html#13\">App\\ZenTicket\\Services\\ModuloService<\/a>"],[0,9,"<a href=\"ZenTicket\/Services\/OcurrenceService.php.html#12\">App\\ZenTicket\\Services\\OcurrenceService<\/a>"],[0,6,"<a href=\"ZenTicket\/Services\/PriorityService.php.html#10\">App\\ZenTicket\\Services\\PriorityService<\/a>"],[0,16,"<a href=\"ZenTicket\/Services\/ProjectService.php.html#15\">App\\ZenTicket\\Services\\ProjectService<\/a>"],[0,6,"<a href=\"ZenTicket\/Services\/ProjectUserService.php.html#9\">App\\ZenTicket\\Services\\ProjectUserService<\/a>"],[0,6,"<a href=\"ZenTicket\/Services\/RoleService.php.html#12\">App\\ZenTicket\\Services\\RoleService<\/a>"],[0,5,"<a href=\"ZenTicket\/Services\/Specializations\/CalculateHoursWorked.php.html#9\">App\\ZenTicket\\Services\\Specializations\\CalculateHoursWorked<\/a>"],[0,4,"<a href=\"ZenTicket\/Services\/Specializations\/SaveEvidencesOccurences.php.html#9\">App\\ZenTicket\\Services\\Specializations\\SaveEvidencesOccurences<\/a>"],[0,2,"<a href=\"ZenTicket\/Services\/Specializations\/Ticket\/ChangeStatusToFinish.php.html#8\">App\\ZenTicket\\Services\\Specializations\\Ticket\\ChangeStatusToFinish<\/a>"],[0,2,"<a href=\"ZenTicket\/Services\/Specializations\/Ticket\/ChangeStatusToProcessing.php.html#8\">App\\ZenTicket\\Services\\Specializations\\Ticket\\ChangeStatusToProcessing<\/a>"],[0,3,"<a href=\"ZenTicket\/Services\/Specializations\/Ticket\/FinishTrackingTicket.php.html#8\">App\\ZenTicket\\Services\\Specializations\\Ticket\\FinishTrackingTicket<\/a>"],[0,3,"<a href=\"ZenTicket\/Services\/Specializations\/Ticket\/PlayTrackingTicket.php.html#8\">App\\ZenTicket\\Services\\Specializations\\Ticket\\PlayTrackingTicket<\/a>"],[0,2,"<a href=\"ZenTicket\/Services\/Specializations\/Ticket\/StopTrackingTicket.php.html#8\">App\\ZenTicket\\Services\\Specializations\\Ticket\\StopTrackingTicket<\/a>"],[0,4,"<a href=\"ZenTicket\/Services\/Specializations\/UploadFilesTemp.php.html#11\">App\\ZenTicket\\Services\\Specializations\\UploadFilesTemp<\/a>"],[0,4,"<a href=\"ZenTicket\/Services\/Specializations\/VinculeProjectUsers.php.html#8\">App\\ZenTicket\\Services\\Specializations\\VinculeProjectUsers<\/a>"],[0,6,"<a href=\"ZenTicket\/Services\/StatusTicketService.php.html#10\">App\\ZenTicket\\Services\\StatusTicketService<\/a>"],[0,19,"<a href=\"ZenTicket\/Services\/TicketService.php.html#15\">App\\ZenTicket\\Services\\TicketService<\/a>"],[0,7,"<a href=\"ZenTicket\/Services\/TicketViewService.php.html#8\">App\\ZenTicket\\Services\\TicketViewService<\/a>"],[0,12,"<a href=\"ZenTicket\/Services\/TimeLineTicketService.php.html#13\">App\\ZenTicket\\Services\\TimeLineTicketService<\/a>"],[0,6,"<a href=\"ZenTicket\/Services\/TypeTicketService.php.html#10\">App\\ZenTicket\\Services\\TypeTicketService<\/a>"],[0,14,"<a href=\"ZenTicket\/Services\/UserService.php.html#22\">App\\ZenTicket\\Services\\UserService<\/a>"],[100,1,"<a href=\"ZenTicket\/Traits\/TicketsTrait.php.html#7\">TicketsTrait<\/a>"]], 'Class Complexity'))
+      .transition()
+      .duration(500)
+      .call(chart);
+
+    nv.utils.windowResize(chart.update);
+
+    return chart;
+  });
+
+  nv.addGraph(function() {
+    var chart = nv.models.scatterChart()
+      .showDistX(true)
+      .showDistY(true)
+      .showLegend(false)
+      .forceX([0, 100]);
+    chart.tooltipContent(function(graph) {
+      return '<p>' + graph.point.class + '</p>';
+    });
+
+    chart.xAxis.axisLabel('Code Coverage (in percent)');
+    chart.yAxis.axisLabel('Method Complexity');
+
+    d3.select('#methodComplexity svg')
+      .datum(getComplexityData([[0,1,"<a href=\"Console\/Kernel.php.html#25\">App\\Console\\Kernel::schedule<\/a>"],[100,1,"<a href=\"Console\/Kernel.php.html#36\">App\\Console\\Kernel::commands<\/a>"],[0,1,"<a href=\"Exceptions\/Handler.php.html#35\">App\\Exceptions\\Handler::report<\/a>"],[0,1,"<a href=\"Exceptions\/Handler.php.html#47\">App\\Exceptions\\Handler::render<\/a>"],[0,1,"<a href=\"Http\/Controllers\/Auth\/ConfirmPasswordController.php.html#35\">App\\Http\\Controllers\\Auth\\ConfirmPasswordController::__construct<\/a>"],[0,1,"<a href=\"Http\/Controllers\/Auth\/LoginController.php.html#35\">App\\Http\\Controllers\\Auth\\LoginController::__construct<\/a>"],[0,1,"<a href=\"Http\/Controllers\/Auth\/RegisterController.php.html#38\">App\\Http\\Controllers\\Auth\\RegisterController::__construct<\/a>"],[0,1,"<a href=\"Http\/Controllers\/Auth\/RegisterController.php.html#49\">App\\Http\\Controllers\\Auth\\RegisterController::validator<\/a>"],[0,1,"<a href=\"Http\/Controllers\/Auth\/RegisterController.php.html#64\">App\\Http\\Controllers\\Auth\\RegisterController::create<\/a>"],[0,1,"<a href=\"Http\/Controllers\/Auth\/VerificationController.php.html#35\">App\\Http\\Controllers\\Auth\\VerificationController::__construct<\/a>"],[0,1,"<a href=\"Http\/Controllers\/HomeController.php.html#19\">App\\Http\\Controllers\\HomeController::__construct<\/a>"],[0,1,"<a href=\"Http\/Controllers\/HomeController.php.html#30\">App\\Http\\Controllers\\HomeController::index<\/a>"],[0,2,"<a href=\"Http\/Controllers\/HomeController.php.html#38\">App\\Http\\Controllers\\HomeController::registerUserOneSignal<\/a>"],[0,1,"<a href=\"Http\/Controllers\/ImpactController.php.html#24\">App\\Http\\Controllers\\ImpactController::__construct<\/a>"],[0,1,"<a href=\"Http\/Controllers\/ImpactController.php.html#35\">App\\Http\\Controllers\\ImpactController::index<\/a>"],[0,1,"<a href=\"Http\/Controllers\/ImpactController.php.html#43\">App\\Http\\Controllers\\ImpactController::create<\/a>"],[0,2,"<a href=\"Http\/Controllers\/ImpactController.php.html#54\">App\\Http\\Controllers\\ImpactController::store<\/a>"],[0,2,"<a href=\"Http\/Controllers\/ImpactController.php.html#72\">App\\Http\\Controllers\\ImpactController::edit<\/a>"],[0,3,"<a href=\"Http\/Controllers\/ImpactController.php.html#83\">App\\Http\\Controllers\\ImpactController::update<\/a>"],[0,3,"<a href=\"Http\/Controllers\/ImpactController.php.html#105\">App\\Http\\Controllers\\ImpactController::destroy<\/a>"],[0,1,"<a href=\"Http\/Controllers\/PriorityController.php.html#24\">App\\Http\\Controllers\\PriorityController::__construct<\/a>"],[0,1,"<a href=\"Http\/Controllers\/PriorityController.php.html#35\">App\\Http\\Controllers\\PriorityController::index<\/a>"],[0,1,"<a href=\"Http\/Controllers\/PriorityController.php.html#43\">App\\Http\\Controllers\\PriorityController::create<\/a>"],[0,2,"<a href=\"Http\/Controllers\/PriorityController.php.html#50\">App\\Http\\Controllers\\PriorityController::store<\/a>"],[0,2,"<a href=\"Http\/Controllers\/PriorityController.php.html#67\">App\\Http\\Controllers\\PriorityController::edit<\/a>"],[0,3,"<a href=\"Http\/Controllers\/PriorityController.php.html#78\">App\\Http\\Controllers\\PriorityController::update<\/a>"],[0,3,"<a href=\"Http\/Controllers\/PriorityController.php.html#100\">App\\Http\\Controllers\\PriorityController::destroy<\/a>"],[0,1,"<a href=\"Http\/Controllers\/ProjectController.php.html#25\">App\\Http\\Controllers\\ProjectController::__construct<\/a>"],[0,1,"<a href=\"Http\/Controllers\/ProjectController.php.html#37\">App\\Http\\Controllers\\ProjectController::index<\/a>"],[0,1,"<a href=\"Http\/Controllers\/ProjectController.php.html#45\">App\\Http\\Controllers\\ProjectController::create<\/a>"],[0,2,"<a href=\"Http\/Controllers\/ProjectController.php.html#57\">App\\Http\\Controllers\\ProjectController::store<\/a>"],[0,2,"<a href=\"Http\/Controllers\/ProjectController.php.html#74\">App\\Http\\Controllers\\ProjectController::edit<\/a>"],[0,3,"<a href=\"Http\/Controllers\/ProjectController.php.html#87\">App\\Http\\Controllers\\ProjectController::update<\/a>"],[0,3,"<a href=\"Http\/Controllers\/ProjectController.php.html#109\">App\\Http\\Controllers\\ProjectController::destroy<\/a>"],[0,1,"<a href=\"Http\/Controllers\/RolesController.php.html#25\">App\\Http\\Controllers\\RolesController::__construct<\/a>"],[0,1,"<a href=\"Http\/Controllers\/RolesController.php.html#38\">App\\Http\\Controllers\\RolesController::index<\/a>"],[0,1,"<a href=\"Http\/Controllers\/RolesController.php.html#46\">App\\Http\\Controllers\\RolesController::create<\/a>"],[0,3,"<a href=\"Http\/Controllers\/RolesController.php.html#55\">App\\Http\\Controllers\\RolesController::store<\/a>"],[0,2,"<a href=\"Http\/Controllers\/RolesController.php.html#78\">App\\Http\\Controllers\\RolesController::edit<\/a>"],[0,3,"<a href=\"Http\/Controllers\/RolesController.php.html#95\">App\\Http\\Controllers\\RolesController::update<\/a>"],[0,1,"<a href=\"Http\/Controllers\/StatusTicketController.php.html#22\">App\\Http\\Controllers\\StatusTicketController::__construct<\/a>"],[0,1,"<a href=\"Http\/Controllers\/StatusTicketController.php.html#33\">App\\Http\\Controllers\\StatusTicketController::index<\/a>"],[0,1,"<a href=\"Http\/Controllers\/StatusTicketController.php.html#41\">App\\Http\\Controllers\\StatusTicketController::create<\/a>"],[0,2,"<a href=\"Http\/Controllers\/StatusTicketController.php.html#48\">App\\Http\\Controllers\\StatusTicketController::store<\/a>"],[0,2,"<a href=\"Http\/Controllers\/StatusTicketController.php.html#66\">App\\Http\\Controllers\\StatusTicketController::edit<\/a>"],[0,3,"<a href=\"Http\/Controllers\/StatusTicketController.php.html#80\">App\\Http\\Controllers\\StatusTicketController::update<\/a>"],[0,3,"<a href=\"Http\/Controllers\/StatusTicketController.php.html#103\">App\\Http\\Controllers\\StatusTicketController::destroy<\/a>"],[0,1,"<a href=\"Http\/Controllers\/TicketController.php.html#45\">App\\Http\\Controllers\\TicketController::__construct<\/a>"],[0,1,"<a href=\"Http\/Controllers\/TicketController.php.html#70\">App\\Http\\Controllers\\TicketController::index<\/a>"],[0,1,"<a href=\"Http\/Controllers\/TicketController.php.html#83\">App\\Http\\Controllers\\TicketController::create<\/a>"],[0,2,"<a href=\"Http\/Controllers\/TicketController.php.html#108\">App\\Http\\Controllers\\TicketController::store<\/a>"],[0,2,"<a href=\"Http\/Controllers\/TicketController.php.html#126\">App\\Http\\Controllers\\TicketController::edit<\/a>"],[0,3,"<a href=\"Http\/Controllers\/TicketController.php.html#153\">App\\Http\\Controllers\\TicketController::update<\/a>"],[0,3,"<a href=\"Http\/Controllers\/TicketController.php.html#175\">App\\Http\\Controllers\\TicketController::destroy<\/a>"],[0,2,"<a href=\"Http\/Controllers\/TicketController.php.html#191\">App\\Http\\Controllers\\TicketController::detail<\/a>"],[0,1,"<a href=\"Http\/Controllers\/TicketController.php.html#210\">App\\Http\\Controllers\\TicketController::upload<\/a>"],[0,2,"<a href=\"Http\/Controllers\/TicketController.php.html#219\">App\\Http\\Controllers\\TicketController::storeOccurence<\/a>"],[0,2,"<a href=\"Http\/Controllers\/TicketController.php.html#241\">App\\Http\\Controllers\\TicketController::storeActions<\/a>"],[0,3,"<a href=\"Http\/Controllers\/TicketController.php.html#265\">App\\Http\\Controllers\\TicketController::getArchives<\/a>"],[0,1,"<a href=\"Http\/Controllers\/TypeTicketController.php.html#23\">App\\Http\\Controllers\\TypeTicketController::__construct<\/a>"],[0,1,"<a href=\"Http\/Controllers\/TypeTicketController.php.html#34\">App\\Http\\Controllers\\TypeTicketController::index<\/a>"],[0,1,"<a href=\"Http\/Controllers\/TypeTicketController.php.html#42\">App\\Http\\Controllers\\TypeTicketController::create<\/a>"],[0,2,"<a href=\"Http\/Controllers\/TypeTicketController.php.html#49\">App\\Http\\Controllers\\TypeTicketController::store<\/a>"],[0,2,"<a href=\"Http\/Controllers\/TypeTicketController.php.html#66\">App\\Http\\Controllers\\TypeTicketController::edit<\/a>"],[0,3,"<a href=\"Http\/Controllers\/TypeTicketController.php.html#77\">App\\Http\\Controllers\\TypeTicketController::update<\/a>"],[0,3,"<a href=\"Http\/Controllers\/TypeTicketController.php.html#99\">App\\Http\\Controllers\\TypeTicketController::destroy<\/a>"],[0,1,"<a href=\"Http\/Controllers\/UsersController.php.html#31\">App\\Http\\Controllers\\UsersController::__construct<\/a>"],[0,1,"<a href=\"Http\/Controllers\/UsersController.php.html#42\">App\\Http\\Controllers\\UsersController::index<\/a>"],[0,1,"<a href=\"Http\/Controllers\/UsersController.php.html#52\">App\\Http\\Controllers\\UsersController::create<\/a>"],[0,2,"<a href=\"Http\/Controllers\/UsersController.php.html#64\">App\\Http\\Controllers\\UsersController::store<\/a>"],[0,2,"<a href=\"Http\/Controllers\/UsersController.php.html#94\">App\\Http\\Controllers\\UsersController::edit<\/a>"],[0,2,"<a href=\"Http\/Controllers\/UsersController.php.html#111\">App\\Http\\Controllers\\UsersController::update<\/a>"],[0,3,"<a href=\"Http\/Controllers\/UsersController.php.html#129\">App\\Http\\Controllers\\UsersController::destroy<\/a>"],[0,2,"<a href=\"Http\/Controllers\/UsersController.php.html#148\">App\\Http\\Controllers\\UsersController::profile<\/a>"],[0,2,"<a href=\"Http\/Controllers\/UsersController.php.html#160\">App\\Http\\Controllers\\UsersController::updateProfile<\/a>"],[0,2,"<a href=\"Http\/Middleware\/Authenticate.php.html#15\">App\\Http\\Middleware\\Authenticate::redirectTo<\/a>"],[0,2,"<a href=\"Http\/Middleware\/RedirectIfAuthenticated.php.html#18\">App\\Http\\Middleware\\RedirectIfAuthenticated::handle<\/a>"],[0,1,"<a href=\"Http\/Requests\/PriorityStore.php.html#14\">App\\Http\\Requests\\PriorityStore::authorize<\/a>"],[0,1,"<a href=\"Http\/Requests\/PriorityStore.php.html#24\">App\\Http\\Requests\\PriorityStore::rules<\/a>"],[0,1,"<a href=\"Http\/Requests\/RoleStore.php.html#14\">App\\Http\\Requests\\RoleStore::authorize<\/a>"],[0,1,"<a href=\"Http\/Requests\/RoleStore.php.html#24\">App\\Http\\Requests\\RoleStore::rules<\/a>"],[0,1,"<a href=\"Http\/Requests\/StatusTicketStore.php.html#14\">App\\Http\\Requests\\StatusTicketStore::authorize<\/a>"],[0,1,"<a href=\"Http\/Requests\/StatusTicketStore.php.html#24\">App\\Http\\Requests\\StatusTicketStore::rules<\/a>"],[0,1,"<a href=\"Http\/Requests\/TicketStore.php.html#14\">App\\Http\\Requests\\TicketStore::authorize<\/a>"],[0,1,"<a href=\"Http\/Requests\/TicketStore.php.html#24\">App\\Http\\Requests\\TicketStore::rules<\/a>"],[0,1,"<a href=\"Http\/Requests\/TicketStore.php.html#35\">App\\Http\\Requests\\TicketStore::messages<\/a>"],[0,1,"<a href=\"Http\/Requests\/UserStore.php.html#14\">App\\Http\\Requests\\UserStore::authorize<\/a>"],[0,1,"<a href=\"Http\/Requests\/UserStore.php.html#24\">App\\Http\\Requests\\UserStore::rules<\/a>"],[0,1,"<a href=\"Http\/Requests\/UserStore.php.html#33\">App\\Http\\Requests\\UserStore::messages<\/a>"],[0,1,"<a href=\"Mail\/RegisterUser.php.html#23\">App\\Mail\\RegisterUser::__construct<\/a>"],[0,1,"<a href=\"Mail\/RegisterUser.php.html#34\">App\\Mail\\RegisterUser::build<\/a>"],[100,1,"<a href=\"Providers\/AppServiceProvider.php.html#14\">App\\Providers\\AppServiceProvider::register<\/a>"],[100,1,"<a href=\"Providers\/AppServiceProvider.php.html#24\">App\\Providers\\AppServiceProvider::boot<\/a>"],[100,1,"<a href=\"Providers\/AuthServiceProvider.php.html#24\">App\\Providers\\AuthServiceProvider::boot<\/a>"],[0,1,"<a href=\"Providers\/BroadcastServiceProvider.php.html#15\">App\\Providers\\BroadcastServiceProvider::boot<\/a>"],[100,1,"<a href=\"Providers\/EventServiceProvider.php.html#28\">App\\Providers\\EventServiceProvider::boot<\/a>"],[100,1,"<a href=\"Providers\/RouteServiceProvider.php.html#24\">App\\Providers\\RouteServiceProvider::boot<\/a>"],[100,1,"<a href=\"Providers\/RouteServiceProvider.php.html#36\">App\\Providers\\RouteServiceProvider::map<\/a>"],[100,1,"<a href=\"Providers\/RouteServiceProvider.php.html#52\">App\\Providers\\RouteServiceProvider::mapWebRoutes<\/a>"],[100,1,"<a href=\"Providers\/RouteServiceProvider.php.html#66\">App\\Providers\\RouteServiceProvider::mapApiRoutes<\/a>"],[33.33333333333333,1,"<a href=\"Providers\/ViewComposerServiceProvider.php.html#16\">App\\Providers\\ViewComposerServiceProvider::boot<\/a>"],[100,1,"<a href=\"Providers\/ViewComposerServiceProvider.php.html#36\">App\\Providers\\ViewComposerServiceProvider::register<\/a>"],[0,1,"<a href=\"User.php.html#52\">App\\User::roles<\/a>"],[0,1,"<a href=\"User.php.html#71\">App\\User::permissions<\/a>"],[0,1,"<a href=\"User.php.html#81\">App\\User::projectsUser<\/a>"],[0,1,"<a href=\"ZenTicket\/Helpers\/LogError.php.html#11\">App\\ZenTicket\\Helpers\\LogError::Log<\/a>"],[0,2,"<a href=\"ZenTicket\/Helpers\/RegisterNotFound.php.html#17\">App\\ZenTicket\\Helpers\\RegisterNotFound::validate<\/a>"],[0,3,"<a href=\"ZenTicket\/Helpers\/SessionFlashMessage.php.html#18\">App\\ZenTicket\\Helpers\\SessionFlashMessage::success<\/a>"],[0,1,"<a href=\"ZenTicket\/Helpers\/SessionFlashMessage.php.html#30\">App\\ZenTicket\\Helpers\\SessionFlashMessage::sessionFlash<\/a>"],[0,3,"<a href=\"ZenTicket\/Helpers\/SessionFlashMessage.php.html#39\">App\\ZenTicket\\Helpers\\SessionFlashMessage::error<\/a>"],[0,4,"<a href=\"ZenTicket\/Helpers\/Upload.php.html#21\">App\\ZenTicket\\Helpers\\Upload::uploadFile<\/a>"],[0,1,"<a href=\"ZenTicket\/Helpers\/Upload.php.html#50\">App\\ZenTicket\\Helpers\\Upload::deleteFile<\/a>"],[0,1,"<a href=\"ZenTicket\/Helpers\/Upload.php.html#59\">App\\ZenTicket\\Helpers\\Upload::generateNameImage<\/a>"],[0,1,"<a href=\"ZenTicket\/Helpers\/Upload.php.html#70\">App\\ZenTicket\\Helpers\\Upload::uploadImage<\/a>"],[0,1,"<a href=\"ZenTicket\/Helpers\/Upload.php.html#75\">App\\ZenTicket\\Helpers\\Upload::uploadDocument<\/a>"],[0,1,"<a href=\"ZenTicket\/Models\/Document.php.html#23\">App\\ZenTicket\\Models\\Document::ticket<\/a>"],[100,1,"<a href=\"ZenTicket\/Models\/Module.php.html#28\">App\\ZenTicket\\Models\\Module::permissions<\/a>"],[100,1,"<a href=\"ZenTicket\/Models\/Module.php.html#32\">App\\ZenTicket\\Models\\Module::parents<\/a>"],[0,1,"<a href=\"ZenTicket\/Models\/Ocurrence.php.html#25\">App\\ZenTicket\\Models\\Ocurrence::documentsOccurences<\/a>"],[100,1,"<a href=\"ZenTicket\/Models\/Permission.php.html#19\">App\\ZenTicket\\Models\\Permission::__construct<\/a>"],[0,1,"<a href=\"ZenTicket\/Models\/Permission.php.html#38\">App\\ZenTicket\\Models\\Permission::roles<\/a>"],[0,1,"<a href=\"ZenTicket\/Models\/Permission.php.html#53\">App\\ZenTicket\\Models\\Permission::users<\/a>"],[0,3,"<a href=\"ZenTicket\/Models\/Permission.php.html#72\">App\\ZenTicket\\Models\\Permission::newPivot<\/a>"],[100,1,"<a href=\"ZenTicket\/Models\/Project.php.html#29\">App\\ZenTicket\\Models\\Project::usersProject<\/a>"],[0,1,"<a href=\"ZenTicket\/Models\/Role.php.html#27\">App\\ZenTicket\\Models\\Role::permissions<\/a>"],[100,1,"<a href=\"ZenTicket\/Models\/Ticket.php.html#53\">App\\ZenTicket\\Models\\Ticket::type<\/a>"],[100,1,"<a href=\"ZenTicket\/Models\/Ticket.php.html#58\">App\\ZenTicket\\Models\\Ticket::project<\/a>"],[100,1,"<a href=\"ZenTicket\/Models\/Ticket.php.html#63\">App\\ZenTicket\\Models\\Ticket::userOpen<\/a>"],[100,1,"<a href=\"ZenTicket\/Models\/Ticket.php.html#68\">App\\ZenTicket\\Models\\Ticket::userResponsible<\/a>"],[100,1,"<a href=\"ZenTicket\/Models\/Ticket.php.html#73\">App\\ZenTicket\\Models\\Ticket::priority<\/a>"],[100,1,"<a href=\"ZenTicket\/Models\/Ticket.php.html#78\">App\\ZenTicket\\Models\\Ticket::impact<\/a>"],[100,1,"<a href=\"ZenTicket\/Models\/Ticket.php.html#83\">App\\ZenTicket\\Models\\Ticket::documents<\/a>"],[100,1,"<a href=\"ZenTicket\/Models\/Ticket.php.html#88\">App\\ZenTicket\\Models\\Ticket::ocurrences<\/a>"],[100,1,"<a href=\"ZenTicket\/Models\/Ticket.php.html#93\">App\\ZenTicket\\Models\\Ticket::timeLineTicket<\/a>"],[100,4,"<a href=\"ZenTicket\/Models\/Ticket.php.html#98\">App\\ZenTicket\\Models\\Ticket::getStatusAttribute<\/a>"],[0,1,"<a href=\"ZenTicket\/Models\/TimeLineTicket.php.html#26\">App\\ZenTicket\\Models\\TimeLineTicket::ticket<\/a>"],[100,1,"<a href=\"ZenTicket\/Models\/User.php.html#54\">App\\ZenTicket\\Models\\User::roles<\/a>"],[100,1,"<a href=\"ZenTicket\/Models\/User.php.html#68\">App\\ZenTicket\\Models\\User::projectsUser<\/a>"],[0,1,"<a href=\"ZenTicket\/Repositories\/DocumentOccurenceRepository.php.html#15\">App\\ZenTicket\\Repositories\\DocumentOccurenceRepository::__construct<\/a>"],[0,1,"<a href=\"ZenTicket\/Repositories\/DocumentRepository.php.html#15\">App\\ZenTicket\\Repositories\\DocumentRepository::__construct<\/a>"],[0,1,"<a href=\"ZenTicket\/Repositories\/EloquentRepository.php.html#24\">App\\ZenTicket\\Repositories\\EloquentRepository::__construct<\/a>"],[0,1,"<a href=\"ZenTicket\/Repositories\/EloquentRepository.php.html#34\">App\\ZenTicket\\Repositories\\EloquentRepository::getAll<\/a>"],[0,1,"<a href=\"ZenTicket\/Repositories\/EloquentRepository.php.html#44\">App\\ZenTicket\\Repositories\\EloquentRepository::getById<\/a>"],[0,1,"<a href=\"ZenTicket\/Repositories\/EloquentRepository.php.html#53\">App\\ZenTicket\\Repositories\\EloquentRepository::create<\/a>"],[0,1,"<a href=\"ZenTicket\/Repositories\/EloquentRepository.php.html#63\">App\\ZenTicket\\Repositories\\EloquentRepository::update<\/a>"],[0,1,"<a href=\"ZenTicket\/Repositories\/EloquentRepository.php.html#72\">App\\ZenTicket\\Repositories\\EloquentRepository::delete<\/a>"],[0,1,"<a href=\"ZenTicket\/Repositories\/ImpactRepository.php.html#15\">App\\ZenTicket\\Repositories\\ImpactRepository::__construct<\/a>"],[0,1,"<a href=\"ZenTicket\/Repositories\/ModuleRepository.php.html#25\">App\\ZenTicket\\Repositories\\ModuleRepository::__construct<\/a>"],[0,1,"<a href=\"ZenTicket\/Repositories\/ModuleRepository.php.html#35\">App\\ZenTicket\\Repositories\\ModuleRepository::getByRoleId<\/a>"],[0,1,"<a href=\"ZenTicket\/Repositories\/ModuleRepository.php.html#70\">App\\ZenTicket\\Repositories\\ModuleRepository::getByUsersIdWithPermissions<\/a>"],[0,3,"<a href=\"ZenTicket\/Repositories\/ModuleRepository.php.html#93\">App\\ZenTicket\\Repositories\\ModuleRepository::updatePermissionByAdministrator<\/a>"],[0,2,"<a href=\"ZenTicket\/Repositories\/ModuleRepository.php.html#121\">App\\ZenTicket\\Repositories\\ModuleRepository::mapPermissions<\/a>"],[0,3,"<a href=\"ZenTicket\/Repositories\/ModuleRepository.php.html#140\">App\\ZenTicket\\Repositories\\ModuleRepository::createPermissionByAdministrator<\/a>"],[0,1,"<a href=\"ZenTicket\/Repositories\/ModuleRepository.php.html#161\">App\\ZenTicket\\Repositories\\ModuleRepository::renderEdit<\/a>"],[0,1,"<a href=\"ZenTicket\/Repositories\/ModuleRepository.php.html#169\">App\\ZenTicket\\Repositories\\ModuleRepository::deletePermissionsAdministrator<\/a>"],[0,1,"<a href=\"ZenTicket\/Repositories\/ModuleRepository.php.html#175\">App\\ZenTicket\\Repositories\\ModuleRepository::getAllModules<\/a>"],[0,1,"<a href=\"ZenTicket\/Repositories\/ModuleRepository.php.html#180\">App\\ZenTicket\\Repositories\\ModuleRepository::getAllModulesActive<\/a>"],[0,1,"<a href=\"ZenTicket\/Repositories\/OcurrenceRepository.php.html#15\">App\\ZenTicket\\Repositories\\OcurrenceRepository::__construct<\/a>"],[0,1,"<a href=\"ZenTicket\/Repositories\/PriorityRepository.php.html#14\">App\\ZenTicket\\Repositories\\PriorityRepository::__construct<\/a>"],[0,1,"<a href=\"ZenTicket\/Repositories\/ProjectRepository.php.html#14\">App\\ZenTicket\\Repositories\\ProjectRepository::__construct<\/a>"],[0,1,"<a href=\"ZenTicket\/Repositories\/ProjectRepository.php.html#18\">App\\ZenTicket\\Repositories\\ProjectRepository::renderProjectsByAdministrator<\/a>"],[0,1,"<a href=\"ZenTicket\/Repositories\/ProjectRepository.php.html#22\">App\\ZenTicket\\Repositories\\ProjectRepository::renderProjectsByUser<\/a>"],[0,1,"<a href=\"ZenTicket\/Repositories\/ProjectUserRepository.php.html#14\">App\\ZenTicket\\Repositories\\ProjectUserRepository::__construct<\/a>"],[0,1,"<a href=\"ZenTicket\/Repositories\/RoleRepository.php.html#23\">App\\ZenTicket\\Repositories\\RoleRepository::__construct<\/a>"],[0,1,"<a href=\"ZenTicket\/Repositories\/RoleRepository.php.html#31\">App\\ZenTicket\\Repositories\\RoleRepository::getAll<\/a>"],[0,1,"<a href=\"ZenTicket\/Repositories\/RoleRepository.php.html#40\">App\\ZenTicket\\Repositories\\RoleRepository::getById<\/a>"],[0,1,"<a href=\"ZenTicket\/Repositories\/RoleRepository.php.html#51\">App\\ZenTicket\\Repositories\\RoleRepository::getByRoleName<\/a>"],[0,1,"<a href=\"ZenTicket\/Repositories\/RoleRepository.php.html#59\">App\\ZenTicket\\Repositories\\RoleRepository::create<\/a>"],[0,1,"<a href=\"ZenTicket\/Repositories\/RoleRepository.php.html#69\">App\\ZenTicket\\Repositories\\RoleRepository::update<\/a>"],[0,1,"<a href=\"ZenTicket\/Repositories\/RoleRepository.php.html#78\">App\\ZenTicket\\Repositories\\RoleRepository::delete<\/a>"],[0,1,"<a href=\"ZenTicket\/Repositories\/StatusTicketRepository.php.html#15\">App\\ZenTicket\\Repositories\\StatusTicketRepository::__construct<\/a>"],[0,1,"<a href=\"ZenTicket\/Repositories\/TicketRepository.php.html#15\">App\\ZenTicket\\Repositories\\TicketRepository::__construct<\/a>"],[0,1,"<a href=\"ZenTicket\/Repositories\/TicketRepository.php.html#20\">App\\ZenTicket\\Repositories\\TicketRepository::getTicketByTicketNumber<\/a>"],[0,1,"<a href=\"ZenTicket\/Repositories\/TicketRepository.php.html#25\">App\\ZenTicket\\Repositories\\TicketRepository::totalTickets<\/a>"],[0,1,"<a href=\"ZenTicket\/Repositories\/TicketViewRepository.php.html#16\">App\\ZenTicket\\Repositories\\TicketViewRepository::__construct<\/a>"],[0,8,"<a href=\"ZenTicket\/Repositories\/TicketViewRepository.php.html#21\">App\\ZenTicket\\Repositories\\TicketViewRepository::getByFilter<\/a>"],[0,1,"<a href=\"ZenTicket\/Repositories\/TimeLineTicketRepository.php.html#15\">App\\ZenTicket\\Repositories\\TimeLineTicketRepository::__construct<\/a>"],[0,1,"<a href=\"ZenTicket\/Repositories\/TimeLineTicketRepository.php.html#20\">App\\ZenTicket\\Repositories\\TimeLineTicketRepository::returnAllTrackByTicket<\/a>"],[0,1,"<a href=\"ZenTicket\/Repositories\/TypeTicketRepository.php.html#15\">App\\ZenTicket\\Repositories\\TypeTicketRepository::__construct<\/a>"],[0,1,"<a href=\"ZenTicket\/Repositories\/UserRepository.php.html#24\">App\\ZenTicket\\Repositories\\UserRepository::__construct<\/a>"],[0,1,"<a href=\"ZenTicket\/Repositories\/UserRepository.php.html#33\">App\\ZenTicket\\Repositories\\UserRepository::getAll<\/a>"],[0,1,"<a href=\"ZenTicket\/Repositories\/UserRepository.php.html#43\">App\\ZenTicket\\Repositories\\UserRepository::getById<\/a>"],[0,1,"<a href=\"ZenTicket\/Repositories\/UserRepository.php.html#54\">App\\ZenTicket\\Repositories\\UserRepository::create<\/a>"],[0,1,"<a href=\"ZenTicket\/Repositories\/UserRepository.php.html#64\">App\\ZenTicket\\Repositories\\UserRepository::update<\/a>"],[0,1,"<a href=\"ZenTicket\/Repositories\/UserRepository.php.html#73\">App\\ZenTicket\\Repositories\\UserRepository::delete<\/a>"],[0,4,"<a href=\"ZenTicket\/Scopes\/TicketsScope.php.html#11\">App\\ZenTicket\\Scopes\\TicketsScope::apply<\/a>"],[0,1,"<a href=\"ZenTicket\/Services\/DocumentOccurenceService.php.html#14\">App\\ZenTicket\\Services\\DocumentOccurenceService::__construct<\/a>"],[0,1,"<a href=\"ZenTicket\/Services\/DocumentOccurenceService.php.html#23\">App\\ZenTicket\\Services\\DocumentOccurenceService::renderList<\/a>"],[0,1,"<a href=\"ZenTicket\/Services\/DocumentOccurenceService.php.html#31\">App\\ZenTicket\\Services\\DocumentOccurenceService::renderEdit<\/a>"],[0,1,"<a href=\"ZenTicket\/Services\/DocumentOccurenceService.php.html#39\">App\\ZenTicket\\Services\\DocumentOccurenceService::buildUpdate<\/a>"],[0,1,"<a href=\"ZenTicket\/Services\/DocumentOccurenceService.php.html#47\">App\\ZenTicket\\Services\\DocumentOccurenceService::buildInsert<\/a>"],[0,1,"<a href=\"ZenTicket\/Services\/DocumentOccurenceService.php.html#55\">App\\ZenTicket\\Services\\DocumentOccurenceService::buildDelete<\/a>"],[0,1,"<a href=\"ZenTicket\/Services\/DocumentService.php.html#14\">App\\ZenTicket\\Services\\DocumentService::__construct<\/a>"],[0,1,"<a href=\"ZenTicket\/Services\/DocumentService.php.html#23\">App\\ZenTicket\\Services\\DocumentService::renderList<\/a>"],[0,1,"<a href=\"ZenTicket\/Services\/DocumentService.php.html#31\">App\\ZenTicket\\Services\\DocumentService::renderEdit<\/a>"],[0,1,"<a href=\"ZenTicket\/Services\/DocumentService.php.html#39\">App\\ZenTicket\\Services\\DocumentService::buildUpdate<\/a>"],[0,1,"<a href=\"ZenTicket\/Services\/DocumentService.php.html#47\">App\\ZenTicket\\Services\\DocumentService::buildInsert<\/a>"],[0,1,"<a href=\"ZenTicket\/Services\/DocumentService.php.html#55\">App\\ZenTicket\\Services\\DocumentService::buildDelete<\/a>"],[0,1,"<a href=\"ZenTicket\/Services\/ImpactService.php.html#14\">App\\ZenTicket\\Services\\ImpactService::__construct<\/a>"],[0,1,"<a href=\"ZenTicket\/Services\/ImpactService.php.html#23\">App\\ZenTicket\\Services\\ImpactService::renderList<\/a>"],[0,1,"<a href=\"ZenTicket\/Services\/ImpactService.php.html#31\">App\\ZenTicket\\Services\\ImpactService::renderEdit<\/a>"],[0,1,"<a href=\"ZenTicket\/Services\/ImpactService.php.html#39\">App\\ZenTicket\\Services\\ImpactService::buildUpdate<\/a>"],[0,1,"<a href=\"ZenTicket\/Services\/ImpactService.php.html#47\">App\\ZenTicket\\Services\\ImpactService::buildInsert<\/a>"],[0,1,"<a href=\"ZenTicket\/Services\/ImpactService.php.html#55\">App\\ZenTicket\\Services\\ImpactService::buildDelete<\/a>"],[0,1,"<a href=\"ZenTicket\/Services\/MailService.php.html#21\">App\\ZenTicket\\Services\\MailService::sendMailSendGrid<\/a>"],[0,1,"<a href=\"ZenTicket\/Services\/ModuloService.php.html#24\">App\\ZenTicket\\Services\\ModuloService::__construct<\/a>"],[0,1,"<a href=\"ZenTicket\/Services\/ModuloService.php.html#34\">App\\ZenTicket\\Services\\ModuloService::renderList<\/a>"],[0,1,"<a href=\"ZenTicket\/Services\/ModuloService.php.html#41\">App\\ZenTicket\\Services\\ModuloService::renderEdit<\/a>"],[0,1,"<a href=\"ZenTicket\/Services\/ModuloService.php.html#49\">App\\ZenTicket\\Services\\ModuloService::renderWithPermission<\/a>"],[0,1,"<a href=\"ZenTicket\/Services\/ModuloService.php.html#60\">App\\ZenTicket\\Services\\ModuloService::updatePermissionsAdministrator<\/a>"],[0,1,"<a href=\"ZenTicket\/Services\/ModuloService.php.html#70\">App\\ZenTicket\\Services\\ModuloService::createPermissionsAdministrator<\/a>"],[0,1,"<a href=\"ZenTicket\/Services\/ModuloService.php.html#79\">App\\ZenTicket\\Services\\ModuloService::deletePermissionsAdministrator<\/a>"],[0,1,"<a href=\"ZenTicket\/Services\/ModuloService.php.html#88\">App\\ZenTicket\\Services\\ModuloService::getAllModules<\/a>"],[0,1,"<a href=\"ZenTicket\/Services\/ModuloService.php.html#99\">App\\ZenTicket\\Services\\ModuloService::getAllModulesActive<\/a>"],[0,1,"<a href=\"ZenTicket\/Services\/OcurrenceService.php.html#16\">App\\ZenTicket\\Services\\OcurrenceService::__construct<\/a>"],[0,1,"<a href=\"ZenTicket\/Services\/OcurrenceService.php.html#26\">App\\ZenTicket\\Services\\OcurrenceService::renderList<\/a>"],[0,1,"<a href=\"ZenTicket\/Services\/OcurrenceService.php.html#34\">App\\ZenTicket\\Services\\OcurrenceService::renderEdit<\/a>"],[0,1,"<a href=\"ZenTicket\/Services\/OcurrenceService.php.html#42\">App\\ZenTicket\\Services\\OcurrenceService::buildUpdate<\/a>"],[0,4,"<a href=\"ZenTicket\/Services\/OcurrenceService.php.html#50\">App\\ZenTicket\\Services\\OcurrenceService::buildInsert<\/a>"],[0,1,"<a href=\"ZenTicket\/Services\/OcurrenceService.php.html#84\">App\\ZenTicket\\Services\\OcurrenceService::buildDelete<\/a>"],[0,1,"<a href=\"ZenTicket\/Services\/PriorityService.php.html#14\">App\\ZenTicket\\Services\\PriorityService::__construct<\/a>"],[0,1,"<a href=\"ZenTicket\/Services\/PriorityService.php.html#23\">App\\ZenTicket\\Services\\PriorityService::renderList<\/a>"],[0,1,"<a href=\"ZenTicket\/Services\/PriorityService.php.html#31\">App\\ZenTicket\\Services\\PriorityService::renderEdit<\/a>"],[0,1,"<a href=\"ZenTicket\/Services\/PriorityService.php.html#39\">App\\ZenTicket\\Services\\PriorityService::buildUpdate<\/a>"],[0,1,"<a href=\"ZenTicket\/Services\/PriorityService.php.html#47\">App\\ZenTicket\\Services\\PriorityService::buildInsert<\/a>"],[0,1,"<a href=\"ZenTicket\/Services\/PriorityService.php.html#55\">App\\ZenTicket\\Services\\PriorityService::buildDelete<\/a>"],[0,1,"<a href=\"ZenTicket\/Services\/ProjectService.php.html#19\">App\\ZenTicket\\Services\\ProjectService::__construct<\/a>"],[0,1,"<a href=\"ZenTicket\/Services\/ProjectService.php.html#28\">App\\ZenTicket\\Services\\ProjectService::renderList<\/a>"],[0,1,"<a href=\"ZenTicket\/Services\/ProjectService.php.html#36\">App\\ZenTicket\\Services\\ProjectService::renderEdit<\/a>"],[0,2,"<a href=\"ZenTicket\/Services\/ProjectService.php.html#45\">App\\ZenTicket\\Services\\ProjectService::buildUpdate<\/a>"],[0,2,"<a href=\"ZenTicket\/Services\/ProjectService.php.html#62\">App\\ZenTicket\\Services\\ProjectService::executeUpload<\/a>"],[0,2,"<a href=\"ZenTicket\/Services\/ProjectService.php.html#73\">App\\ZenTicket\\Services\\ProjectService::buildInsert<\/a>"],[0,2,"<a href=\"ZenTicket\/Services\/ProjectService.php.html#90\">App\\ZenTicket\\Services\\ProjectService::buildDelete<\/a>"],[0,5,"<a href=\"ZenTicket\/Services\/ProjectService.php.html#100\">App\\ZenTicket\\Services\\ProjectService::renderProjectsByUser<\/a>"],[0,1,"<a href=\"ZenTicket\/Services\/ProjectUserService.php.html#13\">App\\ZenTicket\\Services\\ProjectUserService::__construct<\/a>"],[0,1,"<a href=\"ZenTicket\/Services\/ProjectUserService.php.html#22\">App\\ZenTicket\\Services\\ProjectUserService::renderList<\/a>"],[0,1,"<a href=\"ZenTicket\/Services\/ProjectUserService.php.html#30\">App\\ZenTicket\\Services\\ProjectUserService::renderEdit<\/a>"],[0,1,"<a href=\"ZenTicket\/Services\/ProjectUserService.php.html#38\">App\\ZenTicket\\Services\\ProjectUserService::buildUpdate<\/a>"],[0,1,"<a href=\"ZenTicket\/Services\/ProjectUserService.php.html#46\">App\\ZenTicket\\Services\\ProjectUserService::buildInsert<\/a>"],[0,1,"<a href=\"ZenTicket\/Services\/ProjectUserService.php.html#54\">App\\ZenTicket\\Services\\ProjectUserService::buildDelete<\/a>"],[0,1,"<a href=\"ZenTicket\/Services\/RoleService.php.html#28\">App\\ZenTicket\\Services\\RoleService::__construct<\/a>"],[0,1,"<a href=\"ZenTicket\/Services\/RoleService.php.html#39\">App\\ZenTicket\\Services\\RoleService::renderList<\/a>"],[0,1,"<a href=\"ZenTicket\/Services\/RoleService.php.html#50\">App\\ZenTicket\\Services\\RoleService::renderEdit<\/a>"],[0,1,"<a href=\"ZenTicket\/Services\/RoleService.php.html#69\">App\\ZenTicket\\Services\\RoleService::buildUpdate<\/a>"],[0,1,"<a href=\"ZenTicket\/Services\/RoleService.php.html#82\">App\\ZenTicket\\Services\\RoleService::buildInsert<\/a>"],[0,1,"<a href=\"ZenTicket\/Services\/RoleService.php.html#94\">App\\ZenTicket\\Services\\RoleService::buildDelete<\/a>"],[0,1,"<a href=\"ZenTicket\/Services\/Specializations\/CalculateHoursWorked.php.html#13\">App\\ZenTicket\\Services\\Specializations\\CalculateHoursWorked::__construct<\/a>"],[0,4,"<a href=\"ZenTicket\/Services\/Specializations\/CalculateHoursWorked.php.html#18\">App\\ZenTicket\\Services\\Specializations\\CalculateHoursWorked::calculate<\/a>"],[0,1,"<a href=\"ZenTicket\/Services\/Specializations\/SaveEvidencesOccurences.php.html#16\">App\\ZenTicket\\Services\\Specializations\\SaveEvidencesOccurences::__construct<\/a>"],[0,3,"<a href=\"ZenTicket\/Services\/Specializations\/SaveEvidencesOccurences.php.html#23\">App\\ZenTicket\\Services\\Specializations\\SaveEvidencesOccurences::execute<\/a>"],[0,1,"<a href=\"ZenTicket\/Services\/Specializations\/Ticket\/ChangeStatusToFinish.php.html#13\">App\\ZenTicket\\Services\\Specializations\\Ticket\\ChangeStatusToFinish::__construct<\/a>"],[0,1,"<a href=\"ZenTicket\/Services\/Specializations\/Ticket\/ChangeStatusToFinish.php.html#18\">App\\ZenTicket\\Services\\Specializations\\Ticket\\ChangeStatusToFinish::execute<\/a>"],[0,1,"<a href=\"ZenTicket\/Services\/Specializations\/Ticket\/ChangeStatusToProcessing.php.html#13\">App\\ZenTicket\\Services\\Specializations\\Ticket\\ChangeStatusToProcessing::__construct<\/a>"],[0,1,"<a href=\"ZenTicket\/Services\/Specializations\/Ticket\/ChangeStatusToProcessing.php.html#18\">App\\ZenTicket\\Services\\Specializations\\Ticket\\ChangeStatusToProcessing::execute<\/a>"],[0,1,"<a href=\"ZenTicket\/Services\/Specializations\/Ticket\/FinishTrackingTicket.php.html#13\">App\\ZenTicket\\Services\\Specializations\\Ticket\\FinishTrackingTicket::__construct<\/a>"],[0,2,"<a href=\"ZenTicket\/Services\/Specializations\/Ticket\/FinishTrackingTicket.php.html#18\">App\\ZenTicket\\Services\\Specializations\\Ticket\\FinishTrackingTicket::execute<\/a>"],[0,1,"<a href=\"ZenTicket\/Services\/Specializations\/Ticket\/PlayTrackingTicket.php.html#13\">App\\ZenTicket\\Services\\Specializations\\Ticket\\PlayTrackingTicket::__construct<\/a>"],[0,2,"<a href=\"ZenTicket\/Services\/Specializations\/Ticket\/PlayTrackingTicket.php.html#18\">App\\ZenTicket\\Services\\Specializations\\Ticket\\PlayTrackingTicket::execute<\/a>"],[0,1,"<a href=\"ZenTicket\/Services\/Specializations\/Ticket\/StopTrackingTicket.php.html#13\">App\\ZenTicket\\Services\\Specializations\\Ticket\\StopTrackingTicket::__construct<\/a>"],[0,1,"<a href=\"ZenTicket\/Services\/Specializations\/Ticket\/StopTrackingTicket.php.html#18\">App\\ZenTicket\\Services\\Specializations\\Ticket\\StopTrackingTicket::execute<\/a>"],[0,1,"<a href=\"ZenTicket\/Services\/Specializations\/UploadFilesTemp.php.html#17\">App\\ZenTicket\\Services\\Specializations\\UploadFilesTemp::__construct<\/a>"],[0,3,"<a href=\"ZenTicket\/Services\/Specializations\/UploadFilesTemp.php.html#23\">App\\ZenTicket\\Services\\Specializations\\UploadFilesTemp::execute<\/a>"],[0,1,"<a href=\"ZenTicket\/Services\/Specializations\/VinculeProjectUsers.php.html#13\">App\\ZenTicket\\Services\\Specializations\\VinculeProjectUsers::__construct<\/a>"],[0,3,"<a href=\"ZenTicket\/Services\/Specializations\/VinculeProjectUsers.php.html#19\">App\\ZenTicket\\Services\\Specializations\\VinculeProjectUsers::vincule<\/a>"],[0,1,"<a href=\"ZenTicket\/Services\/StatusTicketService.php.html#14\">App\\ZenTicket\\Services\\StatusTicketService::__construct<\/a>"],[0,1,"<a href=\"ZenTicket\/Services\/StatusTicketService.php.html#23\">App\\ZenTicket\\Services\\StatusTicketService::renderList<\/a>"],[0,1,"<a href=\"ZenTicket\/Services\/StatusTicketService.php.html#32\">App\\ZenTicket\\Services\\StatusTicketService::renderEdit<\/a>"],[0,1,"<a href=\"ZenTicket\/Services\/StatusTicketService.php.html#40\">App\\ZenTicket\\Services\\StatusTicketService::buildUpdate<\/a>"],[0,1,"<a href=\"ZenTicket\/Services\/StatusTicketService.php.html#48\">App\\ZenTicket\\Services\\StatusTicketService::buildInsert<\/a>"],[0,1,"<a href=\"ZenTicket\/Services\/StatusTicketService.php.html#56\">App\\ZenTicket\\Services\\StatusTicketService::buildDelete<\/a>"],[0,1,"<a href=\"ZenTicket\/Services\/TicketService.php.html#19\">App\\ZenTicket\\Services\\TicketService::__construct<\/a>"],[0,1,"<a href=\"ZenTicket\/Services\/TicketService.php.html#29\">App\\ZenTicket\\Services\\TicketService::renderList<\/a>"],[0,1,"<a href=\"ZenTicket\/Services\/TicketService.php.html#37\">App\\ZenTicket\\Services\\TicketService::renderEdit<\/a>"],[0,4,"<a href=\"ZenTicket\/Services\/TicketService.php.html#45\">App\\ZenTicket\\Services\\TicketService::buildUpdate<\/a>"],[0,4,"<a href=\"ZenTicket\/Services\/TicketService.php.html#80\">App\\ZenTicket\\Services\\TicketService::buildInsert<\/a>"],[0,2,"<a href=\"ZenTicket\/Services\/TicketService.php.html#110\">App\\ZenTicket\\Services\\TicketService::sanitilizeData<\/a>"],[0,3,"<a href=\"ZenTicket\/Services\/TicketService.php.html#124\">App\\ZenTicket\\Services\\TicketService::generateTicketNumber<\/a>"],[0,1,"<a href=\"ZenTicket\/Services\/TicketService.php.html#142\">App\\ZenTicket\\Services\\TicketService::renderTicketByTicketNumber<\/a>"],[0,1,"<a href=\"ZenTicket\/Services\/TicketService.php.html#149\">App\\ZenTicket\\Services\\TicketService::buildDelete<\/a>"],[0,1,"<a href=\"ZenTicket\/Services\/TicketService.php.html#154\">App\\ZenTicket\\Services\\TicketService::totalTickets<\/a>"],[0,1,"<a href=\"ZenTicket\/Services\/TicketViewService.php.html#12\">App\\ZenTicket\\Services\\TicketViewService::__construct<\/a>"],[0,1,"<a href=\"ZenTicket\/Services\/TicketViewService.php.html#20\">App\\ZenTicket\\Services\\TicketViewService::renderList<\/a>"],[0,1,"<a href=\"ZenTicket\/Services\/TicketViewService.php.html#26\">App\\ZenTicket\\Services\\TicketViewService::renderByFilter<\/a>"],[0,1,"<a href=\"ZenTicket\/Services\/TicketViewService.php.html#34\">App\\ZenTicket\\Services\\TicketViewService::renderEdit<\/a>"],[0,1,"<a href=\"ZenTicket\/Services\/TicketViewService.php.html#42\">App\\ZenTicket\\Services\\TicketViewService::buildUpdate<\/a>"],[0,1,"<a href=\"ZenTicket\/Services\/TicketViewService.php.html#50\">App\\ZenTicket\\Services\\TicketViewService::buildInsert<\/a>"],[0,1,"<a href=\"ZenTicket\/Services\/TicketViewService.php.html#58\">App\\ZenTicket\\Services\\TicketViewService::buildDelete<\/a>"],[0,1,"<a href=\"ZenTicket\/Services\/TimeLineTicketService.php.html#17\">App\\ZenTicket\\Services\\TimeLineTicketService::__construct<\/a>"],[0,1,"<a href=\"ZenTicket\/Services\/TimeLineTicketService.php.html#27\">App\\ZenTicket\\Services\\TimeLineTicketService::renderList<\/a>"],[0,1,"<a href=\"ZenTicket\/Services\/TimeLineTicketService.php.html#35\">App\\ZenTicket\\Services\\TimeLineTicketService::renderEdit<\/a>"],[0,1,"<a href=\"ZenTicket\/Services\/TimeLineTicketService.php.html#43\">App\\ZenTicket\\Services\\TimeLineTicketService::buildUpdate<\/a>"],[0,1,"<a href=\"ZenTicket\/Services\/TimeLineTicketService.php.html#51\">App\\ZenTicket\\Services\\TimeLineTicketService::buildInsert<\/a>"],[0,1,"<a href=\"ZenTicket\/Services\/TimeLineTicketService.php.html#59\">App\\ZenTicket\\Services\\TimeLineTicketService::buildDelete<\/a>"],[0,6,"<a href=\"ZenTicket\/Services\/TimeLineTicketService.php.html#64\">App\\ZenTicket\\Services\\TimeLineTicketService::storeTrack<\/a>"],[0,1,"<a href=\"ZenTicket\/Services\/TypeTicketService.php.html#14\">App\\ZenTicket\\Services\\TypeTicketService::__construct<\/a>"],[0,1,"<a href=\"ZenTicket\/Services\/TypeTicketService.php.html#23\">App\\ZenTicket\\Services\\TypeTicketService::renderList<\/a>"],[0,1,"<a href=\"ZenTicket\/Services\/TypeTicketService.php.html#31\">App\\ZenTicket\\Services\\TypeTicketService::renderEdit<\/a>"],[0,1,"<a href=\"ZenTicket\/Services\/TypeTicketService.php.html#39\">App\\ZenTicket\\Services\\TypeTicketService::buildUpdate<\/a>"],[0,1,"<a href=\"ZenTicket\/Services\/TypeTicketService.php.html#47\">App\\ZenTicket\\Services\\TypeTicketService::buildInsert<\/a>"],[0,1,"<a href=\"ZenTicket\/Services\/TypeTicketService.php.html#55\">App\\ZenTicket\\Services\\TypeTicketService::buildDelete<\/a>"],[0,1,"<a href=\"ZenTicket\/Services\/UserService.php.html#27\">App\\ZenTicket\\Services\\UserService::__construct<\/a>"],[0,1,"<a href=\"ZenTicket\/Services\/UserService.php.html#37\">App\\ZenTicket\\Services\\UserService::renderList<\/a>"],[0,2,"<a href=\"ZenTicket\/Services\/UserService.php.html#47\">App\\ZenTicket\\Services\\UserService::renderEdit<\/a>"],[0,5,"<a href=\"ZenTicket\/Services\/UserService.php.html#62\">App\\ZenTicket\\Services\\UserService::buildUpdate<\/a>"],[0,1,"<a href=\"ZenTicket\/Services\/UserService.php.html#91\">App\\ZenTicket\\Services\\UserService::mapUserPassword<\/a>"],[0,1,"<a href=\"ZenTicket\/Services\/UserService.php.html#96\">App\\ZenTicket\\Services\\UserService::password_generate<\/a>"],[0,2,"<a href=\"ZenTicket\/Services\/UserService.php.html#106\">App\\ZenTicket\\Services\\UserService::buildInsert<\/a>"],[0,1,"<a href=\"ZenTicket\/Services\/UserService.php.html#129\">App\\ZenTicket\\Services\\UserService::buildDelete<\/a>"],[100,1,"<a href=\"ZenTicket\/Traits\/TicketsTrait.php.html#9\">TicketsTrait::boot<\/a>"]], 'Method Complexity'))
+      .transition()
+      .duration(500)
+      .call(chart);
+
+    nv.utils.windowResize(chart.update);
+
+    return chart;
+  });
+
+  function getComplexityData(data, label) {
+    var values = [];
+    $.each(data, function(key) {
+      var value = Math.round(data[key][0]*100) / 100;
+      values.push({
+        x: value,
+        y: data[key][1],
+        class: data[key][2],
+        size: 0.05,
+        shape: 'diamond'
+      });
+    });
+
+    return [
+      {
+        key: label,
+        values: values,
+        color: "#4572A7"
+      }
+    ];
+  }
+});
+  </script>
+ </body>
+</html>
