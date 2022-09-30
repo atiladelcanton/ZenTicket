@@ -109,7 +109,6 @@ class TicketController extends Controller
     {
         try {
             DB::beginTransaction();
-
             $this->service->buildInsert($request->all());
             DB::commit();
             SessionFlashMessage::success(SessionFlashMessage::STORE);

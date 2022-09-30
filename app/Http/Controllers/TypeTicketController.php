@@ -57,7 +57,6 @@ class TypeTicketController extends Controller
         } catch (Exception $e) {
             DB::rollBack();
             LogError::Log($e);
-
             SessionFlashMessage::error(SessionFlashMessage::STORE);
             return back()->withInput();
         }
@@ -99,9 +98,6 @@ class TypeTicketController extends Controller
     public function destroy($id)
     {
         try {
-            if (!RegisterNotFound::validate($this->service, $id)) {
-                return redirect()->route('tipos-de-chamados');
-            }
 
             $this->service->buildDelete($id);
             SessionFlashMessage::success(SessionFlashMessage::DESTROY);

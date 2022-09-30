@@ -25,6 +25,6 @@ class TimeLineTicket extends Model
     ];
     public function ticket()
     {
-        return $this->belongsTo(Ticket::class, 'id');
+        return $this->belongsTo(Ticket::class, 'ticket_id');
     }
 }

@@ -52,6 +52,8 @@
     "prefer-stable": true,
     "scripts": {
         "test":"rm -rf coverage && mkdir coverage && XDEBUG_MODE=coverage phpunit --testdox --coverage-html coverage",
+        "test-simple":"XDEBUG_MODE=coverage phpunit --testdox",
+        "php-cs-fixer.executablePath": "php-cs-fixer",
         "post-autoload-dump": [
             "Illuminate\\Foundation\\ComposerScripts::postAutoloadDump",
             "@php artisan package:discover --ansi"
@@ -62,5 +64,6 @@
         "post-create-project-cmd": [
             "@php artisan key:generate --ansi"
         ]
+
     }
 }

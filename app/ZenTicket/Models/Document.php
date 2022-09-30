@@ -14,7 +14,6 @@ class Document extends Model
 {
 
     protected $fillable = [
-        'type',
         'ticket_id',
         'extension_document',
         'name'
@@ -22,6 +21,6 @@ class Document extends Model
 
     public function ticket()
     {
-        return $this->belongsTo(Ticket::class, 'id');
+        return $this->belongsTo(Ticket::class, 'ticket_id');
     }
 }

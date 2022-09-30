@@ -56,32 +56,7 @@ class Permission extends Model implements \Artesaos\Defender\Contracts\Permissio
             config('defender.user_model'),
             config('defender.permission_user_table'),
             config('defender.permission_key'),
-            'administrator_id'
+            'user_id'
         )->withPivot('value', 'expires');
-    }
-
-    /**
-     * @param Model  $parent
-     * @param array  $attributes
-     * @param string $table
-     * @param bool   $exists
-     * @param  string|null  $using
-     *
-     * @return PermissionUserPivot|\Illuminate\Database\Eloquent\Relations\Pivot
-     */
-    public function newPivot(Model $parent, array $attributes, $table, $exists, $using = null)
-    {
-        $userModel = app()['config']->get('defender.user_model');
-        $roleModel = app()['config']->get('defender.role_model');
-
-        if ($parent instanceof $userModel) {
-            return PermissionUserPivot::fromAttributes($parent, $attributes, $table, $exists);
-        }
-
-        if ($parent instanceof $roleModel) {
-            return PermissionRolePivot::fromAttributes($parent, $attributes, $table, $exists);
-        }
-
-        return parent::newPivot($parent, $attributes, $table, $exists);
     }
 }
