@@ -17,7 +17,7 @@ jobs:
         id: read_property
         uses:  ashley-taylor/read-json-property-action@v1.0
         with:
-          path: composer.json
+          path: ./composer.json
           property: artifact
       - name: echo artifact
         run: echo ${{ steps.read_property.outputs.current_version }}
