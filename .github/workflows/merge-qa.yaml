@@ -13,12 +13,12 @@ jobs:
       #  run: |
       #    echo --- Run Test 🧪---
       #    docker-compose run --rm zenticket-app sh -c "composer install --no-interaction && XDEBUG_MODE=coverage vendor/bin/phpunit --testdox"
+      - uses: actions/checkout@v2
       - name: Read Properties
-        id: read_property
-        uses:  ashley-taylor/read-json-property-action@v1.0
+        id: project-version
+        uses: 'euberdeveloper/ga-project-version@main'
         with:
-          path: ../../composer.json
-          property: artifact
+          package-manager: 'composer'
       - name: echo artifact
-        run: echo ${{ steps.read_property.outputs.current_version }}
+        run: echo ${{ steps.project-version.outputs.current_version }}
   
