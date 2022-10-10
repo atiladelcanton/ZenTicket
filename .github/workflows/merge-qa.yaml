@@ -27,7 +27,6 @@ jobs:
           username: ${{secrets.DOCKER_USERNAME}}
           password: ${{secrets.DOCKER_PASSWORD}}
       - name: Generate Version Semantic QA
-        uses: actions/checkout@v3
         run: |
           echo 'COMPOSER_JSON<<EOF' >> $GITHUB_ENV
           cat ./composer.json >> $GITHUB_ENV
