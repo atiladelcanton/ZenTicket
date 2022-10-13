@@ -46,5 +46,5 @@ jobs:
         with:
           push: true
           context: .
-          tags: ${{ steps.project-version.outputs.version}}
-          labels: ${{ steps.project-version.outputs.version }}
+          tags: atilarampazo/zenticket:QA_${{ steps.project-version.outputs.version}}
+          labels: atilarampazo/zenticket:QA_${{ steps.project-version.outputs.version }}
