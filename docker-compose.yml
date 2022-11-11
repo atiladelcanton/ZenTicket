@@ -14,8 +14,6 @@ services:
     restart: unless-stopped
     env_file:
       - docker/docker-compose-env/application.env
-    depends_on:
-      - zenticket-redis
     networks:
       - zenticket
 
@@ -45,11 +43,6 @@ services:
     networks:
       - zenticket
 
-  zenticket-redis:
-    image: redis:latest
-    container_name: zenticket-redis
-    networks:
-      - zenticket
 
 networks:
   zenticket:
