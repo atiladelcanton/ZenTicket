@@ -3,7 +3,7 @@ version: "3.8"
 services:
   zenticket-app:
     image: zenticket_oficial/zenticket_v2
-    user: "${UXID}:${GID}"
+    user: "1000:1000"
     build:
       context: .
       target: dev
