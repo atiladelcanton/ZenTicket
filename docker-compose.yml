@@ -16,6 +16,7 @@ services:
       - docker/docker-compose-env/application.env
     depends_on:
       - zenticket-redis
+      - zenticket-postgres
     networks:
       - zenticket
 
