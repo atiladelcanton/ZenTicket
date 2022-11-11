@@ -3,7 +3,7 @@ version: "3.8"
 services:
   zenticket-app:
     image: zenticket_oficial/zenticket_v2
-    user: "1000:1000"
+    user: "${UXID}:${GID}"
     build:
       context: .
       target: dev
@@ -16,7 +16,21 @@ services:
       - docker/docker-compose-env/application.env
     networks:
       - zenticket
-
+  zenticket-ci:
+    image: zenticket_oficial/zenticket_v2
+    user: "${UXID}:${GID}"
+    build:
+      context: .
+      target: ci
+    container_name: zenticket-app
+    volumes:
+      - ./:/var/www/html/
+      - ./docker/php/php.ini:/usr/local/etc/php/conf.d/my-custom-php.ini
+    restart: unless-stopped
+    env_file:
+      - docker/docker-compose-env/application.env
+    networks:
+      - zenticket
   zenticket-nginx:
     image: nginx:alpine
     container_name: zenticket-nginx

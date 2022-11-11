@@ -12,7 +12,7 @@ jobs:
       - name: Run Test
         run: |
           echo --- Run Test 🧪---
-          docker-compose run --rm zenticket-app sh -c "composer install --no-interaction && XDEBUG_MODE=coverage vendor/bin/phpunit --testdox"
+          docker-compose run --rm zenticket-ci sh -c "XDEBUG_MODE=coverage vendor/bin/phpunit --testdox"
       -
         name: Sonar Scan
         uses: sonarsource/sonarqube-scan-action@master
