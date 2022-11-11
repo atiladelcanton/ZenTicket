@@ -14,11 +14,23 @@ services:
     restart: unless-stopped
     env_file:
       - docker/docker-compose-env/application.env
-    depends_on:
-      - zenticket-redis
     networks:
       - zenticket
-
+  zenticket-ci:
+    image: zenticket_oficial/zenticket_v2
+    user: "${UXID}:${GID}"
+    build:
+      context: .
+      target: ci
+    container_name: zenticket-app
+    volumes:
+      - ./:/var/www/html/
+      - ./docker/php/php.ini:/usr/local/etc/php/conf.d/my-custom-php.ini
+    restart: unless-stopped
+    env_file:
+      - docker/docker-compose-env/application.env
+    networks:
+      - zenticket
   zenticket-nginx:
     image: nginx:alpine
     container_name: zenticket-nginx
@@ -45,11 +57,6 @@ services:
     networks:
       - zenticket
 
-  zenticket-redis:
-    image: redis:latest
-    container_name: zenticket-redis
-    networks:
-      - zenticket
 
 networks:
   zenticket:
