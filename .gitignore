@@ -16,3 +16,6 @@ _ide_helper.php
 .idea
 .idea/*
 /nbproject/private/
+/execution-result.xml
+/coverage-result.xml
+/coverage.xml
