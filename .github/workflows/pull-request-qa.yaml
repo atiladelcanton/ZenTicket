@@ -12,8 +12,8 @@ jobs:
       - name: Run Tests 🧪
         run: |
           echo --- Run Test 🧪---
-          docker-compose run --rm zenticket-ci sh -c "composer install --no-interaction && XDEBUG_MODE=coverage vendor/bin/phpunit --coverage-clover=coverage-result.xml --log-junit=execution-result.xml --testdox"
-          ls /github/workspace
+          docker-compose run --rm zenticket-ci sh -c "composer install --no-interaction && XDEBUG_MODE=coverage vendor/bin/phpunit --coverage-clover=coverage.xml --log-junit=junit.xml --testdox"
+
       - name: Sonar Scan
         uses: sonarsource/sonarqube-scan-action@master
         env:
