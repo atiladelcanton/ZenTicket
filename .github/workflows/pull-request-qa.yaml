@@ -12,7 +12,7 @@ jobs:
       - name: Run Tests 🧪
         run: |
           echo --- Run Test 🧪---
-          docker-compose run --rm zenticket-ci sh -c "XDEBUG_MODE=coverage vendor/bin/phpunit --coverage-clover=coverage-result.xml --log-junit=execution-result.xml --testdox"
+          docker-compose run --rm zenticket-ci sh -c "composer install --no-interaction && XDEBUG_MODE=coverage vendor/bin/phpunit --coverage-clover=coverage-result.xml --log-junit=execution-result.xml --testdox"
       - name: Archive code coverage results
         uses: actions/upload-artifact@v1
         with:
