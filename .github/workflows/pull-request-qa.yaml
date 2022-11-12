@@ -16,6 +16,13 @@ jobs:
 
       - name: Sonar Scan
         uses: sonarsource/sonarqube-scan-action@master
+        with:
+          projectBase:  app
+          args: >
+           -Dsonar.php.coverage.reportPaths=coverage.xml
+           -Dsonar.php.tests.reportPaths=junit.xml
+           -Dsonar.tests=tests/
+           -Dsonar.verbose=true
         env:
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
           SONAR_HOST_URL: ${{ secrets.SONAR_HOST_URL }}
