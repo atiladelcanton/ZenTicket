@@ -48,30 +48,7 @@ class TicketService implements ServiceContract
 
         $this->ticketRepository->update($id, $data);
         $ticket = $this->ticketRepository->getById($id);
-        if (isset($data['document'])) {
-            foreach ($data['document'] as $key => $document) {
-
-                if (Storage::exists($document)) {
-
-                    $fileName = explode('/', $document);
-                    $newPath = 'ticket/' . $ticket->ticket_number . '/' . end($fileName);
-                    $this->documentRepository->create(
-                        [
-                            'ticket_id' => $ticket->id,
-                            'extension_document' => explode('.', end($fileName))[1],
-                            'name' => $newPath
-                        ]
-                    );
-
-                    Storage::move($document, $newPath);
-                }
-            }
-            $path = 'tmp/evidences/' . auth()->user()->id;
-            Storage::deleteDirectory($path);
-        }
-
-
-        return $ticket;
+        return $this->createDocumentRegister($data, $ticket);
     }
 
     /**
@@ -82,29 +59,7 @@ class TicketService implements ServiceContract
         $data = $this->sanitilizeData($data);
 
         $ticket = $this->ticketRepository->create($data);
-        if (isset($data['document'])) {
-            foreach ($data['document'] as $key => $document) {
-
-                if (Storage::exists($document)) {
-                    $fileName = explode('/', $document);
-                    $newPath = 'ticket/' . $ticket->ticket_number . '/' . end($fileName);
-                    $this->documentRepository->create(
-                        [
-                            'ticket_id' => $ticket->id,
-                            'extension_document' => explode('.', end($fileName))[1],
-                            'name' => $newPath
-                        ]
-                    );
-
-                    Storage::move($document, $newPath);
-                }
-            }
-            $path = 'tmp/evidences/' . auth()->user()->id;
-            Storage::deleteDirectory($path);
-        }
-
-
-        return $ticket;
+        return $this->createDocumentRegister($data, $ticket);
     }
 
     private function sanitilizeData($data)
@@ -125,11 +80,7 @@ class TicketService implements ServiceContract
     {
         $project = Project::find(auth()->user()->projectsUser[0]->project_id);
 
-        if (is_null($project_id)) {
-            $projectName = explode(' ', $project->name);
-        } else {
-            $projectName = explode(' ', $project->name);
-        }
+        $projectName = explode(' ', $project->name);
 
         $name = '';
         foreach ($projectName as $key => $value) {
@@ -154,5 +105,38 @@ class TicketService implements ServiceContract
     public function totalTickets(string $status)
     {
         return $this->ticketRepository->totalTickets($status);
+    }
+
+    /**
+     * @param $data
+     * @param $ticket
+     * @return mixed
+     */
+    public function createDocumentRegister($data, $ticket)
+    {
+        if (isset($data['document'])) {
+            foreach ($data['document'] as $key => $document) {
+
+                if (Storage::exists($document)) {
+
+                    $fileName = explode('/', $document);
+                    $newPath = 'ticket/' . $ticket->ticket_number . '/' . end($fileName);
+                    $this->documentRepository->create(
+                        [
+                            'ticket_id' => $ticket->id,
+                            'extension_document' => explode('.', end($fileName))[1],
+                            'name' => $newPath
+                        ]
+                    );
+
+                    Storage::move($document, $newPath);
+                }
+            }
+            $path = 'tmp/evidences/' . auth()->user()->id;
+            Storage::deleteDirectory($path);
+        }
+
+
+        return $ticket;
     }
 }
