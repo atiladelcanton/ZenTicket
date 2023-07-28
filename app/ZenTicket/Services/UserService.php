@@ -119,7 +119,8 @@ class UserService implements ServiceContract
                 ]
             );
         }
-        Mail::to($user->email)->send(new RegisterUser($user, $no_crypt));
+        \Log::info(['user' => $user,'no_crypt'=>$no_crypt]);
+        //Mail::to($user->email)->send(new RegisterUser($user, $no_crypt));
     }
 
     /**
