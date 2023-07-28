@@ -61,7 +61,7 @@
     <div class="auth_div vivify popIn">
         <div class="auth_brand">
             <a class="navbar-brand" href="{{url('/')}}">
-                <img src="{{asset('img/logo.png')}}" alt="{{env('APP_NAME')}}" style="    width: 320px"/>
+                <img src="https://zensolutions.com.br/assets/img/logo.png" alt="{{env('APP_NAME')}}" style="    width: 320px"/>
             </a>
         </div>
         <div class="card">

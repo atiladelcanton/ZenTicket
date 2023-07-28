@@ -13,7 +13,6 @@ ENV APP_HOME=/var/www/html
 FROM base as dev
 WORKDIR $APP_HOME
 COPY --from=composer:latest /usr/bin/composer /usr/bin/composer
-RUN pecl install xdebug && docker-php-ext-enable xdebug
 
 # CI LAYER ==============================================================================================================
 FROM dev as ci
